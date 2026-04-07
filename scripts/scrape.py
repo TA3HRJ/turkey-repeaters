@@ -111,6 +111,12 @@ HEADERS = {
 
 MODE_MAP = {0: "FM", 1: "DMR", 2: "C4FM", 3: "D-STAR", 4: "NXDN"}
 
+_LOC_PLACEHOLDERS = {"---", "--", "-", ".", "..", "yok", "none", "n/a", ""}
+
+def _clean_loc(s: str) -> str:
+    """Return empty string if s is a placeholder, otherwise return s as-is."""
+    return "" if (s or "").strip().lower() in _LOC_PLACEHOLDERS else (s or "").strip()
+
 def _safe_float(val) -> float | None:
     if val is None:
         return None
@@ -243,7 +249,7 @@ def fetch_akrad() -> list[dict]:
             "callsign":     callsign,
             "city":         city,
             "district":     None,
-            "location":     location or callsign or city,
+            "location":     _clean_loc(location) or callsign or city,
             "frequency":    freq,
             "offset":       calc_offset(freq, band),
             "tone":         tone,
