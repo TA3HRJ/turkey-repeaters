@@ -61,6 +61,8 @@
     .s-on{background:var(--on-air)}.s-off{background:var(--off-air)}
 
     .badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:.72rem;font-weight:700}
+    .coord-exact{color:#1e8449;font-size:.78rem;font-family:monospace}
+    .coord-approx{color:#d68910;font-size:.78rem;font-family:monospace;font-style:italic}
     .bvhf{background:#d5f5e3;color:#1e8449}.buhf{background:#d6eaf8;color:#1a5276}.both{background:#fdebd0;color:#784212}
 
     /* MODAL OVERLAY */
@@ -182,6 +184,7 @@
         <th data-col="power_w" id="th-power">Pwr (W)</th>
         <th data-col="altitude_m" id="th-alt">Alt (m)</th>
         <th data-col="ta_region" id="th-ta">Region</th>
+        <th data-col="lat" id="th-coord">Coordinates</th>
       </tr>
     </thead>
     <tbody id="tbody"></tbody>
@@ -320,7 +323,8 @@ const STRINGS = {
     legOn:"On-Air", legOff:"Off-Air",
     thStatus:"Status",thFreq:"Freq (MHz)",thOffset:"Offset",thTone:"Tone",thBand:"Band",
     thMode:"Mode",thCity:"City",thLoc:"Location / Site",thCall:"Callsign",
-    thPower:"Pwr (W)",thAlt:"Alt (m)",thTA:"Region",
+    thPower:"Pwr (W)",thAlt:"Alt (m)",thTA:"Region",thCoord:"Coordinates",
+    coordExact:"Exact GPS", coordApprox:"~ City center",
     ftData:"Data: ", ftLicense:"Personal use only.",
     wizTitle:"Export Wizard", wizCancel:"Cancel", wizGo:"Export CSV",
     wizSrc:"Source", wizSrcFiltered:"All filtered rows", wizSrcSelected:"Selected rows only",
@@ -346,7 +350,8 @@ const STRINGS = {
     legOn:"Aktif", legOff:"Pasif",
     thStatus:"Durum",thFreq:"Frekans (MHz)",thOffset:"Offset",thTone:"Ton",thBand:"Bant",
     thMode:"Mod",thCity:"Şehir",thLoc:"Konum / İstasyon",thCall:"Çağrı",
-    thPower:"Güç (W)",thAlt:"İrt (m)",thTA:"Bölge",
+    thPower:"Güç (W)",thAlt:"İrt (m)",thTA:"Bölge",thCoord:"Koordinat",
+    coordExact:"Kesin GPS", coordApprox:"~ Şehir merkezi",
     ftData:"Veri: ", ftLicense:"Yalnızca kişisel kullanım.",
     wizTitle:"Dışa Aktarma Sihirbazı", wizCancel:"İptal", wizGo:"CSV İndir",
     wizSrc:"Kaynak", wizSrcFiltered:"Tüm filtrelenmiş satırlar", wizSrcSelected:"Yalnızca seçili satırlar",
@@ -400,6 +405,7 @@ function applyStrings(){
   document.getElementById("th-power").textContent=s.thPower;
   document.getElementById("th-alt").textContent=s.thAlt;
   document.getElementById("th-ta").textContent=s.thTA;
+  document.getElementById("th-coord").textContent=s.thCoord;
   document.getElementById("ft-data").textContent=s.ftData;
   document.getElementById("ft-license").textContent=s.ftLicense;
   document.getElementById("wiz-title").childNodes[0].textContent=s.wizTitle+" ";
@@ -553,6 +559,15 @@ function sortData(data){
 // ============================================================
 // Render
 // ============================================================
+function fmtCoord(r){
+  if(!r.lat||!r.lon) return "—";
+  const lat=r.lat.toFixed(4), lon=r.lon.toFixed(4);
+  if(r.coord_approx){
+    return `<span class="coord-approx" title="${t('coordApprox')}">~${lat}, ${lon}</span>`;
+  }
+  return `<span class="coord-exact" title="${t('coordExact')}">${lat}, ${lon}</span>`;
+}
+
 function bandBadge(b){
   b=(b||"").toUpperCase();
   const cls=b==="VHF"?"bvhf":b==="UHF"?"buhf":"both";
@@ -593,6 +608,7 @@ function renderTable(data){
       r.power_w!=null?r.power_w:"—",
       r.altitude_m!=null?r.altitude_m:"—",
       r.ta_region||"—",
+      fmtCoord(r),
     ];
     cells.forEach((c,i)=>{
       const td=document.createElement("td");
@@ -681,7 +697,7 @@ function loadData(){
       applyStrings();
     })
     .catch(err=>{
-      document.getElementById("tbody").innerHTML=`<tr><td colspan="13" style="padding:20px;color:red">${err.message}</td></tr>`;
+      document.getElementById("tbody").innerHTML=`<tr><td colspan="14" style="padding:20px;color:red">${err.message}</td></tr>`;
       document.getElementById("stat-total").textContent="0";
     });
 }

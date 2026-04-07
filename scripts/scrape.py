@@ -33,6 +33,58 @@ OUTPUT = ROOT / "docs" / "data" / "repeaters.json"
 OVERRIDES = ROOT / "data" / "overrides.json"
 
 # ---------------------------------------------------------------------------
+# City center coordinates (approximate) — used when source has no GPS data
+# ---------------------------------------------------------------------------
+CITY_COORDS: dict[str, tuple[float, float]] = {
+    # norm_city -> (lat, lon)
+    "adana":(37.00,35.32),"adiyaman":(37.76,38.28),"afyonkarahisar":(38.76,30.54),
+    "afyon":(38.76,30.54),"agri":(39.72,43.05),"amasya":(40.65,35.83),
+    "ankara":(39.93,32.86),"antalya":(36.90,30.70),"artvin":(41.18,41.82),
+    "aydin":(37.85,27.85),"balikesir":(39.65,27.88),"bilecik":(40.15,29.98),
+    "bingol":(38.88,40.50),"bitlis":(38.40,42.12),"bolu":(40.74,31.61),
+    "burdur":(37.72,30.29),"bursa":(40.18,29.06),"canakkale":(40.15,26.41),
+    "cankiri":(40.60,33.62),"corum":(40.55,34.96),"denizli":(37.77,29.09),
+    "diyarbakir":(37.91,40.23),"edirne":(41.68,26.56),"elazig":(38.67,39.22),
+    "erzincan":(39.75,39.50),"erzurum":(39.90,41.27),"eskisehir":(39.78,30.52),
+    "gaziantep":(37.06,37.38),"giresun":(40.92,38.39),"gumushane":(40.46,39.48),
+    "hakkari":(37.57,43.74),"hatay":(36.40,36.35),"isparta":(37.76,30.55),
+    "mersin":(36.80,34.64),"icel":(36.80,34.64),"istanbul":(41.01,28.96),
+    "izmir":(38.42,27.14),"kars":(40.60,43.10),"kastamonu":(41.38,33.78),
+    "kayseri":(38.73,35.49),"kirklareli":(41.73,27.22),"kirsehir":(39.15,34.16),
+    "kocaeli":(40.85,29.88),"konya":(37.87,32.49),"kony":(37.87,32.49),"kutahya":(39.42,29.98),
+    "malatya":(38.35,38.32),"manisa":(38.62,27.43),"kahramanmaras":(37.58,36.94),
+    "maras":(37.58,36.94),"mardin":(37.32,40.74),"mugla":(37.22,28.37),
+    "mus":(38.73,41.49),"nevsehir":(38.62,34.71),"nigde":(37.97,34.68),
+    "ordu":(40.98,37.88),"rize":(41.02,40.52),"sakarya":(40.69,30.44),
+    "samsun":(41.29,36.33),"siirt":(37.93,41.95),"sinop":(42.03,35.15),
+    "sivas":(39.75,37.02),"tekirdag":(40.98,27.52),"tokat":(40.31,36.55),
+    "trabzon":(41.00,39.73),"tunceli":(39.10,39.55),"sanliurfa":(37.17,38.79),
+    "urfa":(37.17,38.79),"usak":(38.68,29.41),"van":(38.49,43.38),
+    "yozgat":(39.82,34.81),"zonguldak":(41.45,31.79),"aksaray":(38.37,34.04),
+    "bayburt":(40.26,40.23),"karaman":(37.18,33.22),"kirikkale":(39.85,33.52),
+    "batman":(37.89,41.13),"sirnak":(37.52,42.46),"bartin":(41.64,32.34),
+    "ardahan":(41.11,42.70),"igdir":(39.92,44.05),"yalova":(40.65,29.27),
+    "karabuk":(41.20,32.62),"kilis":(36.72,37.12),"osmaniye":(37.07,36.25),
+    "duzce":(40.84,31.16),
+}
+
+def get_city_coords(city: str) -> tuple[float, float] | None:
+    """Return approximate (lat, lon) for a city name, or None if unknown.
+    Handles compound names like 'Adana Ceyhan' or 'Bolu/Abant' by falling
+    back to the first word (parent city).
+    """
+    if not city:
+        return None
+    # Try full name
+    key = _norm_city(city)
+    if key in CITY_COORDS:
+        return CITY_COORDS[key]
+    # Split on space/slash BEFORE normalising (norm removes spaces)
+    first = _norm_city(city.replace("/", " ").strip().split()[0])
+    return CITY_COORDS.get(first)
+
+
+# ---------------------------------------------------------------------------
 # City -> TA region map (authoritative, overrides source data)
 # ---------------------------------------------------------------------------
 CITY_TA = {
@@ -158,8 +210,9 @@ def fetch_amatortelsiz() -> list[dict]:
             "licensed":     bool(r.get("ruhsat")),
             "power_w":      r.get("guc"),
             "altitude_m":   r.get("yukseklik"),
-            "lat":          float(r["lat"]) if r.get("lat") else None,
-            "lon":          float(r["lon"]) if r.get("lon") else None,
+            "lat":          float(r["lat"]) if r.get("lat") else (get_city_coords(r.get("sehir","")) or (None,None))[0],
+            "lon":          float(r["lon"]) if r.get("lon") else (get_city_coords(r.get("sehir","")) or (None,None))[1],
+            "coord_approx": not bool(r.get("lat")),
             "ta_region":    correct_ta(r.get("sehir",""), r.get("tabolge","")),
             "source":       "amatortelsizcilik.com.tr",
             "last_seen":    str(date.today()),
@@ -259,8 +312,9 @@ def fetch_akrad() -> list[dict]:
             "licensed":     None,
             "power_w":      None,
             "altitude_m":   None,
-            "lat":          None,
-            "lon":          None,
+            "lat":          (get_city_coords(city) or (None,None))[0],
+            "lon":          (get_city_coords(city) or (None,None))[1],
+            "coord_approx": True,
             "ta_region":    correct_ta(city, ""),
             "locator":      locator,
             "source":       "akrad.org.tr",
