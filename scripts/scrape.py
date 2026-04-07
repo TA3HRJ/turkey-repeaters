@@ -33,6 +33,56 @@ OUTPUT = ROOT / "docs" / "data" / "repeaters.json"
 OVERRIDES = ROOT / "data" / "overrides.json"
 
 # ---------------------------------------------------------------------------
+# City -> TA region map (authoritative, overrides source data)
+# ---------------------------------------------------------------------------
+CITY_TA = {
+    # TA1 - Istanbul + Trakya
+    "istanbul":"TA1","edirne":"TA1","kirklareli":"TA1","tekirdag":"TA1",
+    # TA2 - Marmara
+    "bursa":"TA2","kocaeli":"TA2","sakarya":"TA2","bolu":"TA2",
+    "bilecik":"TA2","yalova":"TA2","duzce":"TA2",
+    # TA3 - Orta Anadolu Bati
+    "ankara":"TA3","eskisehir":"TA3","kutahya":"TA3","afyonkarahisar":"TA3",
+    "afyon":"TA3","cankiri":"TA3","kirikkale":"TA3",
+    # TA4 - Ege
+    "izmir":"TA4","aydin":"TA4","manisa":"TA4","mugla":"TA4",
+    "denizli":"TA4","usak":"TA4","canakkale":"TA4","balikesir":"TA4",
+    # TA5 - Akdeniz
+    "adana":"TA5","mersin":"TA5","hatay":"TA5","kahramanmaras":"TA5",
+    "osmaniye":"TA5","kilis":"TA5","gaziantep":"TA5",
+    # TA6 - Karadeniz
+    "samsun":"TA6","ordu":"TA6","giresun":"TA6","trabzon":"TA6",
+    "rize":"TA6","artvin":"TA6","sinop":"TA6","kastamonu":"TA6",
+    "bartin":"TA6","karabuk":"TA6","zonguldak":"TA6","tokat":"TA6",
+    "amasya":"TA6","corum":"TA6","gumushane":"TA6",
+    # TA7 - Dogu Anadolu
+    "erzurum":"TA7","kars":"TA7","agri":"TA7","igdir":"TA7",
+    "ardahan":"TA7","van":"TA7","mus":"TA7","bitlis":"TA7",
+    "hakkari":"TA7","erzincan":"TA7","bayburt":"TA7","tunceli":"TA7",
+    "bingol":"TA7",
+    # TA8 - Gunes Orta Anadolu
+    "konya":"TA8","karaman":"TA8","antalya":"TA8","isparta":"TA8",
+    "burdur":"TA8","nigde":"TA8","aksaray":"TA8","nevsehir":"TA8",
+    "kirsehir":"TA8","yozgat":"TA8",
+    # TA9 - Guneydogu + Orta-Dogu Anadolu
+    "kayseri":"TA9","sivas":"TA9","malatya":"TA9","elazig":"TA9",
+    "diyarbakir":"TA9","sanliurfa":"TA9","mardin":"TA9","batman":"TA9",
+    "sirnak":"TA9","siirt":"TA9","adiyaman":"TA9",
+}
+
+def _norm_city(s: str) -> str:
+    return (s or "").lower() \
+        .replace("ş","s").replace("ç","c").replace("ğ","g") \
+        .replace("ü","u").replace("ö","o").replace("ı","i") \
+        .replace("i̇","i").replace(" ","").strip()
+
+def correct_ta(city: str, source_ta: str) -> str:
+    """Return authoritative TA region; fall back to source value if unknown."""
+    ta = CITY_TA.get(_norm_city(city))
+    return ta if ta else (source_ta or "")
+
+
+# ---------------------------------------------------------------------------
 # Offset calculation (IARU Region 1 standard)
 # ---------------------------------------------------------------------------
 VHF_OFFSET = -0.600   # MHz
@@ -104,7 +154,7 @@ def fetch_amatortelsiz() -> list[dict]:
             "altitude_m":   r.get("yukseklik"),
             "lat":          float(r["lat"]) if r.get("lat") else None,
             "lon":          float(r["lon"]) if r.get("lon") else None,
-            "ta_region":    r.get("tabolge") or "",
+            "ta_region":    correct_ta(r.get("sehir",""), r.get("tabolge","")),
             "source":       "amatortelsizcilik.com.tr",
             "last_seen":    str(date.today()),
         })
@@ -134,10 +184,16 @@ def fetch_akrad() -> list[dict]:
     rows = table.find_all("tr")
 
     # Try to detect header row
+    # Normalize: lowercase + strip Unicode combining marks (e.g. İ → i, not i̇)
+    import unicodedata
+    def _norm_hdr(s):
+        return unicodedata.normalize("NFKD", s.lower()) \
+            .encode("ascii", "ignore").decode("ascii").strip()
+
     header_row = rows[0] if rows else None
     headers = []
     if header_row:
-        headers = [th.get_text(strip=True).lower() for th in header_row.find_all(["th", "td"])]
+        headers = [_norm_hdr(th.get_text(strip=True)) for th in header_row.find_all(["th", "td"])]
 
     # Expected columns (flexible match)
     def col(row_cells, name_candidates):
@@ -148,6 +204,7 @@ def fetch_akrad() -> list[dict]:
         return ""
 
     idx = 0
+    last_city = ""   # carry forward city across rowspan gaps
     for row in rows[1:]:
         cells = row.find_all("td")
         if not cells:
@@ -172,8 +229,11 @@ def fetch_akrad() -> list[dict]:
         except ValueError:
             tone = None
 
-        callsign = col(cells, ["çağrı", "cagri", "callsign", "istasyon"])
-        city = col(cells, ["ili", "şehir", "sehir", "il"]).title()
+        callsign = col(cells, ["çağrı işareti", "cagri", "callsign", "istasyon"])
+        city_raw = col(cells, ["ili", "şehir", "sehir"]).title()  # "il" removed — too broad
+        city = city_raw if city_raw else last_city   # use last known city if cell empty (rowspan)
+        if city_raw:
+            last_city = city_raw
         location = col(cells, ["yeri", "konum", "lokasyon"])
         locator = col(cells, ["locator"])
 
@@ -195,7 +255,7 @@ def fetch_akrad() -> list[dict]:
             "altitude_m":   None,
             "lat":          None,
             "lon":          None,
-            "ta_region":    "",
+            "ta_region":    correct_ta(city, ""),
             "locator":      locator,
             "source":       "akrad.org.tr",
             "last_seen":    str(date.today()),
