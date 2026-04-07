@@ -281,12 +281,25 @@
       </div>
     </div>
 
+    <!-- Export format -->
+    <div class="section">
+      <h3 id="wiz-fmt-lbl">Export Format</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="wiz-fmt" value="csv" checked onchange="wizUpdate()"/><span>Generic CSV</span></label>
+        <label><input type="radio" name="wiz-fmt" value="chirp" onchange="wizUpdate()"/><span>CHIRP CSV</span></label>
+        <label><input type="radio" name="wiz-fmt" value="anytone" onchange="wizUpdate()"/><span>Anytone CSV</span></label>
+        <label><input type="radio" name="wiz-fmt" value="gpx" onchange="wizUpdate()"/><span>GPX</span></label>
+        <label><input type="radio" name="wiz-fmt" value="kml" onchange="wizUpdate()"/><span>KML</span></label>
+      </div>
+      <div id="fmt-note" style="font-size:.78rem;color:var(--muted);margin-top:6px"></div>
+    </div>
+
     <div class="warn-box" id="wiz-warn"></div>
 
     <div class="modal-footer">
       <span id="wiz-count-label" style="align-self:center;font-size:.83rem;color:var(--muted)"></span>
       <button class="btn btn-secondary" onclick="closeExportWizard()" id="wiz-cancel">Cancel</button>
-      <button class="btn btn-primary" onclick="doExport()" id="wiz-go">Export CSV</button>
+      <button class="btn btn-primary" onclick="doExport()" id="wiz-go">Export</button>
     </div>
   </div>
 </div>
@@ -317,6 +330,8 @@ const STRINGS = {
     wizAbbr:"Abbreviation", wizPlate:"Plate number",
     wizPrio:"Priority (over limit — sort by)",
     wizPrioStatus:"On-Air first", wizPrioRegion:"Region A→Z", wizPrioFreq:"Frequency ↑",
+    wizFmt:"Export Format",
+    wizFmtNotes:{csv:"",chirp:"Import into CHIRP software → Radio > Upload to Radio",anytone:"Import into Anytone CPS → Channels > Import",gpx:"GPS devices & mapping apps. Records without coordinates are skipped.",kml:"Google Earth / Maps. Records without coordinates are skipped."},
     wizWarnOver:(n,lim)=>`${n} repeaters match, limit is ${lim}. Only the top ${lim} will be exported based on priority.`,
     wizCountLabel:(n)=>`${n} records will be exported`,
   },
@@ -341,6 +356,8 @@ const STRINGS = {
     wizAbbr:"Kısaltma", wizPlate:"Plaka numarası",
     wizPrio:"Öncelik (limit aşıldığında — sırala)",
     wizPrioStatus:"Aktif önce", wizPrioRegion:"Bölge A→Z", wizPrioFreq:"Frekans ↑",
+    wizFmt:"Dışa Aktarma Formatı",
+    wizFmtNotes:{csv:"",chirp:"CHIRP yazılımına import edin → Radio > Upload to Radio",anytone:"Anytone CPS'e import edin → Channels > Import",gpx:"GPS cihazları ve harita uygulamaları. Koordinatsız kayıtlar atlanır.",kml:"Google Earth / Maps. Koordinatsız kayıtlar atlanır."},
     wizWarnOver:(n,lim)=>`${n} röle eşleşti, limit ${lim}. Öncelik sırasına göre yalnızca ${lim} dışa aktarılacak.`,
     wizCountLabel:(n)=>`${n} kayıt dışa aktarılacak`,
   }
@@ -746,49 +763,134 @@ function wizUpdate(){
 
   document.getElementById("wiz-count-label").textContent=t("wizCountLabel",exportPool.length);
 
+  // Format note
+  const fmt=document.querySelector("input[name=wiz-fmt]:checked")?.value||"csv";
+  const notes=STRINGS[lang].wizFmtNotes||{};
+  document.getElementById("fmt-note").textContent=notes[fmt]||"";
+
   // Preview first 5 channel names
   const preview=exportPool.slice(0,5).map(r=>makeChannelName(r,maxLen,prefixMode).padEnd(maxLen)+" | "+r.frequency?.toFixed(4)+" | "+(r.city||"")).join("\n");
   document.getElementById("name-preview").textContent=preview||"—";
 }
 
-function doExport(){
+function _getExportPool(){
   const lim=parseInt(document.querySelector("input[name=wiz-lim]:checked")?.value||"0");
-  const maxLen=parseInt(document.querySelector("input[name=wiz-chars]:checked")?.value||"10");
-  const prefixMode=document.querySelector("input[name=wiz-prefix]:checked")?.value||"abbr";
-
   let pool=wizGetPool();
   pool=wizApplyFilters(pool);
   if(lim>0&&pool.length>lim) pool=wizApplyPriority(pool).slice(0,lim);
-
-  const headers=["Name","Callsign","Frequency","Offset","Tone","Band","Mode","City","Location","Status","Power_W","Altitude_m","Lat","Lon","TA_Region","Source"];
-  const rows=[
-    headers.join(","),
-    ...pool.map(r=>[
-      `"${makeChannelName(r,maxLen,prefixMode)}"`,
-      `"${r.callsign||""}"`,
-      r.frequency||"",
-      r.offset||"",
-      r.tone||"",
-      r.band||"",
-      r.mode||"",
-      `"${r.city||""}"`,
-      `"${(r.location||"").replace(/"/g,'""')}"`,
-      r.status?"On-Air":"Off-Air",
-      r.power_w||"",
-      r.altitude_m||"",
-      r.lat||"",
-      r.lon||"",
-      r.ta_region||"",
-      `"${r.source||""}"`,
-    ].join(","))
-  ];
-
-  const blob=new Blob([rows.join("\n")],{type:"text/csv;charset=utf-8;"});
+  return pool;
+}
+function _nameParams(){
+  return {
+    maxLen:parseInt(document.querySelector("input[name=wiz-chars]:checked")?.value||"10"),
+    prefixMode:document.querySelector("input[name=wiz-prefix]:checked")?.value||"abbr",
+    lim:parseInt(document.querySelector("input[name=wiz-lim]:checked")?.value||"0"),
+  };
+}
+function _download(content,filename,mime){
+  const blob=new Blob([content],{type:mime||"text/plain;charset=utf-8;"});
   const a=document.createElement("a");
   a.href=URL.createObjectURL(blob);
-  a.download=`turkey-repeaters-${new Date().toISOString().slice(0,10)}-ch${lim||"all"}.csv`;
+  a.download=filename;
   a.click();
+}
+function _dateStr(){return new Date().toISOString().slice(0,10)}
+
+function doExport(){
+  const fmt=document.querySelector("input[name=wiz-fmt]:checked")?.value||"csv";
+  const pool=_getExportPool();
+  const {maxLen,prefixMode,lim}=_nameParams();
+  const suffix=`${_dateStr()}-ch${lim||"all"}`;
+  if(fmt==="csv")     exportGenericCSV(pool,maxLen,prefixMode,suffix);
+  else if(fmt==="chirp")   exportCHIRP(pool,maxLen,prefixMode,suffix);
+  else if(fmt==="anytone") exportAnytone(pool,maxLen,prefixMode,suffix);
+  else if(fmt==="gpx")     exportGPX(pool,maxLen,prefixMode,suffix);
+  else if(fmt==="kml")     exportKML(pool,maxLen,prefixMode,suffix);
   closeExportWizard();
+}
+
+function exportGenericCSV(pool,maxLen,prefixMode,suffix){
+  const headers=["Name","Callsign","Frequency","Offset","Tone","Band","Mode","City","Location","Status","Power_W","Altitude_m","Lat","Lon","TA_Region","Source"];
+  const rows=[headers.join(","),...pool.map(r=>[
+    `"${makeChannelName(r,maxLen,prefixMode)}"`,`"${r.callsign||""}"`,
+    r.frequency||"",r.offset||"",r.tone||"",r.band||"",r.mode||"",
+    `"${r.city||""}"`,`"${(r.location||"").replace(/"/g,'""')}"`,
+    r.status?"On-Air":"Off-Air",r.power_w||"",r.altitude_m||"",
+    r.lat||"",r.lon||"",r.ta_region||"",`"${r.source||""}"`
+  ].join(","))];
+  _download(rows.join("\n"),`turkey-repeaters-${suffix}.csv`,"text/csv;charset=utf-8;");
+}
+
+function exportCHIRP(pool,maxLen,prefixMode,suffix){
+  // CHIRP generic CSV format
+  const headers=["Location","Name","Frequency","Duplex","Offset","Tone","rToneFreq","cToneFreq","DtcsCode","DtcsPolarity","Mode","TStep","Skip","Comment","URCALL","RPT1CALL","RPT2CALL","DVCODE"];
+  const rows=[headers.join(","),...pool.map((r,i)=>{
+    const freq=(r.frequency||0).toFixed(6);
+    const off=Math.abs(r.offset||0).toFixed(6);
+    const duplex=!r.offset?"":r.offset<0?"-":"+";
+    const tone=r.tone?r.tone.toFixed(1):"88.5";
+    const toneMode=r.tone?"Tone":"";
+    const mode=(r.mode||"FM")==="FM"?"FM":"FM"; // CHIRP: FM/NFM/AM
+    const name=makeChannelName(r,maxLen,prefixMode);
+    return [i+1,`"${name}"`,freq,duplex,off,toneMode,tone,tone,"023","NN",mode,"5.00","","","","","",""].join(",");
+  })];
+  _download(rows.join("\n"),`turkey-repeaters-CHIRP-${suffix}.csv`,"text/csv;charset=utf-8;");
+}
+
+function exportAnytone(pool,maxLen,prefixMode,suffix){
+  // Anytone D868UV/D878UV/D890UV channel CSV format
+  const headers=["No.","Channel Name","Receive Frequency","Transmit Frequency",
+    "Channel Type","Transmit Power","Band Width","CTCSS/DCS Decode","CTCSS/DCS Encode",
+    "Contact","Contact Call Type","Contact TG/DMR ID","Radio ID",
+    "Busy Lock/TX Permit","Squelch Mode","Optional Signal",
+    "DTMF ID","2Tone ID","5Tone ID","PTT ID","Color Code","Slot",
+    "Scan List","Receive Group List","PTT Prohibit","Reverse",
+    "Simplex TDMA","Slot Suit","AES Digital Encryption","Digital Encryption",
+    "Call Confirmation","Talk Around(Simplex)","Work Alone","Custom CTCSS",
+    "2TONE Decode","Ranging","Through Mode","Digi Aprs Rx","Analog Aprs Rx",
+    "Force Narrow","Analog Scrambler","Lonewoker Response","Emergency System",
+    "URL","Two Tone ID Decode","Work Mode"];
+  const rows=[headers.join(","),...pool.map((r,i)=>{
+    const rxFreq=(r.frequency||0).toFixed(5);
+    const txFreq=((r.frequency||0)+(r.offset||0)).toFixed(5);
+    const tone=r.tone?r.tone.toFixed(1):"Off";
+    const bw=(r.mode==="NFM")?"12.5K":"25K";
+    const name=makeChannelName(r,maxLen,prefixMode);
+    return [
+      i+1,`"${name}"`,rxFreq,txFreq,
+      "A-Analog","High",bw,tone,tone,
+      "","Group Call","","",
+      "Off","Carrier","Off",
+      "1","1","1","Off","1","1",
+      "None","None","Off","Off",
+      "Off","Off","Normal Encryption","Off",
+      "Off","Off","Off","251.1",
+      "0","Off","Off","Off","Off",
+      "Off","Off","Off","None",
+      "","0","Channel"
+    ].join(",");
+  })];
+  _download(rows.join("\n"),`turkey-repeaters-Anytone-${suffix}.csv`,"text/csv;charset=utf-8;");
+}
+
+function exportGPX(pool,maxLen,prefixMode,suffix){
+  const wpts=pool.filter(r=>r.lat&&r.lon).map(r=>{
+    const name=makeChannelName(r,maxLen,prefixMode);
+    const desc=`${(r.frequency||0).toFixed(4)} MHz | ${r.tone?r.tone.toFixed(1)+" Hz":"No tone"} | ${r.mode||"FM"} | ${r.status?"On-Air":"Off-Air"}`;
+    return `  <wpt lat="${r.lat}" lon="${r.lon}">\n    <name>${name}</name>\n    <desc>${desc}</desc>\n    <sym>Radio Tower</sym>\n  </wpt>`;
+  });
+  const gpx=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="Turkey Repeaters" xmlns="http://www.topografix.com/GPX/1/1">\n${wpts.join("\n")}\n</gpx>`;
+  _download(gpx,`turkey-repeaters-${suffix}.gpx`,"application/gpx+xml;charset=utf-8;");
+}
+
+function exportKML(pool,maxLen,prefixMode,suffix){
+  const marks=pool.filter(r=>r.lat&&r.lon).map(r=>{
+    const name=makeChannelName(r,maxLen,prefixMode);
+    const desc=`<![CDATA[${(r.frequency||0).toFixed(4)} MHz<br/>Offset: ${r.offset||0} MHz<br/>Tone: ${r.tone?r.tone.toFixed(1)+" Hz":"None"}<br/>Mode: ${r.mode||"FM"}<br/>Status: ${r.status?"On-Air":"Off-Air"}<br/>City: ${r.city||""}<br/>Location: ${r.location||""}]]>`;
+    return `    <Placemark>\n      <name>${name}</name>\n      <description>${desc}</description>\n      <Point><coordinates>${r.lon},${r.lat},${r.altitude_m||0}</coordinates></Point>\n    </Placemark>`;
+  });
+  const kml=`<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2">\n  <Document>\n    <name>Turkey Repeaters ${_dateStr()}</name>\n${marks.join("\n")}\n  </Document>\n</kml>`;
+  _download(kml,`turkey-repeaters-${suffix}.kml`,"application/vnd.google-earth.kml+xml;charset=utf-8;");
 }
 
 // ============================================================
