@@ -142,7 +142,7 @@ def fetch_amatortelsiz() -> list[dict]:
             "callsign":     "",                        # not in source
             "city":         (r.get("sehir") or "").title(),
             "district":     (r.get("ilce") or "").title() or None,
-            "location":     r.get("konum") or "",
+            "location":     r.get("konum") or r.get("sehir") or "",
             "frequency":    freq,
             "offset":       offset,
             "tone":         _safe_float(r.get("ton")),
@@ -243,7 +243,7 @@ def fetch_akrad() -> list[dict]:
             "callsign":     callsign,
             "city":         city,
             "district":     None,
-            "location":     location,
+            "location":     location or callsign or city,
             "frequency":    freq,
             "offset":       calc_offset(freq, band),
             "tone":         tone,
