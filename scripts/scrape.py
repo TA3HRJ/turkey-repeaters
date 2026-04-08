@@ -126,6 +126,41 @@ CITY_TA = {
     "gokceada":"TA0","bozcaada":"TA0","cunda":"TA0","alibey":"TA0",
 }
 
+# ---------------------------------------------------------------------------
+# Canonical city display names (maps normalized alias -> proper Turkish name)
+# ---------------------------------------------------------------------------
+CITY_CANONICAL: dict[str, str] = {
+    "adana":"Adana","adiyaman":"Adıyaman",
+    "afyonkarahisar":"Afyonkarahisar","afyon":"Afyonkarahisar",
+    "agri":"Ağrı","amasya":"Amasya","ankara":"Ankara","antalya":"Antalya",
+    "artvin":"Artvin","aydin":"Aydın","balikesir":"Balıkesir",
+    "bilecik":"Bilecik","bingol":"Bingöl","bitlis":"Bitlis","bolu":"Bolu",
+    "burdur":"Burdur","bursa":"Bursa","canakkale":"Çanakkale",
+    "cankiri":"Çankırı","corum":"Çorum","denizli":"Denizli",
+    "diyarbakir":"Diyarbakır","edirne":"Edirne","elazig":"Elazığ",
+    "erzincan":"Erzincan","erzurum":"Erzurum","eskisehir":"Eskişehir",
+    "gaziantep":"Gaziantep","giresun":"Giresun","gumushane":"Gümüşhane",
+    "hakkari":"Hakkari","hatay":"Hatay","isparta":"Isparta",
+    "mersin":"Mersin","icel":"Mersin",
+    "istanbul":"İstanbul","izmir":"İzmir","kars":"Kars",
+    "kastamonu":"Kastamonu","kayseri":"Kayseri","kirklareli":"Kırklareli",
+    "kirsehir":"Kırşehir","kocaeli":"Kocaeli",
+    "konya":"Konya","kony":"Konya",
+    "kutahya":"Kütahya","malatya":"Malatya","manisa":"Manisa",
+    "kahramanmaras":"Kahramanmaraş","maras":"Kahramanmaraş",
+    "mardin":"Mardin","mugla":"Muğla","mus":"Muş",
+    "nevsehir":"Nevşehir","nigde":"Niğde","ordu":"Ordu","rize":"Rize",
+    "sakarya":"Sakarya","samsun":"Samsun","siirt":"Siirt","sinop":"Sinop",
+    "sivas":"Sivas","tekirdag":"Tekirdağ","tokat":"Tokat",
+    "trabzon":"Trabzon","tunceli":"Tunceli",
+    "sanliurfa":"Şanlıurfa","urfa":"Şanlıurfa",
+    "usak":"Uşak","van":"Van","yozgat":"Yozgat","zonguldak":"Zonguldak",
+    "aksaray":"Aksaray","bayburt":"Bayburt","karaman":"Karaman",
+    "kirikkale":"Kırıkkale","batman":"Batman","sirnak":"Şırnak",
+    "bartin":"Bartın","ardahan":"Ardahan","igdir":"Iğdır","yalova":"Yalova",
+    "karabuk":"Karabük","kilis":"Kilis","osmaniye":"Osmaniye","duzce":"Düzce",
+}
+
 def _norm_city(s: str) -> str:
     return (s or "").lower() \
         .replace("ş","s").replace("ç","c").replace("ğ","g") \
@@ -425,15 +460,18 @@ def apply_overrides(records: list[dict]) -> list[dict]:
 # ---------------------------------------------------------------------------
 def normalize_cities(records: list[dict]) -> list[dict]:
     for r in records:
-        city, district = split_city_district(r.get("city", "") or "")
+        city_raw = r.get("city", "") or ""
+        city, district = split_city_district(city_raw)
         if district:
-            r["city"] = city
             loc = r.get("location") or ""
             if district.lower() not in loc.lower():
                 r["location"] = f"{district} / {loc}" if loc else district
-            # Re-derive TA with clean city name if not already set
-            if not r.get("ta_region"):
-                r["ta_region"] = correct_ta(city, "", r.get("location", ""))
+        # Apply canonical display name (fixes Kony→Konya, Kahramanmaras→Kahramanmaraş, etc.)
+        canonical = CITY_CANONICAL.get(_norm_city(city))
+        r["city"] = canonical if canonical else city
+        # Re-derive TA with canonical city name if not already set
+        if not r.get("ta_region"):
+            r["ta_region"] = correct_ta(r["city"], "", r.get("location", ""))
     return records
 
 
