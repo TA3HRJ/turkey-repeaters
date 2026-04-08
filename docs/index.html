@@ -133,6 +133,22 @@
     </select>
   </div>
   <div>
+    <label id="lbl-ta">Region</label>
+    <select id="filter-ta" onchange="applyFilters()">
+      <option value="" id="opt-allta">All regions</option>
+      <option value="TA0">TA0</option>
+      <option value="TA1">TA1</option>
+      <option value="TA2">TA2</option>
+      <option value="TA3">TA3</option>
+      <option value="TA4">TA4</option>
+      <option value="TA5">TA5</option>
+      <option value="TA6">TA6</option>
+      <option value="TA7">TA7</option>
+      <option value="TA8">TA8</option>
+      <option value="TA9">TA9</option>
+    </select>
+  </div>
+  <div>
     <label id="lbl-city">City</label>
     <select id="filter-city" onchange="applyFilters()">
       <option value="" id="opt-allcities">All cities</option>
@@ -321,8 +337,8 @@
 const STRINGS = {
   en:{
     title:"Turkey Amateur Radio Repeaters", subtitle:"Searchable · Filterable · Exportable",
-    search:"Search", band:"Band", status:"Status", city:"City",
-    allBands:"All bands", allStatus:"All", onAir:"On-Air", offAir:"Off-Air",
+    search:"Search", band:"Band", status:"Status", ta:"Region", city:"City",
+    allBands:"All bands", allStatus:"All", allRegions:"All regions", onAir:"On-Air", offAir:"Off-Air",
     export:"Export CSV", rbImport:"RepeaterBook Import",
     rbTitle:"RepeaterBook CSV Import",
     rbDesc:"Download CSV from RepeaterBook (Turkey filter), select file. Matching repeaters updated, new ones added. <strong>Session only</strong> — run <code>merge_repeaterbook.py</code> to make permanent.",
@@ -350,8 +366,8 @@ const STRINGS = {
   },
   tr:{
     title:"Türkiye Amatör Telsiz Röleleri", subtitle:"Arama · Filtreleme · Dışa aktarım",
-    search:"Ara", band:"Bant", status:"Durum", city:"Şehir",
-    allBands:"Tüm bantlar", allStatus:"Tümü", onAir:"Aktif", offAir:"Pasif",
+    search:"Ara", band:"Bant", status:"Durum", ta:"Bölge", city:"Şehir",
+    allBands:"Tüm bantlar", allStatus:"Tümü", allRegions:"Tüm bölgeler", onAir:"Aktif", offAir:"Pasif",
     export:"CSV İndir", rbImport:"RepeaterBook İçe Aktar",
     rbTitle:"RepeaterBook CSV İçe Aktarma",
     rbDesc:"RepeaterBook'tan Türkiye CSV indirin. Eşleşenler güncellenir, yeniler eklenir. <strong>Yalnızca oturum</strong> — kalıcı için <code>merge_repeaterbook.py</code> çalıştırın.",
@@ -388,6 +404,8 @@ function applyStrings(){
   document.getElementById("custom-search").placeholder=s.search+"...";
   document.getElementById("lbl-band").textContent=s.band;
   document.getElementById("lbl-status").textContent=s.status;
+  document.getElementById("lbl-ta").textContent=s.ta;
+  document.getElementById("opt-allta").textContent=s.allRegions;
   document.getElementById("lbl-city").textContent=s.city;
   document.getElementById("opt-allbands").textContent=s.allBands;
   document.getElementById("opt-allstatus").textContent=s.allStatus;
@@ -676,12 +694,14 @@ function applyFilters(){
   const search=document.getElementById("custom-search").value.toLowerCase();
   const band=document.getElementById("filter-band").value.toUpperCase();
   const status=document.getElementById("filter-status").value;
+  const ta=document.getElementById("filter-ta").value;
   const city=document.getElementById("filter-city").value.toLowerCase();
   const combined=[...allData,...rbData];
   filteredData=combined.filter(r=>{
     if(band&&(r.band||"").toUpperCase()!==band) return false;
     if(status==="on"&&!r.status) return false;
     if(status==="off"&&r.status) return false;
+    if(ta&&r.ta_region!==ta) return false;
     if(city&&(r.city||"").toLowerCase()!==city) return false;
     if(search){
       const hay=[r.city,r.location,r.callsign,r.band,r.mode,r.ta_region,r.frequency].join(" ").toLowerCase();

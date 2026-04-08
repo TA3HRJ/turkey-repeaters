@@ -138,9 +138,29 @@ def _norm_city_first(s: str) -> str:
     first = (s or "").replace("/", " ").strip().split()[0] if (s or "").strip() else ""
     return _norm_city(first)
 
-def correct_ta(city: str, source_ta: str) -> str:
+def split_city_district(city_raw: str) -> tuple[str, str]:
+    """Split a compound city name into (main_city, district).
+    'Adana Ceyhan' -> ('Adana', 'Ceyhan')
+    'Amasya / Merzifon' -> ('Amasya', 'Merzifon')
+    'Ankara' -> ('Ankara', '')
+    Returns district='' if city is already a known province or can't be split."""
+    if not city_raw:
+        return city_raw, ""
+    if _norm_city(city_raw) in CITY_TA:
+        return city_raw, ""
+    parts = re.split(r"\s*/\s*|\s+", city_raw.strip(), maxsplit=1)
+    if len(parts) == 2 and _norm_city(parts[0]) in CITY_TA:
+        return parts[0].strip().title(), parts[1].strip().title()
+    return city_raw, ""
+
+def correct_ta(city: str, source_ta: str, location: str = "") -> str:
     """Return authoritative TA region; fall back to source value if unknown.
-    Tries full name first, then first word for compound names."""
+    Tries full name first, then first word for compound names.
+    Also checks location field for island keywords (TA0)."""
+    # Location-based override for islands
+    loc_norm = _norm_city(location)
+    if any(k in loc_norm for k in ("adalar","gokceada","bozcaada","buyukada","heybeliada","kinaliada","burgaz")):
+        return "TA0"
     ta = CITY_TA.get(_norm_city(city))
     if not ta:
         ta = CITY_TA.get(_norm_city_first(city))
@@ -332,7 +352,7 @@ def fetch_akrad() -> list[dict]:
             "lat":          (get_city_coords(city) or (None,None))[0],
             "lon":          (get_city_coords(city) or (None,None))[1],
             "coord_approx": True,
-            "ta_region":    correct_ta(city, ""),
+            "ta_region":    correct_ta(city, "", location),
             "locator":      locator,
             "source":       "akrad.org.tr",
             "last_seen":    str(date.today()),
@@ -401,12 +421,30 @@ def apply_overrides(records: list[dict]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Normalize compound city names (e.g. "Adana Ceyhan" -> city="Adana", prepend district to location)
+# ---------------------------------------------------------------------------
+def normalize_cities(records: list[dict]) -> list[dict]:
+    for r in records:
+        city, district = split_city_district(r.get("city", "") or "")
+        if district:
+            r["city"] = city
+            loc = r.get("location") or ""
+            if district.lower() not in loc.lower():
+                r["location"] = f"{district} / {loc}" if loc else district
+            # Re-derive TA with clean city name if not already set
+            if not r.get("ta_region"):
+                r["ta_region"] = correct_ta(city, "", r.get("location", ""))
+    return records
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
     at_records = fetch_amatortelsiz()
     akrad_records = fetch_akrad()
     records = merge(at_records, akrad_records)
+    records = normalize_cities(records)
     records = apply_overrides(records)
 
     output = {
