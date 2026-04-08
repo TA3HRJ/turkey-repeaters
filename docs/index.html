@@ -150,6 +150,17 @@
     </select>
   </div>
   <div>
+    <label id="lbl-mode">Mode</label>
+    <select id="filter-mode" onchange="applyFilters()">
+      <option value="" id="opt-allmode">All modes</option>
+      <option value="FM">FM</option>
+      <option value="DMR">DMR</option>
+      <option value="C4FM">C4FM</option>
+      <option value="D-STAR">D-STAR</option>
+      <option value="NXDN">NXDN</option>
+    </select>
+  </div>
+  <div>
     <label id="lbl-city">City</label>
     <select id="filter-city" onchange="applyFilters()">
       <option value="" id="opt-allcities">All cities</option>
@@ -347,6 +358,7 @@ const STRINGS = {
     updated:"Last updated:", total:"total", filtered:"shown", selected:"selected", clearsel:"(clear)",
     legOn:"On-Air", legOff:"Off-Air",
     thStatus:"Status",thFreq:"Freq (MHz)",thOffset:"Offset",thTone:"Tone",thBand:"Band",
+    mode:"Mode",allModes:"All modes",
     thMode:"Mode",thPlate:"Plate",thCity:"City",thLoc:"Location / Site",thCall:"Callsign",
     thPower:"Pwr (W)",thAlt:"Alt (m)",thTA:"Region",thCoord:"Coordinates",
     coordExact:"Exact GPS", coordApprox:"~ City center",
@@ -376,6 +388,7 @@ const STRINGS = {
     updated:"Son güncelleme:", total:"toplam", filtered:"gösterilen", selected:"seçili", clearsel:"(temizle)",
     legOn:"Aktif", legOff:"Pasif",
     thStatus:"Durum",thFreq:"Frekans (MHz)",thOffset:"Offset",thTone:"Ton",thBand:"Bant",
+    mode:"Mod",allModes:"Tüm modlar",
     thMode:"Mod",thPlate:"Plaka",thCity:"Şehir",thLoc:"Konum / İstasyon",thCall:"Çağrı",
     thPower:"Güç (W)",thAlt:"İrt (m)",thTA:"Bölge",thCoord:"Koordinat",
     coordExact:"Kesin GPS", coordApprox:"~ Şehir merkezi",
@@ -429,6 +442,8 @@ function applyStrings(){
   document.getElementById("th-offset").textContent=s.thOffset;
   document.getElementById("th-tone").textContent=s.thTone;
   document.getElementById("th-band").textContent=s.thBand;
+  document.getElementById("lbl-mode").textContent=s.mode;
+  document.getElementById("opt-allmode").textContent=s.allModes;
   document.getElementById("th-mode").textContent=s.thMode;
   document.getElementById("th-plate").textContent=s.thPlate;
   document.getElementById("th-city").textContent=s.thCity;
@@ -706,6 +721,7 @@ function applyFilters(){
   const band=document.getElementById("filter-band").value.toUpperCase();
   const status=document.getElementById("filter-status").value;
   const ta=document.getElementById("filter-ta").value;
+  const mode=document.getElementById("filter-mode").value;
   const city=document.getElementById("filter-city").value.toLowerCase();
   const combined=[...allData,...rbData];
   filteredData=combined.filter(r=>{
@@ -713,6 +729,7 @@ function applyFilters(){
     if(status==="on"&&!r.status) return false;
     if(status==="off"&&r.status) return false;
     if(ta&&r.ta_region!==ta) return false;
+    if(mode&&(r.mode||"").toUpperCase()!==mode.toUpperCase()) return false;
     if(city&&(r.city||"").toLowerCase()!==city) return false;
     if(search){
       const hay=[r.city,r.location,r.callsign,r.band,r.mode,r.ta_region,r.frequency].join(" ").toLowerCase();
