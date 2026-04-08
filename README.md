@@ -104,17 +104,21 @@ Each record in `repeaters.json` contains:
 | `power_w` | int\|null | Power (Watts) |
 | `altitude_m` | int\|null | Altitude (metres) |
 | `lat` / `lon` | float\|null | GPS coordinates |
-| `ta_region` | string | TA1–TA7 region code |
+| `ta_region` | string | TA0–TA9 region code |
 | `source` | string | Origin website |
 | `last_seen` | string | Date of last scrape |
 
 ---
 
-## Future Export Formats (planned)
+## Export Formats
 
-- [ ] CHIRP `.img`
-- [ ] Anytone `.rdt`
-- [ ] Kenwood (Yaesu-compatible)
+All formats are available via the Export Wizard on the site:
+
+- **Generic CSV** — spreadsheet-compatible
+- **CHIRP CSV** — import into CHIRP software
+- **Anytone CPS CSV** — Anytone D890UV channel list
+- **GPX** — GPS waypoints (exact or approximate coords)
+- **KML** — Google Earth / Maps layer
 
 ---
 
