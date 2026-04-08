@@ -295,6 +295,13 @@
         <label><input type="radio" name="wiz-fmt" value="kml" onchange="wizUpdate()"/><span>KML</span></label>
       </div>
       <div id="fmt-note" style="font-size:.78rem;color:var(--muted);margin-top:6px"></div>
+      <div id="approx-coord-wrap" style="display:none;margin-top:8px">
+        <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer">
+          <input type="checkbox" id="wiz-approx-coords" onchange="wizUpdate()"/>
+          <span id="wiz-approx-lbl">Include approximate coordinates (city center)</span>
+        </label>
+        <div style="font-size:.75rem;color:#d68910;margin-top:3px;margin-left:20px" id="wiz-approx-note">⚠ Approximate pins will use a different icon and warning label.</div>
+      </div>
     </div>
 
     <div class="warn-box" id="wiz-warn"></div>
@@ -335,7 +342,9 @@ const STRINGS = {
     wizPrio:"Priority (over limit — sort by)",
     wizPrioStatus:"On-Air first", wizPrioRegion:"Region A→Z", wizPrioFreq:"Frequency ↑",
     wizFmt:"Export Format",
-    wizFmtNotes:{csv:"",chirp:"Import into CHIRP software → Radio > Upload to Radio",anytone:"Import into Anytone CPS → Channels > Import",gpx:"GPS devices & mapping apps. Records without coordinates are skipped.",kml:"Google Earth / Maps. Records without coordinates are skipped."},
+    wizFmtNotes:{csv:"",chirp:"Import into CHIRP software → Radio > Upload to Radio",anytone:"Import into Anytone CPS → Channels > Import",gpx:"GPS devices & mapping apps.",kml:"Google Earth / Maps."},
+    wizApproxLbl:"Include approximate coordinates (city center)",
+    wizApproxNote:"⚠ Approximate pins will use a different icon and warning label.",
     wizWarnOver:(n,lim)=>`${n} repeaters match, limit is ${lim}. Only the top ${lim} will be exported based on priority.`,
     wizCountLabel:(n)=>`${n} records will be exported`,
   },
@@ -362,7 +371,9 @@ const STRINGS = {
     wizPrio:"Öncelik (limit aşıldığında — sırala)",
     wizPrioStatus:"Aktif önce", wizPrioRegion:"Bölge A→Z", wizPrioFreq:"Frekans ↑",
     wizFmt:"Dışa Aktarma Formatı",
-    wizFmtNotes:{csv:"",chirp:"CHIRP yazılımına import edin → Radio > Upload to Radio",anytone:"Anytone CPS'e import edin → Channels > Import",gpx:"GPS cihazları ve harita uygulamaları. Koordinatsız kayıtlar atlanır.",kml:"Google Earth / Maps. Koordinatsız kayıtlar atlanır."},
+    wizFmtNotes:{csv:"",chirp:"CHIRP yazılımına import edin → Radio > Upload to Radio",anytone:"Anytone CPS'e import edin → Channels > Import",gpx:"GPS cihazları ve harita uygulamaları.",kml:"Google Earth / Maps."},
+    wizApproxLbl:"Yaklaşık koordinatları dahil et (şehir merkezi)",
+    wizApproxNote:"⚠ Yaklaşık pinler farklı ikon ve uyarı etiketiyle gösterilir.",
     wizWarnOver:(n,lim)=>`${n} röle eşleşti, limit ${lim}. Öncelik sırasına göre yalnızca ${lim} dışa aktarılacak.`,
     wizCountLabel:(n)=>`${n} kayıt dışa aktarılacak`,
   }
@@ -406,6 +417,8 @@ function applyStrings(){
   document.getElementById("th-alt").textContent=s.thAlt;
   document.getElementById("th-ta").textContent=s.thTA;
   document.getElementById("th-coord").textContent=s.thCoord;
+  document.getElementById("wiz-approx-lbl").textContent=s.wizApproxLbl;
+  document.getElementById("wiz-approx-note").textContent=s.wizApproxNote;
   document.getElementById("ft-data").textContent=s.ftData;
   document.getElementById("ft-license").textContent=s.ftLicense;
   document.getElementById("wiz-title").childNodes[0].textContent=s.wizTitle+" ";
@@ -779,10 +792,12 @@ function wizUpdate(){
 
   document.getElementById("wiz-count-label").textContent=t("wizCountLabel",exportPool.length);
 
-  // Format note
+  // Format note + approx coords toggle visibility
   const fmt=document.querySelector("input[name=wiz-fmt]:checked")?.value||"csv";
   const notes=STRINGS[lang].wizFmtNotes||{};
   document.getElementById("fmt-note").textContent=notes[fmt]||"";
+  const isGeo=fmt==="gpx"||fmt==="kml";
+  document.getElementById("approx-coord-wrap").style.display=isGeo?"block":"none";
 
   // Preview first 5 channel names
   const preview=exportPool.slice(0,5).map(r=>makeChannelName(r,maxLen,prefixMode).padEnd(maxLen)+" | "+r.frequency?.toFixed(4)+" | "+(r.city||"")).join("\n");
@@ -890,22 +905,32 @@ function exportAnytone(pool,maxLen,prefixMode,suffix){
 }
 
 function exportGPX(pool,maxLen,prefixMode,suffix){
-  const wpts=pool.filter(r=>r.lat&&r.lon).map(r=>{
+  const inclApprox=document.getElementById("wiz-approx-coords")?.checked||false;
+  const wpts=pool.filter(r=>r.lat&&r.lon&&(inclApprox||!r.coord_approx)).map(r=>{
     const name=makeChannelName(r,maxLen,prefixMode);
-    const desc=`${(r.frequency||0).toFixed(4)} MHz | ${r.tone?r.tone.toFixed(1)+" Hz":"No tone"} | ${r.mode||"FM"} | ${r.status?"On-Air":"Off-Air"}`;
-    return `  <wpt lat="${r.lat}" lon="${r.lon}">\n    <name>${name}</name>\n    <desc>${desc}</desc>\n    <sym>Radio Tower</sym>\n  </wpt>`;
+    const approxWarn=r.coord_approx?" [APPROX - city center]":"";
+    const desc=`${(r.frequency||0).toFixed(4)} MHz | ${r.tone?r.tone.toFixed(1)+" Hz":"No tone"} | ${r.mode||"FM"} | ${r.status?"On-Air":"Off-Air"}${approxWarn}`;
+    const sym=r.coord_approx?"Waypoint":"Radio Tower";
+    return `  <wpt lat="${r.lat}" lon="${r.lon}">\n    <name>${name}</name>\n    <desc>${desc}</desc>\n    <sym>${sym}</sym>\n  </wpt>`;
   });
   const gpx=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="Turkey Repeaters" xmlns="http://www.topografix.com/GPX/1/1">\n${wpts.join("\n")}\n</gpx>`;
   _download(gpx,`turkey-repeaters-${suffix}.gpx`,"application/gpx+xml;charset=utf-8;");
 }
 
 function exportKML(pool,maxLen,prefixMode,suffix){
-  const marks=pool.filter(r=>r.lat&&r.lon).map(r=>{
+  const inclApprox=document.getElementById("wiz-approx-coords")?.checked||false;
+  const styles=[
+    `  <Style id="exact"><IconStyle><color>ff00aa00</color><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>`,
+    `  <Style id="approx"><IconStyle><color>ff0055ff</color><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_square.png</href></Icon></IconStyle></Style>`
+  ].join("\n");
+  const marks=pool.filter(r=>r.lat&&r.lon&&(inclApprox||!r.coord_approx)).map(r=>{
     const name=makeChannelName(r,maxLen,prefixMode);
-    const desc=`<![CDATA[${(r.frequency||0).toFixed(4)} MHz<br/>Offset: ${r.offset||0} MHz<br/>Tone: ${r.tone?r.tone.toFixed(1)+" Hz":"None"}<br/>Mode: ${r.mode||"FM"}<br/>Status: ${r.status?"On-Air":"Off-Air"}<br/>City: ${r.city||""}<br/>Location: ${r.location||""}]]>`;
-    return `    <Placemark>\n      <name>${name}</name>\n      <description>${desc}</description>\n      <Point><coordinates>${r.lon},${r.lat},${r.altitude_m||0}</coordinates></Point>\n    </Placemark>`;
+    const approxWarn=r.coord_approx?`<br/><b>&#9888; Approximate location (city center)</b>`:"";
+    const desc=`<![CDATA[${(r.frequency||0).toFixed(4)} MHz<br/>Offset: ${r.offset||0} MHz<br/>Tone: ${r.tone?r.tone.toFixed(1)+" Hz":"None"}<br/>Mode: ${r.mode||"FM"}<br/>Status: ${r.status?"On-Air":"Off-Air"}<br/>City: ${r.city||""}<br/>Location: ${r.location||""}${approxWarn}]]>`;
+    const styleId=r.coord_approx?"approx":"exact";
+    return `    <Placemark>\n      <name>${name}</name>\n      <description>${desc}</description>\n      <styleUrl>#${styleId}</styleUrl>\n      <Point><coordinates>${r.lon},${r.lat},${r.altitude_m||0}</coordinates></Point>\n    </Placemark>`;
   });
-  const kml=`<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2">\n  <Document>\n    <name>Turkey Repeaters ${_dateStr()}</name>\n${marks.join("\n")}\n  </Document>\n</kml>`;
+  const kml=`<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2">\n  <Document>\n    <name>Turkey Repeaters ${_dateStr()}</name>\n${styles}\n${marks.join("\n")}\n  </Document>\n</kml>`;
   _download(kml,`turkey-repeaters-${suffix}.kml`,"application/vnd.google-earth.kml+xml;charset=utf-8;");
 }
 
