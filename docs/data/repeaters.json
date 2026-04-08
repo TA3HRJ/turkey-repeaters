@@ -125,7 +125,7 @@
       "offset": -7.6,
       "tone": null,
       "band": "UHF",
-      "mode": "DMR",
+      "mode": "NXDN",
       "status": true,
       "licensed": true,
       "power_w": null,

@@ -187,6 +187,10 @@ def fetch_amatortelsiz() -> list[dict]:
     for r in raw:
         digital_code = r.get("digital", 0) or 0
         mode = MODE_MAP.get(digital_code, "FM")
+        # Override: if location mentions NXDN explicitly, trust the text
+        konum = (r.get("konum") or "").upper()
+        if "NXDN" in konum:
+            mode = "NXDN"
         raw_freq = str(r.get("frekans") or "0").split("-")[0].strip().replace(",", ".")
         try:
             freq = float(raw_freq)
