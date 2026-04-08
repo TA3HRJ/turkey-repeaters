@@ -85,42 +85,42 @@ def get_city_coords(city: str) -> tuple[float, float] | None:
 
 
 # ---------------------------------------------------------------------------
-# City -> TA region map (authoritative, overrides source data)
+# City -> TA region map
+# Used as FALLBACK for records without a source TA value (e.g. AKRAD).
+# AT source records use their own tabolge field — see correct_ta().
+# Istanbul: source correctly assigns TA1 (Avrupa) or TA2 (Anadolu) per record;
+#           AKRAD Istanbul records default to TA1 here.
 # ---------------------------------------------------------------------------
 CITY_TA = {
-    # TA1 - Istanbul + Trakya
+    # TA1 - İstanbul Avrupa + Trakya
     "istanbul":"TA1","edirne":"TA1","kirklareli":"TA1","tekirdag":"TA1",
-    # TA2 - Marmara
-    "bursa":"TA2","kocaeli":"TA2","sakarya":"TA2","bolu":"TA2",
-    "bilecik":"TA2","yalova":"TA2","duzce":"TA2",
-    # TA3 - Orta Anadolu Bati
-    "ankara":"TA3","eskisehir":"TA3","kutahya":"TA3","afyonkarahisar":"TA3",
-    "afyon":"TA3","cankiri":"TA3","kirikkale":"TA3",
-    # TA4 - Ege
-    "izmir":"TA4","aydin":"TA4","manisa":"TA4","mugla":"TA4",
-    "denizli":"TA4","usak":"TA4","canakkale":"TA4","balikesir":"TA4",
-    # TA5 - Akdeniz
-    "adana":"TA5","mersin":"TA5","hatay":"TA5","kahramanmaras":"TA5",
-    "osmaniye":"TA5","kilis":"TA5","gaziantep":"TA5",
-    # TA6 - Karadeniz
-    "samsun":"TA6","ordu":"TA6","giresun":"TA6","trabzon":"TA6",
-    "rize":"TA6","artvin":"TA6","sinop":"TA6","kastamonu":"TA6",
-    "bartin":"TA6","karabuk":"TA6","zonguldak":"TA6","tokat":"TA6",
-    "amasya":"TA6","corum":"TA6","gumushane":"TA6",
-    # TA7 - Dogu Anadolu
-    "erzurum":"TA7","kars":"TA7","agri":"TA7","igdir":"TA7",
-    "ardahan":"TA7","van":"TA7","mus":"TA7","bitlis":"TA7",
-    "hakkari":"TA7","erzincan":"TA7","bayburt":"TA7","tunceli":"TA7",
-    "bingol":"TA7",
-    # TA8 - Gunes Orta Anadolu
-    "konya":"TA8","kony":"TA8","karaman":"TA8","antalya":"TA8","isparta":"TA8",
-    "burdur":"TA8","nigde":"TA8","aksaray":"TA8","nevsehir":"TA8",
-    "kirsehir":"TA8","yozgat":"TA8",
-    # TA9 - Guneydogu + Orta-Dogu Anadolu
-    "kayseri":"TA9","sivas":"TA9","malatya":"TA9","elazig":"TA9",
-    "diyarbakir":"TA9","sanliurfa":"TA9","mardin":"TA9","batman":"TA9",
-    "sirnak":"TA9","siirt":"TA9","adiyaman":"TA9",
-    # TA0 - Islands / Adalar (special district)
+    # TA2 - İstanbul Anadolu + Marmara çevresi
+    "ankara":"TA2","kocaeli":"TA2","sakarya":"TA2","bolu":"TA2",
+    "bilecik":"TA2","yalova":"TA2","duzce":"TA2","kirikkale":"TA2","eskisehir":"TA2",
+    # TA3 - Ege
+    "izmir":"TA3","manisa":"TA3","balikesir":"TA3","bursa":"TA3","canakkale":"TA3",
+    # TA4 - Güney Ege + Akdeniz batı
+    "antalya":"TA4","aydin":"TA4","burdur":"TA4","denizli":"TA4","isparta":"TA4",
+    "kutahya":"TA4","mugla":"TA4","usak":"TA4","afyonkarahisar":"TA4","afyon":"TA4",
+    # TA5 - Akdeniz doğu + Orta Anadolu
+    "adana":"TA5","mersin":"TA5","icel":"TA5","hatay":"TA5","konya":"TA5","kony":"TA5",
+    "karaman":"TA5","nevsehir":"TA5","nigde":"TA5","aksaray":"TA5","osmaniye":"TA5",
+    # TA6 - Karadeniz + İç Anadolu kuzey
+    "samsun":"TA6","sinop":"TA6","kastamonu":"TA6","bartin":"TA6","karabuk":"TA6",
+    "zonguldak":"TA6","tokat":"TA6","amasya":"TA6","cankiri":"TA6","corum":"TA6","yozgat":"TA6",
+    # TA7 - Karadeniz doğu + İç-Doğu Anadolu
+    "trabzon":"TA7","rize":"TA7","giresun":"TA7","ordu":"TA7","artvin":"TA7",
+    "gumushane":"TA7","erzincan":"TA7","kayseri":"TA7","sivas":"TA7",
+    # TA8 - Güneydoğu Anadolu
+    "gaziantep":"TA8","kahramanmaras":"TA8","maras":"TA8","kilis":"TA8",
+    "adiyaman":"TA8","malatya":"TA8","elazig":"TA8",
+    "diyarbakir":"TA8","sanliurfa":"TA8","urfa":"TA8","mardin":"TA8",
+    "batman":"TA8","sirnak":"TA8","siirt":"TA8","kirsehir":"TA8",
+    # TA9 - Doğu Anadolu
+    "erzurum":"TA9","kars":"TA9","agri":"TA9","igdir":"TA9","ardahan":"TA9",
+    "van":"TA9","mus":"TA9","bitlis":"TA9","hakkari":"TA9","tunceli":"TA9",
+    "bingol":"TA9","bayburt":"TA9",
+    # TA0 - Adalar / Islands
     "adalar":"TA0","buyukada":"TA0","heybeliada":"TA0","burgaz":"TA0",
     "kinaliada":"TA0","imrali":"TA0","avsa":"TA0","marmara":"TA0",
     "gokceada":"TA0","bozcaada":"TA0","cunda":"TA0","alibey":"TA0",
@@ -194,17 +194,21 @@ def split_city_district(city_raw: str) -> tuple[str, str]:
     return city_raw, ""
 
 def correct_ta(city: str, source_ta: str, location: str = "") -> str:
-    """Return authoritative TA region; fall back to source value if unknown.
-    Tries full name first, then first word for compound names.
-    Also checks location field for island keywords (TA0)."""
-    # Location-based override for islands
+    """Return TA region for a record.
+    - TA0 island keyword in location always wins.
+    - If source provides a TA value (AT records), trust it — the source is
+      authoritative per-repeater (e.g. Istanbul TA1 vs TA2 by district).
+    - Otherwise (AKRAD records with no source TA) derive from CITY_TA dict.
+    """
     loc_norm = _norm_city(location)
     if any(k in loc_norm for k in ("adalar","gokceada","bozcaada","buyukada","heybeliada","kinaliada","burgaz")):
         return "TA0"
+    if source_ta and re.match(r"TA\d", source_ta, re.IGNORECASE):
+        return source_ta.upper()
     ta = CITY_TA.get(_norm_city(city))
     if not ta:
         ta = CITY_TA.get(_norm_city_first(city))
-    return ta if ta else (source_ta or "")
+    return ta or ""
 
 
 # ---------------------------------------------------------------------------
