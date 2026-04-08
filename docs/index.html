@@ -166,6 +166,10 @@
       <option value="" id="opt-allcities">All cities</option>
     </select>
   </div>
+  <div style="display:flex;align-items:center;gap:4px;padding-bottom:2px">
+    <input type="checkbox" id="filter-conflicts" onchange="applyFilters()"/>
+    <label for="filter-conflicts" id="lbl-conflicts" style="margin:0;cursor:pointer">Conflicts only</label>
+  </div>
   <div style="margin-left:auto;display:flex;gap:6px;align-items:flex-end">
     <button class="btn btn-primary" onclick="openExportWizard()" id="btn-export">Export CSV</button>
     <button class="btn btn-secondary btn-sm" onclick="toggleRBPanel()" id="btn-rb">RepeaterBook Import</button>
@@ -358,7 +362,7 @@ const STRINGS = {
     updated:"Last updated:", total:"total", filtered:"shown", selected:"selected", clearsel:"(clear)",
     legOn:"On-Air", legOff:"Off-Air",
     thStatus:"Status",thFreq:"Freq (MHz)",thOffset:"Offset",thTone:"Tone",thBand:"Band",
-    mode:"Mode",allModes:"All modes",
+    mode:"Mode",allModes:"All modes",conflicts:"Conflicts only",
     thMode:"Mode",thPlate:"Plate",thCity:"City",thLoc:"Location / Site",thCall:"Callsign",
     thPower:"Pwr (W)",thAlt:"Alt (m)",thTA:"Region",thCoord:"Coordinates",
     coordExact:"Exact GPS", coordApprox:"~ City center",
@@ -388,7 +392,7 @@ const STRINGS = {
     updated:"Son güncelleme:", total:"toplam", filtered:"gösterilen", selected:"seçili", clearsel:"(temizle)",
     legOn:"Aktif", legOff:"Pasif",
     thStatus:"Durum",thFreq:"Frekans (MHz)",thOffset:"Offset",thTone:"Ton",thBand:"Bant",
-    mode:"Mod",allModes:"Tüm modlar",
+    mode:"Mod",allModes:"Tüm modlar",conflicts:"Sadece çakışanlar",
     thMode:"Mod",thPlate:"Plaka",thCity:"Şehir",thLoc:"Konum / İstasyon",thCall:"Çağrı",
     thPower:"Güç (W)",thAlt:"İrt (m)",thTA:"Bölge",thCoord:"Koordinat",
     coordExact:"Kesin GPS", coordApprox:"~ Şehir merkezi",
@@ -442,6 +446,7 @@ function applyStrings(){
   document.getElementById("th-offset").textContent=s.thOffset;
   document.getElementById("th-tone").textContent=s.thTone;
   document.getElementById("th-band").textContent=s.thBand;
+  document.getElementById("lbl-conflicts").textContent=s.conflicts;
   document.getElementById("lbl-mode").textContent=s.mode;
   document.getElementById("opt-allmode").textContent=s.allModes;
   document.getElementById("th-mode").textContent=s.thMode;
@@ -723,7 +728,15 @@ function applyFilters(){
   const ta=document.getElementById("filter-ta").value;
   const mode=document.getElementById("filter-mode").value;
   const city=document.getElementById("filter-city").value.toLowerCase();
+  const conflicts=document.getElementById("filter-conflicts").checked;
   const combined=[...allData,...rbData];
+  // Build conflict set: frequencies used by 2+ repeaters
+  let conflictFreqs=null;
+  if(conflicts){
+    const freq_count={};
+    combined.forEach(r=>{if(r.frequency){const k=r.frequency.toFixed(4);freq_count[k]=(freq_count[k]||0)+1;}});
+    conflictFreqs=new Set(Object.keys(freq_count).filter(k=>freq_count[k]>1));
+  }
   filteredData=combined.filter(r=>{
     if(band&&(r.band||"").toUpperCase()!==band) return false;
     if(status==="on"&&!r.status) return false;
@@ -731,13 +744,21 @@ function applyFilters(){
     if(ta&&r.ta_region!==ta) return false;
     if(mode&&(r.mode||"").toUpperCase()!==mode.toUpperCase()) return false;
     if(city&&(r.city||"").toLowerCase()!==city) return false;
+    if(conflictFreqs&&!conflictFreqs.has((r.frequency||0).toFixed(4))) return false;
     if(search){
-      const hay=[r.city,r.location,r.callsign,r.band,r.mode,r.ta_region,r.frequency].join(" ").toLowerCase();
+      const hay=[r.city,r.location,r.callsign,r.band,r.mode,r.ta_region,r.frequency?r.frequency.toFixed(4):""].join(" ").toLowerCase();
       if(!hay.includes(search)) return false;
     }
     return true;
   });
   document.getElementById("chk-all").checked=false;
+  // Auto-sort by frequency when conflict mode is active so same-freq repeaters are adjacent
+  if(conflicts&&sortCol!=="frequency"){
+    sortCol="frequency"; sortDir=1;
+    document.querySelectorAll("table#rt thead th").forEach(h=>h.classList.remove("sort-asc","sort-desc"));
+    const thF=document.querySelector("table#rt thead th[data-col='frequency']");
+    if(thF) thF.classList.add("sort-asc");
+  }
   renderTable(filteredData);
   wizUpdate();
 }
