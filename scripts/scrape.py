@@ -113,13 +113,17 @@ CITY_TA = {
     "hakkari":"TA7","erzincan":"TA7","bayburt":"TA7","tunceli":"TA7",
     "bingol":"TA7",
     # TA8 - Gunes Orta Anadolu
-    "konya":"TA8","karaman":"TA8","antalya":"TA8","isparta":"TA8",
+    "konya":"TA8","kony":"TA8","karaman":"TA8","antalya":"TA8","isparta":"TA8",
     "burdur":"TA8","nigde":"TA8","aksaray":"TA8","nevsehir":"TA8",
     "kirsehir":"TA8","yozgat":"TA8",
     # TA9 - Guneydogu + Orta-Dogu Anadolu
     "kayseri":"TA9","sivas":"TA9","malatya":"TA9","elazig":"TA9",
     "diyarbakir":"TA9","sanliurfa":"TA9","mardin":"TA9","batman":"TA9",
     "sirnak":"TA9","siirt":"TA9","adiyaman":"TA9",
+    # TA0 - Islands / Adalar (special district)
+    "adalar":"TA0","buyukada":"TA0","heybeliada":"TA0","burgaz":"TA0",
+    "kinaliada":"TA0","imrali":"TA0","avsa":"TA0","marmara":"TA0",
+    "gokceada":"TA0","bozcaada":"TA0","cunda":"TA0","alibey":"TA0",
 }
 
 def _norm_city(s: str) -> str:
@@ -128,9 +132,18 @@ def _norm_city(s: str) -> str:
         .replace("ü","u").replace("ö","o").replace("ı","i") \
         .replace("i̇","i").replace(" ","").strip()
 
+def _norm_city_first(s: str) -> str:
+    """Normalize only the FIRST word/segment of a compound city name.
+    Handles 'Adana Ceyhan', 'Bolu/Abant', 'Amasya / Merzifon' etc."""
+    first = (s or "").replace("/", " ").strip().split()[0] if (s or "").strip() else ""
+    return _norm_city(first)
+
 def correct_ta(city: str, source_ta: str) -> str:
-    """Return authoritative TA region; fall back to source value if unknown."""
+    """Return authoritative TA region; fall back to source value if unknown.
+    Tries full name first, then first word for compound names."""
     ta = CITY_TA.get(_norm_city(city))
+    if not ta:
+        ta = CITY_TA.get(_norm_city_first(city))
     return ta if ta else (source_ta or "")
 
 
