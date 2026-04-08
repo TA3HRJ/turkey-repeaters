@@ -3997,7 +3997,7 @@
       "lat": 40.85966417,
       "lon": 29.11586743,
       "coord_approx": false,
-      "ta_region": "TA1",
+      "ta_region": "TA0",
       "source": "amatortelsizcilik.com.tr",
       "last_seen": "2026-04-08",
       "locator": "KN40IX"
@@ -8903,7 +8903,7 @@
       "lat": 41.021,
       "lon": 28.709,
       "coord_approx": false,
-      "ta_region": "TA1",
+      "ta_region": "TA0",
       "source": "amatortelsizcilik.com.tr",
       "last_seen": "2026-04-08"
     },
