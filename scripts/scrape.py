@@ -162,10 +162,15 @@ CITY_CANONICAL: dict[str, str] = {
 }
 
 def _norm_city(s: str) -> str:
-    return (s or "").lower() \
-        .replace("ş","s").replace("ç","c").replace("ğ","g") \
-        .replace("ü","u").replace("ö","o").replace("ı","i") \
-        .replace("i̇","i").replace(" ","").strip()
+    s = (s or "").strip()
+    # Replace Turkish uppercase chars BEFORE .lower() to avoid combining-char issues
+    # (Python's "İ".lower() → "i"+U+0307, not plain "i")
+    s = s.replace("İ","i").replace("I","i").replace("Ş","s").replace("Ç","c") \
+         .replace("Ğ","g").replace("Ü","u").replace("Ö","o")
+    s = s.lower()
+    s = s.replace("ş","s").replace("ç","c").replace("ğ","g") \
+         .replace("ü","u").replace("ö","o").replace("ı","i")
+    return s.replace(" ","").strip()
 
 def _norm_city_first(s: str) -> str:
     """Normalize only the FIRST word/segment of a compound city name.
