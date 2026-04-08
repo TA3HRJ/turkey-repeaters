@@ -195,6 +195,7 @@
         <th data-col="tone" id="th-tone">Tone</th>
         <th data-col="band" class="no-sort" id="th-band">Band</th>
         <th data-col="mode" id="th-mode">Mode</th>
+        <th data-col="plate" id="th-plate">Plate</th>
         <th data-col="city" id="th-city">City</th>
         <th data-col="location" id="th-location">Location / Site</th>
         <th data-col="callsign" id="th-callsign">Callsign</th>
@@ -346,7 +347,7 @@ const STRINGS = {
     updated:"Last updated:", total:"total", filtered:"shown", selected:"selected", clearsel:"(clear)",
     legOn:"On-Air", legOff:"Off-Air",
     thStatus:"Status",thFreq:"Freq (MHz)",thOffset:"Offset",thTone:"Tone",thBand:"Band",
-    thMode:"Mode",thCity:"City",thLoc:"Location / Site",thCall:"Callsign",
+    thMode:"Mode",thPlate:"Plate",thCity:"City",thLoc:"Location / Site",thCall:"Callsign",
     thPower:"Pwr (W)",thAlt:"Alt (m)",thTA:"Region",thCoord:"Coordinates",
     coordExact:"Exact GPS", coordApprox:"~ City center",
     ftData:"Data: ", ftLicense:"Personal use only.",
@@ -375,7 +376,7 @@ const STRINGS = {
     updated:"Son güncelleme:", total:"toplam", filtered:"gösterilen", selected:"seçili", clearsel:"(temizle)",
     legOn:"Aktif", legOff:"Pasif",
     thStatus:"Durum",thFreq:"Frekans (MHz)",thOffset:"Offset",thTone:"Ton",thBand:"Bant",
-    thMode:"Mod",thCity:"Şehir",thLoc:"Konum / İstasyon",thCall:"Çağrı",
+    thMode:"Mod",thPlate:"Plaka",thCity:"Şehir",thLoc:"Konum / İstasyon",thCall:"Çağrı",
     thPower:"Güç (W)",thAlt:"İrt (m)",thTA:"Bölge",thCoord:"Koordinat",
     coordExact:"Kesin GPS", coordApprox:"~ Şehir merkezi",
     ftData:"Veri: ", ftLicense:"Yalnızca kişisel kullanım.",
@@ -429,6 +430,7 @@ function applyStrings(){
   document.getElementById("th-tone").textContent=s.thTone;
   document.getElementById("th-band").textContent=s.thBand;
   document.getElementById("th-mode").textContent=s.thMode;
+  document.getElementById("th-plate").textContent=s.thPlate;
   document.getElementById("th-city").textContent=s.thCity;
   document.getElementById("th-location").textContent=s.thLoc;
   document.getElementById("th-callsign").textContent=s.thCall;
@@ -582,7 +584,14 @@ document.querySelectorAll("table#rt thead th[data-col]").forEach(th=>{
 function sortData(data){
   if(!sortCol) return data;
   return [...data].sort((a,b)=>{
-    const av=a[sortCol]??-Infinity, bv=b[sortCol]??-Infinity;
+    let av,bv;
+    if(sortCol==="plate"){
+      av=parseInt(getPlate(a.city)||"999");
+      bv=parseInt(getPlate(b.city)||"999");
+    } else {
+      av=a[sortCol]??-Infinity;
+      bv=b[sortCol]??-Infinity;
+    }
     if(typeof av==="string") return av.localeCompare(bv)*sortDir;
     return(av-bv)*sortDir;
   });
@@ -634,7 +643,8 @@ function renderTable(data){
       r.tone?r.tone.toFixed(1):"—",
       bandBadge(r.band),
       r.mode||"FM",
-      (()=>{const p=getPlate(r.city);return (p?`<span class="plate-badge">${p}</span>`:"")+(r.city||"—")})(),
+      getPlate(r.city)||"—",
+      r.city||"—",
       r.location||"—",
       r.callsign||"—",
       r.power_w!=null?r.power_w:"—",
