@@ -1,4 +1,24 @@
 [
   {"id": "AT_180", "ta_region": "TA0"},
-  {"id": "AT_398", "ta_region": "TA0"}
+  {"id": "AT_398", "ta_region": "TA0"},
+  {"id": "AT_326", "location": "Aladağ"},
+  {"id": "AT_277", "location": "Babadağ Mevkii"},
+  {"id": "AK_294", "location": "Babadağ Mevkii"},
+  {"id": "AK_242", "location": "Bağçeşme"},
+  {"id": "AK_276", "location": "Başkonuş Dağı"},
+  {"id": "AK_281", "location": "Başkonuş Dağı"},
+  {"id": "AT_205", "location": "Bergama"},
+  {"id": "AT_209", "location": "Bergama"},
+  {"id": "AK_363", "location": "Ereğli"},
+  {"id": "AK_75",  "location": "Gugu Köyü"},
+  {"id": "AK_172", "location": "Gökçay Mevkii"},
+  {"id": "AT_387", "location": "Hatipli-Ketenciler"},
+  {"id": "AK_368", "location": "Kestaneci Köyü"},
+  {"id": "AT_315", "location": "Korucuk Köyü"},
+  {"id": "AK_180", "location": "Mukaddem Mevkii"},
+  {"id": "AT_132", "location": "Palandöken"},
+  {"id": "AT_287", "location": "Sakarat TRT"},
+  {"id": "AT_35",  "location": "Sarıçınar"},
+  {"id": "AT_36",  "location": "Sarıçınar"},
+  {"id": "AK_163", "location": "Çaldağ"}
 ]
