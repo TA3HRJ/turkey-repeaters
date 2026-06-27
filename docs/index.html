@@ -106,6 +106,17 @@
     .tab-content{display:none}
     .tab-content.active{display:block}
 
+    /* COMMUNITY VOTE */
+    .vote-cell{text-align:center;white-space:nowrap;min-width:90px}
+    .vote-row{display:inline-flex;gap:2px;align-items:center;font-size:.72rem}
+    .vote-btn{border:none;border-radius:3px;cursor:pointer;padding:1px 4px;font-size:.72rem;font-weight:700;line-height:1.4;transition:all .12s}
+    .vote-btn:hover{opacity:.85;transform:scale(1.1)}
+    .vb-yes{background:#d5f5e3;color:#1e8449}.vb-yes.voted{background:#27ae60;color:#fff}
+    .vb-no{background:#fadbd8;color:#c0392b}.vb-no.voted{background:#e74c3c;color:#fff}
+    .vote-score{font-size:.7rem;color:var(--muted);margin:0 1px}
+    .vote-separator{display:inline-block;width:1px;height:14px;background:var(--border);margin:0 3px;vertical-align:middle}
+    .vote-label{font-size:.65rem;color:var(--muted);display:block;line-height:1;margin-bottom:1px}
+
     /* MAP */
     #map-container{height:calc(100vh - 260px);min-height:400px}
     .map-legend{position:absolute;bottom:20px;left:20px;background:rgba(255,255,255,.92);padding:8px 12px;border-radius:6px;font-size:.78rem;z-index:800;box-shadow:0 1px 5px rgba(0,0,0,.2);line-height:1.6}
@@ -245,6 +256,7 @@
           <th data-col="altitude_m" id="th-alt">Alt (m)</th>
           <th data-col="ta_region" id="th-ta">Region</th>
           <th data-col="lat" id="th-coord">Coordinates</th>
+          <th class="no-sort" id="th-community">Community</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -393,6 +405,9 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
 // ============================================================
 // i18n
@@ -429,6 +444,8 @@ const STRINGS = {
     wizWarnOver:(n,lim)=>`${n} repeaters match, limit is ${lim}. Only the top ${lim} will be exported based on priority.`,
     wizCountLabel:(n)=>`${n} records will be exported`,
     tabList:"List", tabMap:"Map", mapLegOn:"On-Air", mapLegOff:"Off-Air",
+    thCommunity:"Community", cvWorking:"Working?", cvLocation:"Location?",
+    cvYes:"Yes", cvNo:"No", cvVoted:"You voted", cvThanks:"Vote saved!",
   },
   tr:{
     title:"Türkiye Amatör Telsiz Röleleri", subtitle:"Arama · Filtreleme · Dışa aktarım",
@@ -461,6 +478,8 @@ const STRINGS = {
     wizWarnOver:(n,lim)=>`${n} röle eşleşti, limit ${lim}. Öncelik sırasına göre yalnızca ${lim} dışa aktarılacak.`,
     wizCountLabel:(n)=>`${n} kayıt dışa aktarılacak`,
     tabList:"Liste", tabMap:"Harita", mapLegOn:"Aktif", mapLegOff:"Pasif",
+    thCommunity:"Topluluk", cvWorking:"Çalışıyor?", cvLocation:"Konum?",
+    cvYes:"Evet", cvNo:"Hayır", cvVoted:"Oy verildi", cvThanks:"Oy kaydedildi!",
   }
 };
 let lang="en";
@@ -534,6 +553,7 @@ function applyStrings(){
   document.getElementById("wiz-prio-status").textContent=s.wizPrioStatus;
   document.getElementById("wiz-prio-region").textContent=s.wizPrioRegion;
   document.getElementById("wiz-prio-freq").textContent=s.wizPrioFreq;
+  document.getElementById("th-community").textContent=s.thCommunity;
   document.getElementById("tab-list-label").textContent=s.tabList;
   document.getElementById("tab-map-label").textContent=s.tabMap;
   document.getElementById("map-leg-on").textContent=s.mapLegOn;
@@ -735,6 +755,10 @@ function renderTable(data){
       td.innerHTML=c;
       tr.appendChild(td);
     });
+    const tdVote=document.createElement("td");
+    tdVote.className="vote-cell";
+    tdVote.innerHTML=buildVoteCell(r.id);
+    tr.appendChild(tdVote);
     frag.appendChild(tr);
   });
   tbody.innerHTML="";
@@ -838,7 +862,7 @@ function loadData(){
       applyStrings();
     })
     .catch(err=>{
-      document.getElementById("tbody").innerHTML=`<tr><td colspan="14" style="padding:20px;color:red">${err.message}</td></tr>`;
+      document.getElementById("tbody").innerHTML=`<tr><td colspan="16" style="padding:20px;color:red">${err.message}</td></tr>`;
       document.getElementById("stat-total").textContent="0";
     });
 }
@@ -1190,9 +1214,144 @@ function updateMapMarkers(){
 }
 
 // ============================================================
+// Firebase Community Voting
+// ============================================================
+const FIREBASE_CONFIG = {
+  apiKey: "FIREBASE_API_KEY",
+  authDomain: "turkey-repeaters.firebaseapp.com",
+  projectId: "turkey-repeaters",
+  storageBucket: "turkey-repeaters.firebasestorage.app",
+  messagingSenderId: "000000000000",
+  appId: "FIREBASE_APP_ID"
+};
+
+let db=null, fbAuth=null, fbUid=null;
+let voteAggregates={};
+let myVotes={};
+let firebaseReady=false;
+
+function initFirebase(){
+  if(FIREBASE_CONFIG.apiKey==="FIREBASE_API_KEY") return;
+  try{
+    firebase.initializeApp(FIREBASE_CONFIG);
+    db=firebase.firestore();
+    fbAuth=firebase.auth();
+    fbAuth.signInAnonymously().then(cred=>{
+      fbUid=cred.user.uid;
+      firebaseReady=true;
+      loadVotes();
+    }).catch(()=>{});
+  }catch(e){}
+}
+
+function loadVotes(){
+  if(!db) return;
+  db.doc("aggregates/votes").get().then(doc=>{
+    if(doc.exists) voteAggregates=doc.data()||{};
+    refreshVoteCells();
+  }).catch(()=>{});
+  if(fbUid){
+    db.doc(`user_votes/${fbUid}`).get().then(doc=>{
+      if(doc.exists) myVotes=doc.data()||{};
+      refreshVoteCells();
+    }).catch(()=>{});
+  }
+}
+
+function getVoteCounts(id){
+  const v=voteAggregates[id];
+  if(!v) return {wy:0,wn:0,ly:0,ln:0};
+  return {wy:v.wy||0, wn:v.wn||0, ly:v.ly||0, ln:v.ln||0};
+}
+
+function buildVoteCell(id){
+  const v=getVoteCounts(id);
+  const my=myVotes[id]||{};
+  const wTotal=v.wy+v.wn;
+  const lTotal=v.ly+v.ln;
+
+  const wYesC=my.w===true?"voted":"";
+  const wNoC=my.w===false?"voted":"";
+  const lYesC=my.l===true?"voted":"";
+  const lNoC=my.l===false?"voted":"";
+
+  return `<div>
+    <span class="vote-label">${t("cvWorking")}</span>
+    <span class="vote-row">
+      <button class="vote-btn vb-yes ${wYesC}" onclick="castVote('${id}','w',true)" title="${t("cvYes")}">&#10003;${v.wy?'<span class="vote-score">'+v.wy+'</span>':''}</button>
+      <button class="vote-btn vb-no ${wNoC}" onclick="castVote('${id}','w',false)" title="${t("cvNo")}">&#10007;${v.wn?'<span class="vote-score">'+v.wn+'</span>':''}</button>
+      ${wTotal?'<span class="vote-score">('+wTotal+')</span>':''}
+    </span>
+  </div>
+  <div style="margin-top:2px">
+    <span class="vote-label">${t("cvLocation")}</span>
+    <span class="vote-row">
+      <button class="vote-btn vb-yes ${lYesC}" onclick="castVote('${id}','l',true)" title="${t("cvYes")}">&#10003;${v.ly?'<span class="vote-score">'+v.ly+'</span>':''}</button>
+      <button class="vote-btn vb-no ${lNoC}" onclick="castVote('${id}','l',false)" title="${t("cvNo")}">&#10007;${v.ln?'<span class="vote-score">'+v.ln+'</span>':''}</button>
+      ${lTotal?'<span class="vote-score">('+lTotal+')</span>':''}
+    </span>
+  </div>`;
+}
+
+function castVote(id, field, value){
+  if(!firebaseReady||!db||!fbUid) return;
+  const prev=myVotes[id]||{};
+  const prevVal=prev[field];
+  if(prevVal===value) return;
+
+  const batch=db.batch();
+  const aggRef=db.doc("aggregates/votes");
+  const userRef=db.doc(`user_votes/${fbUid}`);
+  const inc=firebase.firestore.FieldValue.increment;
+
+  const updates={};
+  if(field==="w"){
+    updates[`${id}.wy`]=inc(value?1:(prevVal===true?-1:0));
+    updates[`${id}.wn`]=inc(!value?1:(prevVal===false?-1:0));
+  } else {
+    updates[`${id}.ly`]=inc(value?1:(prevVal===true?-1:0));
+    updates[`${id}.ln`]=inc(!value?1:(prevVal===false?-1:0));
+  }
+  batch.set(aggRef,updates,{merge:true});
+
+  const myUpdate={};
+  myUpdate[`${id}.${field}`]=value;
+  myUpdate[`${id}.ts`]=Date.now();
+  batch.set(userRef,myUpdate,{merge:true});
+
+  batch.commit().then(()=>{
+    if(!myVotes[id]) myVotes[id]={};
+    myVotes[id][field]=value;
+    const vc=voteAggregates[id]||(voteAggregates[id]={wy:0,wn:0,ly:0,ln:0});
+    if(field==="w"){
+      if(value){vc.wy++;if(prevVal===false)vc.wn--;}
+      else{vc.wn++;if(prevVal===true)vc.wy--;}
+    } else {
+      if(value){vc.ly++;if(prevVal===false)vc.ln--;}
+      else{vc.ln++;if(prevVal===true)vc.ly--;}
+    }
+    refreshVoteCell(id);
+  }).catch(()=>{});
+}
+
+function refreshVoteCells(){
+  document.querySelectorAll("td.vote-cell").forEach(td=>{
+    const tr=td.closest("tr");
+    if(tr&&tr.dataset.id) td.innerHTML=buildVoteCell(tr.dataset.id);
+  });
+}
+
+function refreshVoteCell(id){
+  const tr=document.querySelector(`tr[data-id="${id}"]`);
+  if(!tr) return;
+  const td=tr.querySelector("td.vote-cell");
+  if(td) td.innerHTML=buildVoteCell(id);
+}
+
+// ============================================================
 // Init
 // ============================================================
-document.addEventListener("DOMContentLoaded",()=>{applyStrings();loadData()});
+document.addEventListener("DOMContentLoaded",()=>{applyStrings();loadData();initFirebase()});
 </script>
 </body>
 </html>

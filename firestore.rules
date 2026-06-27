@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Vote aggregates - anyone can read, authenticated users can update
+    match /aggregates/votes {
+      allow read: if true;
+      allow create, update: if request.auth != null;
+    }
+    // Per-user votes - only the owner can read/write their own votes
+    match /user_votes/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}
