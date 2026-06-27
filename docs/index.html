@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Turkey Amateur Radio Repeaters / Türkiye Amatör Telsiz Röleleri</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
   <style>
     :root {
       --bg:#f5f7fa; --surface:#fff; --primary:#1a5276; --accent:#2980b9;
@@ -95,7 +98,20 @@
 
     footer{text-align:center;padding:16px;font-size:.76rem;color:var(--muted);border-top:1px solid var(--border);margin-top:10px}
     footer a{color:var(--accent);text-decoration:none}
-    @media(max-width:600px){main{padding:8px}.toolbar{padding:8px}}
+    /* TABS */
+    .tab-bar{display:flex;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:0 20px}
+    .tab-btn{padding:8px 20px;border:none;background:none;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;transition:all .15s}
+    .tab-btn:hover{color:var(--text);background:#f0f4f8}
+    .tab-btn.active{color:var(--primary);border-bottom-color:var(--accent)}
+    .tab-content{display:none}
+    .tab-content.active{display:block}
+
+    /* MAP */
+    #map-container{height:calc(100vh - 260px);min-height:400px}
+    .map-legend{position:absolute;bottom:20px;left:20px;background:rgba(255,255,255,.92);padding:8px 12px;border-radius:6px;font-size:.78rem;z-index:800;box-shadow:0 1px 5px rgba(0,0,0,.2);line-height:1.6}
+    .map-legend-dot{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:middle;margin-right:4px}
+
+    @media(max-width:600px){main{padding:8px}.toolbar{padding:8px}#map-container{height:60vh;min-height:300px}}
   </style>
 </head>
 <body>
@@ -190,6 +206,12 @@
   <span style="margin-left:auto;font-size:.75rem"><span id="lbl-updated">Last updated:</span> <strong id="updated-date">—</strong></span>
 </div>
 
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" id="tab-list-btn" onclick="switchTab('list')"><span id="tab-list-label">List</span></button>
+  <button class="tab-btn" id="tab-map-btn" onclick="switchTab('map')"><span id="tab-map-label">Map</span></button>
+</div>
+
 <!-- RB IMPORT PANEL -->
 <div id="rb-panel">
   <h3 id="rb-title">RepeaterBook CSV Import</h3>
@@ -198,35 +220,53 @@
   <span id="rb-status" style="margin-left:10px;color:var(--muted)"></span>
 </div>
 
-<!-- TABLE -->
-<main>
-  <div class="legend">
-    <span><span class="dot dot-on"></span><span id="leg-on">On-Air</span></span>
-    <span><span class="dot dot-off"></span><span id="leg-off">Off-Air</span></span>
+<!-- LIST TAB -->
+<div id="tab-list" class="tab-content active">
+  <main>
+    <div class="legend">
+      <span><span class="dot dot-on"></span><span id="leg-on">On-Air</span></span>
+      <span><span class="dot dot-off"></span><span id="leg-off">Off-Air</span></span>
+    </div>
+    <table id="rt">
+      <thead>
+        <tr>
+          <th class="no-sort"><input type="checkbox" id="chk-all" onchange="toggleSelectAll(this)" title="Select all visible"/></th>
+          <th class="no-sort" id="th-status">Status</th>
+          <th data-col="frequency" id="th-freq">Freq (MHz)</th>
+          <th data-col="offset" id="th-offset">Offset</th>
+          <th data-col="tone" id="th-tone">Tone</th>
+          <th data-col="band" class="no-sort" id="th-band">Band</th>
+          <th data-col="mode" id="th-mode">Mode</th>
+          <th data-col="plate" id="th-plate">Plate</th>
+          <th data-col="city" id="th-city">City</th>
+          <th data-col="location" id="th-location">Location / Site</th>
+          <th data-col="callsign" id="th-callsign">Callsign</th>
+          <th data-col="power_w" id="th-power">Pwr (W)</th>
+          <th data-col="altitude_m" id="th-alt">Alt (m)</th>
+          <th data-col="ta_region" id="th-ta">Region</th>
+          <th data-col="lat" id="th-coord">Coordinates</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </main>
+</div>
+
+<!-- MAP TAB -->
+<div id="tab-map" class="tab-content">
+  <div id="map-container" style="position:relative">
+    <div class="map-legend" id="map-legend">
+      <div><span class="map-legend-dot" style="background:#27ae60"></span> VHF</div>
+      <div><span class="map-legend-dot" style="background:#2980b9"></span> UHF</div>
+      <div><span class="map-legend-dot" style="background:#e67e22"></span> APRS</div>
+      <div><span class="map-legend-dot" style="background:#8e44ad"></span> EchoLink</div>
+      <div style="margin-top:4px;border-top:1px solid #ddd;padding-top:4px">
+        <span class="map-legend-dot" style="background:#27ae60;opacity:1"></span> <span id="map-leg-on">On-Air</span>
+        <span class="map-legend-dot" style="background:#ccc;margin-left:6px"></span> <span id="map-leg-off">Off-Air</span>
+      </div>
+    </div>
   </div>
-  <table id="rt">
-    <thead>
-      <tr>
-        <th class="no-sort"><input type="checkbox" id="chk-all" onchange="toggleSelectAll(this)" title="Select all visible"/></th>
-        <th class="no-sort" id="th-status">Status</th>
-        <th data-col="frequency" id="th-freq">Freq (MHz)</th>
-        <th data-col="offset" id="th-offset">Offset</th>
-        <th data-col="tone" id="th-tone">Tone</th>
-        <th data-col="band" class="no-sort" id="th-band">Band</th>
-        <th data-col="mode" id="th-mode">Mode</th>
-        <th data-col="plate" id="th-plate">Plate</th>
-        <th data-col="city" id="th-city">City</th>
-        <th data-col="location" id="th-location">Location / Site</th>
-        <th data-col="callsign" id="th-callsign">Callsign</th>
-        <th data-col="power_w" id="th-power">Pwr (W)</th>
-        <th data-col="altitude_m" id="th-alt">Alt (m)</th>
-        <th data-col="ta_region" id="th-ta">Region</th>
-        <th data-col="lat" id="th-coord">Coordinates</th>
-      </tr>
-    </thead>
-    <tbody id="tbody"></tbody>
-  </table>
-</main>
+</div>
 
 <footer>
   <span id="ft-data">Data: </span>
@@ -351,6 +391,8 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 // ============================================================
 // i18n
@@ -386,6 +428,7 @@ const STRINGS = {
     wizApproxNote:"⚠ Approximate pins will use a different icon and warning label.",
     wizWarnOver:(n,lim)=>`${n} repeaters match, limit is ${lim}. Only the top ${lim} will be exported based on priority.`,
     wizCountLabel:(n)=>`${n} records will be exported`,
+    tabList:"List", tabMap:"Map", mapLegOn:"On-Air", mapLegOff:"Off-Air",
   },
   tr:{
     title:"Türkiye Amatör Telsiz Röleleri", subtitle:"Arama · Filtreleme · Dışa aktarım",
@@ -417,6 +460,7 @@ const STRINGS = {
     wizApproxNote:"⚠ Yaklaşık pinler farklı ikon ve uyarı etiketiyle gösterilir.",
     wizWarnOver:(n,lim)=>`${n} röle eşleşti, limit ${lim}. Öncelik sırasına göre yalnızca ${lim} dışa aktarılacak.`,
     wizCountLabel:(n)=>`${n} kayıt dışa aktarılacak`,
+    tabList:"Liste", tabMap:"Harita", mapLegOn:"Aktif", mapLegOff:"Pasif",
   }
 };
 let lang="en";
@@ -490,6 +534,10 @@ function applyStrings(){
   document.getElementById("wiz-prio-status").textContent=s.wizPrioStatus;
   document.getElementById("wiz-prio-region").textContent=s.wizPrioRegion;
   document.getElementById("wiz-prio-freq").textContent=s.wizPrioFreq;
+  document.getElementById("tab-list-label").textContent=s.tabList;
+  document.getElementById("tab-map-label").textContent=s.tabMap;
+  document.getElementById("map-leg-on").textContent=s.mapLegOn;
+  document.getElementById("map-leg-off").textContent=s.mapLegOff;
   document.title=s.title;
   document.documentElement.lang=lang;
   updateStats();
@@ -770,6 +818,7 @@ function applyFilters(){
     if(thF) thF.classList.add("sort-asc");
   }
   renderTable(filteredData);
+  if(activeTab==="map") updateMapMarkers();
   wizUpdate();
 }
 
@@ -1054,6 +1103,90 @@ function importRepeaterBook(input){
     applyFilters();
   };
   reader.readAsText(file);
+}
+
+// ============================================================
+// Tabs
+// ============================================================
+let activeTab="list";
+function switchTab(tab){
+  activeTab=tab;
+  document.getElementById("tab-list").classList.toggle("active",tab==="list");
+  document.getElementById("tab-map").classList.toggle("active",tab==="map");
+  document.getElementById("tab-list-btn").classList.toggle("active",tab==="list");
+  document.getElementById("tab-map-btn").classList.toggle("active",tab==="map");
+  if(tab==="map"){
+    if(!map) initMap();
+    setTimeout(()=>{map.invalidateSize()},100);
+    updateMapMarkers();
+  }
+}
+
+// ============================================================
+// Map (Leaflet + MarkerCluster)
+// ============================================================
+let map=null;
+let markerCluster=null;
+const BAND_COLORS={VHF:"#27ae60",UHF:"#2980b9",APRS:"#e67e22",ECHO:"#8e44ad"};
+
+function markerIcon(band,status){
+  const color=BAND_COLORS[(band||"").toUpperCase()]||"#7f8c8d";
+  const fill=status?color:"#ccc";
+  const stroke=status?color:"#999";
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="26" height="36" viewBox="0 0 26 36">
+    <path d="M13 0C5.8 0 0 5.8 0 13c0 9.8 13 23 13 23s13-13.2 13-23C26 5.8 20.2 0 13 0z" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/>
+    <circle cx="13" cy="13" r="5" fill="white" opacity=".85"/>
+  </svg>`;
+  return L.divIcon({
+    html:svg,
+    className:"",
+    iconSize:[26,36],
+    iconAnchor:[13,36],
+    popupAnchor:[0,-32]
+  });
+}
+
+function initMap(){
+  map=L.map("map-container",{zoomControl:true}).setView([39.0,35.0],6);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom:18
+  }).addTo(map);
+  markerCluster=L.markerClusterGroup({
+    maxClusterRadius:45,
+    spiderfyOnMaxZoom:true,
+    showCoverageOnHover:false,
+    disableClusteringAtZoom:13
+  });
+  map.addLayer(markerCluster);
+  updateMapMarkers();
+}
+
+function updateMapMarkers(){
+  if(!map||!markerCluster) return;
+  markerCluster.clearLayers();
+  const markers=[];
+  filteredData.forEach(r=>{
+    if(!r.lat||!r.lon) return;
+    const m=L.marker([r.lat,r.lon],{icon:markerIcon(r.band,r.status)});
+    const statusTxt=r.status?t("onAir"):t("offAir");
+    const statusColor=r.status?"#27ae60":"#e74c3c";
+    const approxNote=r.coord_approx?`<div style="color:#d68910;font-size:.75rem;margin-top:4px">~ ${t("coordApprox")}</div>`:"";
+    m.bindPopup(`<div style="font-size:.85rem;line-height:1.5;min-width:180px">
+      <strong style="font-size:.95rem">${r.callsign||r.location||r.city}</strong>
+      <div style="color:${statusColor};font-weight:600;margin:2px 0">${statusTxt}</div>
+      <div><b>${(r.frequency||0).toFixed(4)} MHz</b> ${r.band||""} ${r.mode||"FM"}</div>
+      ${r.offset?`<div>Offset: ${fmtOff(r.offset)} MHz</div>`:""}
+      ${r.tone?`<div>Tone: ${r.tone.toFixed(1)} Hz</div>`:""}
+      <div>${r.city||""}${r.district?" / "+r.district:""}</div>
+      ${r.location?`<div style="color:#666">${r.location}</div>`:""}
+      ${r.power_w!=null?`<div>${r.power_w}W`:""}${r.altitude_m!=null?` · ${r.altitude_m}m`:""}${r.power_w!=null?"</div>":""}
+      ${r.ta_region?`<div style="color:#888;font-size:.78rem">${r.ta_region}</div>`:""}
+      ${approxNote}
+    </div>`,{maxWidth:260});
+    markers.push(m);
+  });
+  markerCluster.addLayers(markers);
 }
 
 // ============================================================
