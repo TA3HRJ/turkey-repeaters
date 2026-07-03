@@ -7,21 +7,22 @@ Live site: **https://ta3hrj.github.io/turkey-repeaters**
 
 ## Features
 
-- Live search and filter by band, city, status
-- EN / TR language toggle
+- Live search and filter by band, city, status — filters are shareable via URL (`?band=VHF&city=İzmir&tab=map`)
+- Interactive map (Leaflet, lazy-loaded on first use)
+- "📍 Nearest" button: sorts repeaters by distance from your location
+- EN / TR language toggle, dark mode (follows system, manual toggle persists)
 - CSV export (filtered or full)
 - Client-side RepeaterBook CSV import (session only)
+- Installable PWA — works fully offline (service worker caches app + data)
+- Weekly automated data refresh via GitHub Actions
 - No login required, no backend, hosted free on GitHub Pages
 
 ---
 
 ## Data Sources
 
-| Source | Method | Notes |
-|---|---|---|
-| [amatortelsizcilik.com.tr](https://amatortelsizcilik.com.tr/roleler) | Auto-scraped (JSON API) | Primary source, ~500 records |
-| [akrad.org.tr](https://www.akrad.org.tr/turkiye-geneli-role-listesi/) | Auto-scraped (HTML table) | Fills callsigns & locators |
-| [repeaterbook.com](https://www.repeaterbook.com/row_repeaters/index2.php?state_id=TR) | Manual CSV import | Corrections & additions |
+Data is aggregated from multiple Turkish amateur radio sources and cross-checked for accuracy.
+[RepeaterBook](https://www.repeaterbook.com/row_repeaters/index2.php?state_id=TR) CSV can be imported manually for corrections and additions.
 
 ---
 
@@ -39,7 +40,12 @@ pip install -r scripts/requirements.txt
 python scripts/scrape.py
 ```
 
-This writes `docs/data/repeaters.json`.  Open `docs/index.html` in a browser to view.
+This writes `docs/data/repeaters.json` and the compact `docs/data/repeaters.min.json`
+the site actually loads (regenerate it alone with `python scripts/build_compact.py`).
+Serve `docs/` locally (e.g. `python -m http.server --directory docs`) to view.
+
+> Data also refreshes automatically every Monday via the
+> `.github/workflows/update-data.yml` GitHub Action.
 
 ### 3. (Optional) Import a RepeaterBook CSV
 
@@ -124,5 +130,4 @@ All formats are available via the Export Wizard on the site:
 
 ## License
 
-MIT — for personal use only.  
-Data copyright belongs to respective source websites.
+MIT — for personal use only.
