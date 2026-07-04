@@ -506,6 +506,10 @@ def main():
 
     print(f"\nDone. {len(records)} repeaters written to {OUTPUT}")
 
+    # Keep the compact frontend payload in sync with the canonical file.
+    import build_compact
+    build_compact.main()
+
 
 if __name__ == "__main__":
     main()

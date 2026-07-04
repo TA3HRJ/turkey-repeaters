@@ -1,0 +1,2618 @@
+[
+  {
+    "canonical": "Akdeniz Radyo Amatörleri Derneği- Kozanta5Ihk",
+    "variants": [
+      "Akdeniz Radyo Amatörleri Derneği TA5GMZ",
+      "Akdeniz Radyo Amatörleri Derneği- KozanTA5IHK"
+    ],
+    "records": {
+      "Akdeniz Radyo Amatörleri Derneği TA5GMZ": [
+        {
+          "id": "AT_436",
+          "city": "Adana",
+          "freq": 433.4
+        },
+        {
+          "id": "AT_437",
+          "city": "Adana",
+          "freq": 145.7875
+        }
+      ],
+      "Akdeniz Radyo Amatörleri Derneği- KozanTA5IHK": [
+        {
+          "id": "AT_438",
+          "city": "Adana",
+          "freq": 433.55
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Akrad Kartepe",
+    "variants": [
+      "Kartepe",
+      "Akrad kartepe"
+    ],
+    "records": {
+      "Kartepe": [
+        {
+          "id": "AT_225",
+          "city": "Kocaeli",
+          "freq": 145.6125
+        },
+        {
+          "id": "AT_236",
+          "city": "Kocaeli",
+          "freq": 144.8
+        }
+      ],
+      "Akrad kartepe": [
+        {
+          "id": "AT_444",
+          "city": "Kocaeli",
+          "freq": 439.1625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Aladag",
+    "variants": [
+      "ALADAG",
+      "Aladağ Mevkii"
+    ],
+    "records": {
+      "ALADAG": [
+        {
+          "id": "AT_326",
+          "city": "Tokat",
+          "freq": 439.15
+        }
+      ],
+      "Aladağ Mevkii": [
+        {
+          "id": "AT_360",
+          "city": "Bartin",
+          "freq": 145.75
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Astrad Sarıçam",
+    "variants": [
+      "Sarıçam",
+      "ASTRAD Sarıçam"
+    ],
+    "records": {
+      "Sarıçam": [
+        {
+          "id": "AT_481",
+          "city": "Antalya",
+          "freq": 439.1625
+        }
+      ],
+      "ASTRAD Sarıçam": [
+        {
+          "id": "AT_501",
+          "city": "Adana",
+          "freq": 439.1875
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Aydos Mevkii / Yellice",
+    "variants": [
+      "Aydos Mevkii / Yellice",
+      "Aydos",
+      "Aydos Dağı",
+      "AYDOS MVK"
+    ],
+    "records": {
+      "Aydos Mevkii / Yellice": [
+        {
+          "id": "AT_239",
+          "city": "Konya",
+          "freq": 145.7
+        }
+      ],
+      "Aydos": [
+        {
+          "id": "AT_244",
+          "city": "Konya",
+          "freq": 144.8
+        }
+      ],
+      "Aydos Dağı": [
+        {
+          "id": "AT_402",
+          "city": "Konya",
+          "freq": 145.7875
+        }
+      ],
+      "AYDOS MVK": [
+        {
+          "id": "AK_254",
+          "city": "Kony/ Eregli",
+          "freq": 145.7
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Ağlayançal / Kon-Rf",
+    "variants": [
+      "Ağlayançal",
+      "Ağlayançal Dağı",
+      "Ağlayançal / Kon-RF"
+    ],
+    "records": {
+      "Ağlayançal": [
+        {
+          "id": "AT_240",
+          "city": "Konya",
+          "freq": 145.725
+        },
+        {
+          "id": "AT_243",
+          "city": "Konya",
+          "freq": 439.275
+        }
+      ],
+      "Ağlayançal Dağı": [
+        {
+          "id": "AT_245",
+          "city": "Konya",
+          "freq": 144.8
+        }
+      ],
+      "Ağlayançal / Kon-RF": [
+        {
+          "id": "AT_452",
+          "city": "Konya",
+          "freq": 145.675
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Babadag Mevkii",
+    "variants": [
+      "BABADAG MEVKII",
+      "BABADAG"
+    ],
+    "records": {
+      "BABADAG MEVKII": [
+        {
+          "id": "AT_269",
+          "city": "Mugla",
+          "freq": 145.675
+        },
+        {
+          "id": "AT_273",
+          "city": "Mugla",
+          "freq": 439.375
+        },
+        {
+          "id": "AK_286",
+          "city": "Mugla Fethiye",
+          "freq": 145.675
+        }
+      ],
+      "BABADAG": [
+        {
+          "id": "AT_277",
+          "city": "Mugla",
+          "freq": 144.8
+        },
+        {
+          "id": "AK_294",
+          "city": "Mugla Fethiye",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Bahçecik",
+    "variants": [
+      "Bahçecik",
+      "Bahçe Mevki"
+    ],
+    "records": {
+      "Bahçecik": [
+        {
+          "id": "AT_226",
+          "city": "Kocaeli",
+          "freq": 145.725
+        }
+      ],
+      "Bahçe Mevki": [
+        {
+          "id": "AT_443",
+          "city": "Osmaniye",
+          "freq": 145.6125
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Bayrampaşa / Anarad Rx 67 Ton",
+    "variants": [
+      "Bayrampaşa / ANARAD RX 67 Ton",
+      "Şehir Merkezi - ANARAD"
+    ],
+    "records": {
+      "Bayrampaşa / ANARAD RX 67 Ton": [
+        {
+          "id": "AT_186",
+          "city": "Istanbul",
+          "freq": 439.375
+        }
+      ],
+      "Şehir Merkezi - ANARAD": [
+        {
+          "id": "AT_223",
+          "city": "Kirklareli",
+          "freq": 439.375
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Bağlum (Digital)",
+    "variants": [
+      "Bağlum (DIGITAL)",
+      "Bağlum",
+      "Ağı Dağı"
+    ],
+    "records": {
+      "Bağlum (DIGITAL)": [
+        {
+          "id": "AT_23",
+          "city": "Ankara",
+          "freq": 145.65
+        }
+      ],
+      "Bağlum": [
+        {
+          "id": "AT_27",
+          "city": "Ankara",
+          "freq": 439.25
+        }
+      ],
+      "Ağı Dağı": [
+        {
+          "id": "AT_99",
+          "city": "Canakkale",
+          "freq": 439.275
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Bağçeşme",
+    "variants": [
+      "Bağçeşme",
+      "BAGCESME"
+    ],
+    "records": {
+      "Bağçeşme": [
+        {
+          "id": "AT_227",
+          "city": "Kocaeli",
+          "freq": 145.725
+        }
+      ],
+      "BAGCESME": [
+        {
+          "id": "AK_242",
+          "city": "Kocaeli Izmit",
+          "freq": 145.725
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Başkonuş Dağı",
+    "variants": [
+      "Başkonuş Dağı",
+      "BASKONUS DAĞI"
+    ],
+    "records": {
+      "Başkonuş Dağı": [
+        {
+          "id": "AT_525",
+          "city": "Kahramanmaras",
+          "freq": 145.75
+        }
+      ],
+      "BASKONUS DAĞI": [
+        {
+          "id": "AK_276",
+          "city": "Kahramanmaraş",
+          "freq": 145.75
+        },
+        {
+          "id": "AK_281",
+          "city": "Kahramanmaraş",
+          "freq": 439.2625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Bergama",
+    "variants": [
+      "BERGAMA",
+      "Bergama Kale"
+    ],
+    "records": {
+      "BERGAMA": [
+        {
+          "id": "AT_205",
+          "city": "Izmir",
+          "freq": 439.325
+        },
+        {
+          "id": "AT_209",
+          "city": "Izmir",
+          "freq": 439.425
+        }
+      ],
+      "Bergama Kale": [
+        {
+          "id": "AT_429",
+          "city": "Izmir",
+          "freq": 439.1625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Beydağı / Bey Dağı",
+    "variants": [
+      "Beydağı / Bey Dağı",
+      "Beydağı"
+    ],
+    "records": {
+      "Beydağı / Bey Dağı": [
+        {
+          "id": "AT_250",
+          "city": "Malatya",
+          "freq": 145.775
+        }
+      ],
+      "Beydağı": [
+        {
+          "id": "AT_251",
+          "city": "Malatya",
+          "freq": 439.425
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Bozdağ Tafhad",
+    "variants": [
+      "Bozdağ",
+      "Boz Tepe",
+      "Bozdağ TAFHAD",
+      "ESTRAD Bozdağ"
+    ],
+    "records": {
+      "Bozdağ": [
+        {
+          "id": "AT_134",
+          "city": "Eskisehir",
+          "freq": 145.7
+        },
+        {
+          "id": "AT_135",
+          "city": "Eskisehir",
+          "freq": 439.2
+        }
+      ],
+      "Boz Tepe": [
+        {
+          "id": "AT_136",
+          "city": "Eskisehir",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_334",
+          "city": "Trabzon",
+          "freq": 144.8
+        }
+      ],
+      "Bozdağ TAFHAD": [
+        {
+          "id": "AT_404",
+          "city": "Izmir",
+          "freq": 439.2125
+        }
+      ],
+      "ESTRAD Bozdağ": [
+        {
+          "id": "AT_489",
+          "city": "Eskisehir",
+          "freq": 439.275
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Bulancak/Dikmentepe - Trac",
+    "variants": [
+      "Dikmen",
+      "DIKMEN TP",
+      "DIKMENTEPE",
+      "DIKMEN",
+      "Bulancak/DikmenTepe - TRAC"
+    ],
+    "records": {
+      "Dikmen": [
+        {
+          "id": "AT_26",
+          "city": "Ankara",
+          "freq": 439.175
+        },
+        {
+          "id": "AT_458",
+          "city": "Ankara",
+          "freq": 145.725
+        }
+      ],
+      "DIKMEN TP": [
+        {
+          "id": "AT_144",
+          "city": "Giresun",
+          "freq": 145.775
+        }
+      ],
+      "DIKMENTEPE": [
+        {
+          "id": "AT_274",
+          "city": "Mugla",
+          "freq": 439.375
+        },
+        {
+          "id": "AK_291",
+          "city": "Mugla Fethiye",
+          "freq": 439.375
+        }
+      ],
+      "DIKMEN": [
+        {
+          "id": "AT_276",
+          "city": "Mugla",
+          "freq": 144.8
+        }
+      ],
+      "Bulancak/DikmenTepe - TRAC": [
+        {
+          "id": "AT_519",
+          "city": "Giresun",
+          "freq": 439.175
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Ceyhan Davudi Dağı",
+    "variants": [
+      "Ceyhan Davudi Dağı",
+      "Davudi Dağı"
+    ],
+    "records": {
+      "Ceyhan Davudi Dağı": [
+        {
+          "id": "AT_11",
+          "city": "Adana",
+          "freq": 144.8
+        }
+      ],
+      "Davudi Dağı": [
+        {
+          "id": "AT_424",
+          "city": "Adana",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Cobandere",
+    "variants": [
+      "COBANDERE",
+      "COBANDEDE"
+    ],
+    "records": {
+      "COBANDERE": [
+        {
+          "id": "AT_154",
+          "city": "Hatay",
+          "freq": 145.75
+        }
+      ],
+      "COBANDEDE": [
+        {
+          "id": "AT_155",
+          "city": "Hatay",
+          "freq": 439.2625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Dilek Tepesi",
+    "variants": [
+      "Dilek Tepesi",
+      "DILEK TP"
+    ],
+    "records": {
+      "Dilek Tepesi": [
+        {
+          "id": "AT_60",
+          "city": "Aydin",
+          "freq": 144.8
+        }
+      ],
+      "DILEK TP": [
+        {
+          "id": "AK_61",
+          "city": "Aydin",
+          "freq": 439.375
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Ereğli",
+    "variants": [
+      "Ereğli",
+      "EREGLI"
+    ],
+    "records": {
+      "Ereğli": [
+        {
+          "id": "AT_345",
+          "city": "Zonguldak",
+          "freq": 145.6
+        }
+      ],
+      "EREGLI": [
+        {
+          "id": "AK_363",
+          "city": "Zonguldak/Eregli",
+          "freq": 145.6
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Erikce Tepesi",
+    "variants": [
+      "Erikce",
+      "Erikce Tepesi"
+    ],
+    "records": {
+      "Erikce": [
+        {
+          "id": "AT_138",
+          "city": "Gaziantep",
+          "freq": 145.725
+        }
+      ],
+      "Erikce Tepesi": [
+        {
+          "id": "AT_140",
+          "city": "Gaziantep",
+          "freq": 439.4
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Espiye/İmamtepe - Trac",
+    "variants": [
+      "ESPIYE IMAM TEPE",
+      "Espiye/İmamtepe - TRAC",
+      "Espiye",
+      "IMAM TP"
+    ],
+    "records": {
+      "ESPIYE IMAM TEPE": [
+        {
+          "id": "AT_141",
+          "city": "Giresun",
+          "freq": 145.6
+        }
+      ],
+      "Espiye/İmamtepe - TRAC": [
+        {
+          "id": "AT_143",
+          "city": "Giresun",
+          "freq": 145.775
+        }
+      ],
+      "Espiye": [
+        {
+          "id": "AT_146",
+          "city": "Giresun",
+          "freq": 439.425
+        }
+      ],
+      "IMAM TP": [
+        {
+          "id": "AK_157",
+          "city": "Giresun/Espiye",
+          "freq": 145.775
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Gugu Köyü",
+    "variants": [
+      "Gugu Köyü",
+      "GUGU KOYU"
+    ],
+    "records": {
+      "Gugu Köyü": [
+        {
+          "id": "AT_63",
+          "city": "Balikesir",
+          "freq": 145.75
+        }
+      ],
+      "GUGU KOYU": [
+        {
+          "id": "AK_75",
+          "city": "Balikesir Dursunbey",
+          "freq": 145.75
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Gökçay Mevkii",
+    "variants": [
+      "Gökçay Mevkii",
+      "GOKCAY MEVKII"
+    ],
+    "records": {
+      "Gökçay Mevkii": [
+        {
+          "id": "AT_160",
+          "city": "Isparta",
+          "freq": 439.425
+        }
+      ],
+      "GOKCAY MEVKII": [
+        {
+          "id": "AK_172",
+          "city": "Isparta",
+          "freq": 439.225
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Harput Tepesi",
+    "variants": [
+      "Harput Tepesi",
+      "Harput"
+    ],
+    "records": {
+      "Harput Tepesi": [
+        {
+          "id": "AT_124",
+          "city": "Elazig",
+          "freq": 145.75
+        }
+      ],
+      "Harput": [
+        {
+          "id": "AT_125",
+          "city": "Elazig",
+          "freq": 439.15
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Hatipli-Ketenciler",
+    "variants": [
+      "Hatipli-Ketenciler",
+      "HATIPLI-KETENCILER"
+    ],
+    "records": {
+      "Hatipli-Ketenciler": [
+        {
+          "id": "AT_384",
+          "city": "Duzce",
+          "freq": 145.75
+        }
+      ],
+      "HATIPLI-KETENCILER": [
+        {
+          "id": "AT_387",
+          "city": "Duzce",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Honaz Dmr",
+    "variants": [
+      "HONAZ DMR",
+      "HONAZ"
+    ],
+    "records": {
+      "HONAZ DMR": [
+        {
+          "id": "AT_116",
+          "city": "Denizli",
+          "freq": 439.1625
+        }
+      ],
+      "HONAZ": [
+        {
+          "id": "AT_117",
+          "city": "Denizli",
+          "freq": 439.25
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Hıdırlık Tepesi",
+    "variants": [
+      "Hıdırlık Tepesi",
+      "Isırlık Tepesi",
+      "Kale Tepesi"
+    ],
+    "records": {
+      "Hıdırlık Tepesi": [
+        {
+          "id": "AT_13",
+          "city": "Afyon",
+          "freq": 145.65
+        },
+        {
+          "id": "AT_14",
+          "city": "Afyon",
+          "freq": 439.425
+        }
+      ],
+      "Isırlık Tepesi": [
+        {
+          "id": "AT_291",
+          "city": "Rize",
+          "freq": 144.8
+        }
+      ],
+      "Kale Tepesi": [
+        {
+          "id": "AT_347",
+          "city": "Zonguldak",
+          "freq": 145.7
+        },
+        {
+          "id": "AT_352",
+          "city": "Zonguldak",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Işıklar Tepesi Trac",
+    "variants": [
+      "Işık Dağı",
+      "Işıkpınar Köyü",
+      "İşkule",
+      "Işıklar Tepesi TRAC",
+      "Işıklar Tepe"
+    ],
+    "records": {
+      "Işık Dağı": [
+        {
+          "id": "AT_22",
+          "city": "Ankara",
+          "freq": 145.625
+        },
+        {
+          "id": "AT_33",
+          "city": "Ankara",
+          "freq": 144.8
+        }
+      ],
+      "Işıkpınar Köyü": [
+        {
+          "id": "AT_129",
+          "city": "Erzincan",
+          "freq": 145.725
+        }
+      ],
+      "İşkule": [
+        {
+          "id": "AT_193",
+          "city": "Istanbul",
+          "freq": 144.8
+        }
+      ],
+      "Işıklar Tepesi TRAC": [
+        {
+          "id": "AT_320",
+          "city": "Tekirdag",
+          "freq": 145.6
+        }
+      ],
+      "Işıklar Tepe": [
+        {
+          "id": "AT_324",
+          "city": "Tekirdag",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kahraman Telsiz Ve Radyo Amatörleri Derneği (Katrad)",
+    "variants": [
+      "Ahır Dağı",
+      "Kahraman Telsiz ve Radyo Amatörleri Derneği (KATRAD)",
+      "kahramanmaras"
+    ],
+    "records": {
+      "Ahır Dağı": [
+        {
+          "id": "AT_260",
+          "city": "Kahramanmaras",
+          "freq": 145.625
+        },
+        {
+          "id": "AT_261",
+          "city": "Kahramanmaras",
+          "freq": 439.175
+        },
+        {
+          "id": "AT_262",
+          "city": "Kahramanmaras",
+          "freq": 439.2
+        },
+        {
+          "id": "AT_263",
+          "city": "Kahramanmaras",
+          "freq": 439.275
+        },
+        {
+          "id": "AT_264",
+          "city": "Kahramanmaras",
+          "freq": 439.425
+        },
+        {
+          "id": "AT_266",
+          "city": "Kahramanmaras",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_526",
+          "city": "Kahramanmaras",
+          "freq": 145.775
+        }
+      ],
+      "Kahraman Telsiz ve Radyo Amatörleri Derneği (KATRAD)": [
+        {
+          "id": "AT_430",
+          "city": "Kahramanmaras",
+          "freq": 439.2375
+        }
+      ],
+      "kahramanmaras": [
+        {
+          "id": "AT_448",
+          "city": "Kahramanmaras",
+          "freq": 439.2625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Karadağ",
+    "variants": [
+      "Karadağ",
+      "Kara Dağ",
+      "KARADAG"
+    ],
+    "records": {
+      "Karadağ": [
+        {
+          "id": "AT_128",
+          "city": "Erzincan",
+          "freq": 145.675
+        }
+      ],
+      "Kara Dağ": [
+        {
+          "id": "AT_131",
+          "city": "Erzincan",
+          "freq": 144.8
+        }
+      ],
+      "KARADAG": [
+        {
+          "id": "AT_357",
+          "city": "Karaman",
+          "freq": 145.65
+        },
+        {
+          "id": "AT_358",
+          "city": "Karaman",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Karagöl Tepe - Trac",
+    "variants": [
+      "Karagöl Tepe - TRAC",
+      "KARAGOL TEPE"
+    ],
+    "records": {
+      "Karagöl Tepe - TRAC": [
+        {
+          "id": "AT_282",
+          "city": "Giresun",
+          "freq": 145.6
+        }
+      ],
+      "KARAGOL TEPE": [
+        {
+          "id": "AT_288",
+          "city": "Ordu",
+          "freq": 144.8
+        },
+        {
+          "id": "AK_299",
+          "city": "Ordu",
+          "freq": 145.6
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Karapınar Köyü Analog / Digi",
+    "variants": [
+      "Karapınar Köyü Analog / DIGI",
+      "Karapınar Köyü"
+    ],
+    "records": {
+      "Karapınar Köyü Analog / DIGI": [
+        {
+          "id": "AT_229",
+          "city": "Kocaeli",
+          "freq": 439.2
+        }
+      ],
+      "Karapınar Köyü": [
+        {
+          "id": "AT_235",
+          "city": "Kocaeli",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kartal Tepe / Katrancık Dağı",
+    "variants": [
+      "Kartal Tepe / Katrancık Dağı",
+      "Katrancık Dağı"
+    ],
+    "records": {
+      "Kartal Tepe / Katrancık Dağı": [
+        {
+          "id": "AT_79",
+          "city": "Burdur",
+          "freq": 145.775
+        }
+      ],
+      "Katrancık Dağı": [
+        {
+          "id": "AT_80",
+          "city": "Burdur",
+          "freq": 439.15
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kartalkaya (Bolrad)",
+    "variants": [
+      "Kartalkaya (BOLRAD)",
+      "KAR TP"
+    ],
+    "records": {
+      "Kartalkaya (BOLRAD)": [
+        {
+          "id": "AT_78",
+          "city": "Bolu",
+          "freq": 439.4
+        }
+      ],
+      "KAR TP": [
+        {
+          "id": "AK_240",
+          "city": "Kocaeli Izmit",
+          "freq": 145.6125
+        },
+        {
+          "id": "AK_245",
+          "city": "Kocaeli Izmit",
+          "freq": 439.275
+        },
+        {
+          "id": "AK_250",
+          "city": "Kocaeli Izmit",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kayışdağı Anarad",
+    "variants": [
+      "Kayışdağı",
+      "Kayışdağı TRAC",
+      "Kayışdağı ANARAD",
+      "Kayışdağı / ANARAD",
+      "Kayışdağı TRAC 2"
+    ],
+    "records": {
+      "Kayışdağı": [
+        {
+          "id": "AT_177",
+          "city": "Istanbul",
+          "freq": 145.65
+        },
+        {
+          "id": "AT_194",
+          "city": "Istanbul",
+          "freq": 144.8
+        }
+      ],
+      "Kayışdağı TRAC": [
+        {
+          "id": "AT_178",
+          "city": "Istanbul",
+          "freq": 145.675
+        },
+        {
+          "id": "AT_182",
+          "city": "Istanbul",
+          "freq": 439.15
+        }
+      ],
+      "Kayışdağı ANARAD": [
+        {
+          "id": "AT_181",
+          "city": "Istanbul",
+          "freq": 145.775
+        }
+      ],
+      "Kayışdağı / ANARAD": [
+        {
+          "id": "AT_187",
+          "city": "Istanbul",
+          "freq": 439.375
+        }
+      ],
+      "Kayışdağı TRAC 2": [
+        {
+          "id": "AT_389",
+          "city": "Istanbul",
+          "freq": 439.2625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Keltepe Trac",
+    "variants": [
+      "Keltepe",
+      "Kel Tepe",
+      "Keltepe TRAC",
+      "KELTEPE"
+    ],
+    "records": {
+      "Keltepe": [
+        {
+          "id": "AT_76",
+          "city": "Bolu",
+          "freq": 145.625
+        },
+        {
+          "id": "AT_108",
+          "city": "Corum",
+          "freq": 145.75
+        },
+        {
+          "id": "AT_109",
+          "city": "Corum",
+          "freq": 439.2
+        },
+        {
+          "id": "AT_433",
+          "city": "Tokat",
+          "freq": 439.375
+        }
+      ],
+      "Kel Tepe": [
+        {
+          "id": "AT_114",
+          "city": "Corum",
+          "freq": 144.8
+        }
+      ],
+      "Keltepe TRAC": [
+        {
+          "id": "AT_369",
+          "city": "Karabuk",
+          "freq": 145.775
+        }
+      ],
+      "KELTEPE": [
+        {
+          "id": "AK_88",
+          "city": "Bolu/Abant",
+          "freq": 145.625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kemelköy Egerad",
+    "variants": [
+      "Kemelköy EGERAD",
+      "Kemelköy"
+    ],
+    "records": {
+      "Kemelköy EGERAD": [
+        {
+          "id": "AT_476",
+          "city": "Canakkale",
+          "freq": 439.25
+        }
+      ],
+      "Kemelköy": [
+        {
+          "id": "AT_480",
+          "city": "Canakkale",
+          "freq": 439.1625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kestaneci Ky",
+    "variants": [
+      "Kestaneci Köyü",
+      "KESTANECI KY"
+    ],
+    "records": {
+      "Kestaneci Köyü": [
+        {
+          "id": "AT_350",
+          "city": "Zonguldak",
+          "freq": 439.425
+        }
+      ],
+      "KESTANECI KY": [
+        {
+          "id": "AK_368",
+          "city": "Zonguldak/Eregli",
+          "freq": 439.425
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kilitbahir",
+    "variants": [
+      "Kilitbahir",
+      "AHIR DG"
+    ],
+    "records": {
+      "Kilitbahir": [
+        {
+          "id": "AT_98",
+          "city": "Canakkale",
+          "freq": 439.15
+        },
+        {
+          "id": "AT_102",
+          "city": "Canakkale",
+          "freq": 144.8
+        }
+      ],
+      "AHIR DG": [
+        {
+          "id": "AK_275",
+          "city": "Kahramanmaraş",
+          "freq": 145.625
+        },
+        {
+          "id": "AK_277",
+          "city": "Kahramanmaraş",
+          "freq": 145.775
+        },
+        {
+          "id": "AK_278",
+          "city": "Kahramanmaraş",
+          "freq": 439.175
+        },
+        {
+          "id": "AK_279",
+          "city": "Kahramanmaraş",
+          "freq": 439.2
+        },
+        {
+          "id": "AK_280",
+          "city": "Kahramanmaraş",
+          "freq": 439.2375
+        },
+        {
+          "id": "AK_282",
+          "city": "Kahramanmaraş",
+          "freq": 439.425
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kocahamzali Ky",
+    "variants": [
+      "KOCAHAMZALI KY",
+      "Ali Dağı",
+      "Koca Dağ"
+    ],
+    "records": {
+      "KOCAHAMZALI KY": [
+        {
+          "id": "AT_167",
+          "city": "Mersin",
+          "freq": 439.4
+        }
+      ],
+      "Ali Dağı": [
+        {
+          "id": "AT_220",
+          "city": "Kayseri",
+          "freq": 439.4
+        },
+        {
+          "id": "AT_221",
+          "city": "Kayseri",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_468",
+          "city": "Adiyaman",
+          "freq": 439.275
+        }
+      ],
+      "Koca Dağ": [
+        {
+          "id": "AT_312",
+          "city": "Samsun",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Korucuk Köyü",
+    "variants": [
+      "Korucuk Köyü",
+      "KORUCUK"
+    ],
+    "records": {
+      "Korucuk Köyü": [
+        {
+          "id": "AT_313",
+          "city": "Sinop",
+          "freq": 145.625
+        }
+      ],
+      "KORUCUK": [
+        {
+          "id": "AT_315",
+          "city": "Sinop",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kırat Tepesi",
+    "variants": [
+      "Kayı Tepesi",
+      "Kırat Tepesi"
+    ],
+    "records": {
+      "Kayı Tepesi": [
+        {
+          "id": "AT_159",
+          "city": "Isparta",
+          "freq": 145.675
+        }
+      ],
+      "Kırat Tepesi": [
+        {
+          "id": "AT_348",
+          "city": "Zonguldak",
+          "freq": 145.725
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Kızılyüce Tepesi (Kengerli)",
+    "variants": [
+      "Kızılyüce Tepesi (Kengerli)",
+      "Kızılyüce Tepesi"
+    ],
+    "records": {
+      "Kızılyüce Tepesi (Kengerli)": [
+        {
+          "id": "AT_376",
+          "city": "Osmaniye",
+          "freq": 145.775
+        },
+        {
+          "id": "AT_379",
+          "city": "Osmaniye",
+          "freq": 439.375
+        }
+      ],
+      "Kızılyüce Tepesi": [
+        {
+          "id": "AT_381",
+          "city": "Osmaniye",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Madra Dağı (Digital Mix)",
+    "variants": [
+      "Madra Dağı (Digital Mix)",
+      "x"
+    ],
+    "records": {
+      "Madra Dağı (Digital Mix)": [
+        {
+          "id": "AT_65",
+          "city": "Balikesir",
+          "freq": 439.225
+        }
+      ],
+      "x": [
+        {
+          "id": "AK_296",
+          "city": "Mugla Bodrum",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Mahya Dağı / Analog-Digital",
+    "variants": [
+      "MAHYA DG",
+      "Mahya Dağı",
+      "Mahya Dağı / Analog-Digital"
+    ],
+    "records": {
+      "MAHYA DG": [
+        {
+          "id": "AT_222",
+          "city": "Kirklareli",
+          "freq": 439.225
+        }
+      ],
+      "Mahya Dağı": [
+        {
+          "id": "AT_224",
+          "city": "Kirklareli",
+          "freq": 144.8
+        }
+      ],
+      "Mahya Dağı / Analog-Digital": [
+        {
+          "id": "AT_409",
+          "city": "Kirklareli",
+          "freq": 439.275
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Marmaris Su Deposu",
+    "variants": [
+      "Marmaris Su Deposu",
+      "Su Deposu Mvk"
+    ],
+    "records": {
+      "Marmaris Su Deposu": [
+        {
+          "id": "AT_400",
+          "city": "Mugla",
+          "freq": 439.2
+        }
+      ],
+      "Su Deposu Mvk": [
+        {
+          "id": "AT_463",
+          "city": "Kirikkale",
+          "freq": 145.7
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Melikgazi Tepesi",
+    "variants": [
+      "Melikgazi Tepesi",
+      "Melikgazi tepesi",
+      "Melikgazi"
+    ],
+    "records": {
+      "Melikgazi Tepesi": [
+        {
+          "id": "AT_107",
+          "city": "Corum",
+          "freq": 145.6
+        }
+      ],
+      "Melikgazi tepesi": [
+        {
+          "id": "AT_493",
+          "city": "Corum",
+          "freq": 439.25
+        }
+      ],
+      "Melikgazi": [
+        {
+          "id": "AT_495",
+          "city": "Corum",
+          "freq": 439.25
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Meraküm Tepesi 2",
+    "variants": [
+      "MERAKUM TP",
+      "Meraküm AKRAD",
+      "Meraküm Tepesi 2"
+    ],
+    "records": {
+      "MERAKUM TP": [
+        {
+          "id": "AT_316",
+          "city": "Sivas",
+          "freq": 145.7
+        },
+        {
+          "id": "AT_317",
+          "city": "Sivas",
+          "freq": 145.775
+        }
+      ],
+      "Meraküm AKRAD": [
+        {
+          "id": "AT_318",
+          "city": "Sivas",
+          "freq": 439.175
+        }
+      ],
+      "Meraküm Tepesi 2": [
+        {
+          "id": "AT_319",
+          "city": "Sivas",
+          "freq": 439.4
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Merzifon/Taşan Dağı",
+    "variants": [
+      "Merzifon/Taşan Dağı",
+      "Merzifon"
+    ],
+    "records": {
+      "Merzifon/Taşan Dağı": [
+        {
+          "id": "AK_20",
+          "city": "Amasya / Merzifon",
+          "freq": 439.425
+        }
+      ],
+      "Merzifon": [
+        {
+          "id": "AK_23",
+          "city": "Amasya / Merzifon",
+          "freq": 433.4
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Mukaddem Mvk",
+    "variants": [
+      "MUKADDEM MVK",
+      "MUKADDEM TP"
+    ],
+    "records": {
+      "MUKADDEM MVK": [
+        {
+          "id": "AT_164",
+          "city": "Mersin",
+          "freq": 145.625
+        }
+      ],
+      "MUKADDEM TP": [
+        {
+          "id": "AK_180",
+          "city": "Mersin",
+          "freq": 439.2
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Natder Madran",
+    "variants": [
+      "NATDER Madran",
+      "NATDER Şehir Merkezi",
+      "MADRA DG"
+    ],
+    "records": {
+      "NATDER Madran": [
+        {
+          "id": "AT_50",
+          "city": "Aydin",
+          "freq": 145.625
+        }
+      ],
+      "NATDER Şehir Merkezi": [
+        {
+          "id": "AT_57",
+          "city": "Aydin",
+          "freq": 439.4
+        }
+      ],
+      "MADRA DG": [
+        {
+          "id": "AK_77",
+          "city": "Balikesir Edremit",
+          "freq": 439.225
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Palandoken",
+    "variants": [
+      "PALANDOKEN",
+      "Palandöken"
+    ],
+    "records": {
+      "PALANDOKEN": [
+        {
+          "id": "AT_132",
+          "city": "Erzurum",
+          "freq": 145.775
+        }
+      ],
+      "Palandöken": [
+        {
+          "id": "AT_388",
+          "city": "Erzurum",
+          "freq": 439.425
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Rüzgarlı Tepesi",
+    "variants": [
+      "Rüzgarlı Tepe",
+      "Rüzgarlı Tepesi"
+    ],
+    "records": {
+      "Rüzgarlı Tepe": [
+        {
+          "id": "AT_1",
+          "city": "Adana",
+          "freq": 145.7
+        },
+        {
+          "id": "AT_7",
+          "city": "Adana",
+          "freq": 439.2875
+        }
+      ],
+      "Rüzgarlı Tepesi": [
+        {
+          "id": "AT_10",
+          "city": "Adana",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Sakarat Trt",
+    "variants": [
+      "Sakarat TRT",
+      "SAKARAT TRT"
+    ],
+    "records": {
+      "Sakarat TRT": [
+        {
+          "id": "AT_283",
+          "city": "Ordu",
+          "freq": 145.7
+        }
+      ],
+      "SAKARAT TRT": [
+        {
+          "id": "AT_287",
+          "city": "Ordu",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Sarıçınar",
+    "variants": [
+      "Sarıçınar",
+      "Sarıçınar Dağı"
+    ],
+    "records": {
+      "Sarıçınar": [
+        {
+          "id": "AT_35",
+          "city": "Antalya",
+          "freq": 145.65
+        },
+        {
+          "id": "AT_36",
+          "city": "Antalya",
+          "freq": 145.7
+        }
+      ],
+      "Sarıçınar Dağı": [
+        {
+          "id": "AT_39",
+          "city": "Antalya",
+          "freq": 439.375
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Serdivan / Kıran Tepesi",
+    "variants": [
+      "SERDIVAN",
+      "Serdivan",
+      "Serdivan / Kıran Tepesi"
+    ],
+    "records": {
+      "SERDIVAN": [
+        {
+          "id": "AT_296",
+          "city": "Sakarya",
+          "freq": 439.2
+        },
+        {
+          "id": "AT_297",
+          "city": "Sakarya",
+          "freq": 439.225
+        }
+      ],
+      "Serdivan": [
+        {
+          "id": "AT_299",
+          "city": "Sakarya",
+          "freq": 439.375
+        }
+      ],
+      "Serdivan / Kıran Tepesi": [
+        {
+          "id": "AT_304",
+          "city": "Sakarya",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Sille / Kontrad",
+    "variants": [
+      "Sille / Kontrad",
+      "Kontrad"
+    ],
+    "records": {
+      "Sille / Kontrad": [
+        {
+          "id": "AT_237",
+          "city": "Konya",
+          "freq": 145.6
+        }
+      ],
+      "Kontrad": [
+        {
+          "id": "AT_241",
+          "city": "Konya",
+          "freq": 439.2
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Spil Dağı Dmr/Analog Mix Mode",
+    "variants": [
+      "Spil Dağı",
+      "Spil Dağı DMR/ANALOG MIX MODE"
+    ],
+    "records": {
+      "Spil Dağı": [
+        {
+          "id": "AT_252",
+          "city": "Manisa",
+          "freq": 145.6
+        },
+        {
+          "id": "AT_256",
+          "city": "Manisa",
+          "freq": 439.4
+        },
+        {
+          "id": "AT_259",
+          "city": "Manisa",
+          "freq": 144.8
+        }
+      ],
+      "Spil Dağı DMR/ANALOG MIX MODE": [
+        {
+          "id": "AT_255",
+          "city": "Manisa",
+          "freq": 439.225
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Sülemiş Tepesi",
+    "variants": [
+      "Sülemiş Tepesi",
+      "SULEMIS TP"
+    ],
+    "records": {
+      "Sülemiş Tepesi": [
+        {
+          "id": "AT_375",
+          "city": "Osmaniye",
+          "freq": 145.6
+        }
+      ],
+      "SULEMIS TP": [
+        {
+          "id": "AK_385",
+          "city": "Osmaniye/Kadirli",
+          "freq": 145.6
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Ta1Abi-L",
+    "variants": [
+      "TA1ABI-L",
+      "TA1ABI-R"
+    ],
+    "records": {
+      "TA1ABI-L": [
+        {
+          "id": "AT_189",
+          "city": "Istanbul",
+          "freq": 144.95
+        }
+      ],
+      "TA1ABI-R": [
+        {
+          "id": "AT_192",
+          "city": "Istanbul",
+          "freq": 433.4
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Tavşanlı",
+    "variants": [
+      "Tavşan Dağı",
+      "Tavşanlı"
+    ],
+    "records": {
+      "Tavşan Dağı": [
+        {
+          "id": "AT_17",
+          "city": "Amasya",
+          "freq": 145.65
+        },
+        {
+          "id": "AT_21",
+          "city": "Amasya",
+          "freq": 144.8
+        }
+      ],
+      "Tavşanlı": [
+        {
+          "id": "AT_435",
+          "city": "Kutahya",
+          "freq": 439.15
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Toros Dağları",
+    "variants": [
+      "TOROS MVK",
+      "Toros Dağları"
+    ],
+    "records": {
+      "TOROS MVK": [
+        {
+          "id": "AT_198",
+          "city": "Izmir",
+          "freq": 439.15
+        }
+      ],
+      "Toros Dağları": [
+        {
+          "id": "AT_484",
+          "city": "Mersin",
+          "freq": 439.4
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Trac - Kurttepe",
+    "variants": [
+      "TRAC - Kurttepe",
+      "Şehir Merkezi TRAC",
+      "TRAC Şehir Merkezi",
+      "TRAC"
+    ],
+    "records": {
+      "TRAC - Kurttepe": [
+        {
+          "id": "AT_3",
+          "city": "Adana",
+          "freq": 439.15
+        }
+      ],
+      "Şehir Merkezi TRAC": [
+        {
+          "id": "AT_66",
+          "city": "Balikesir",
+          "freq": 439.375
+        }
+      ],
+      "TRAC Şehir Merkezi": [
+        {
+          "id": "AT_322",
+          "city": "Tekirdag",
+          "freq": 439.425
+        }
+      ],
+      "TRAC": [
+        {
+          "id": "AT_511",
+          "city": "Afyon",
+          "freq": 439.275
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Trac Nazilli Karadağ",
+    "variants": [
+      "NAZILLI MRK",
+      "TRAC Nazilli Karadağ"
+    ],
+    "records": {
+      "NAZILLI MRK": [
+        {
+          "id": "AT_52",
+          "city": "Aydin",
+          "freq": 439.15
+        }
+      ],
+      "TRAC Nazilli Karadağ": [
+        {
+          "id": "AT_53",
+          "city": "Aydin",
+          "freq": 439.2
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Uludag Bakacak",
+    "variants": [
+      "ULUDAG BAKACAK",
+      "Bakacak"
+    ],
+    "records": {
+      "ULUDAG BAKACAK": [
+        {
+          "id": "AT_83",
+          "city": "Bursa",
+          "freq": 145.65
+        }
+      ],
+      "Bakacak": [
+        {
+          "id": "AT_86",
+          "city": "Bursa",
+          "freq": 145.725
+        },
+        {
+          "id": "AT_89",
+          "city": "Bursa",
+          "freq": 145.775
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Yavca / Merat",
+    "variants": [
+      "Yavca / Merat",
+      "YAVCA"
+    ],
+    "records": {
+      "Yavca / Merat": [
+        {
+          "id": "AT_163",
+          "city": "Mersin",
+          "freq": 145.6
+        }
+      ],
+      "YAVCA": [
+        {
+          "id": "AT_174",
+          "city": "Mersin",
+          "freq": 144.8
+        },
+        {
+          "id": "AK_191",
+          "city": "Mersin",
+          "freq": 144800.0
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Ym2Kdb-R",
+    "variants": [
+      "YM2KDB-R",
+      "YM2KDZ-R"
+    ],
+    "records": {
+      "YM2KDB-R": [
+        {
+          "id": "AT_233",
+          "city": "Kocaeli",
+          "freq": 439.375
+        },
+        {
+          "id": "AK_248",
+          "city": "Kocaeli Karamursel",
+          "freq": 439.375
+        }
+      ],
+      "YM2KDZ-R": [
+        {
+          "id": "AT_386",
+          "city": "Duzce",
+          "freq": 145.75
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Ym2Ky-R",
+    "variants": [
+      "YM2KY-R",
+      "YM2KS-R",
+      "YM2KV-R",
+      "YM2KO-R"
+    ],
+    "records": {
+      "YM2KY-R": [
+        {
+          "id": "AT_300",
+          "city": "Sakarya",
+          "freq": 145.6
+        }
+      ],
+      "YM2KS-R": [
+        {
+          "id": "AT_301",
+          "city": "Sakarya",
+          "freq": 145.775
+        }
+      ],
+      "YM2KV-R": [
+        {
+          "id": "AT_362",
+          "city": "Bartin",
+          "freq": 144.95
+        }
+      ],
+      "YM2KO-R": [
+        {
+          "id": "AT_373",
+          "city": "Karabuk",
+          "freq": 145.7
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Ym7Kk-R",
+    "variants": [
+      "YM7KK-R",
+      "YM7KA-R"
+    ],
+    "records": {
+      "YM7KK-R": [
+        {
+          "id": "AT_147",
+          "city": "Giresun",
+          "freq": 439.4
+        }
+      ],
+      "YM7KA-R": [
+        {
+          "id": "AT_332",
+          "city": "Trabzon",
+          "freq": 145.625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Yoroztepe Trac",
+    "variants": [
+      "Yoroztepe TRAC",
+      "YOROZ TEPE"
+    ],
+    "records": {
+      "Yoroztepe TRAC": [
+        {
+          "id": "AT_284",
+          "city": "Ordu",
+          "freq": 439.25
+        },
+        {
+          "id": "AT_518",
+          "city": "Ordu",
+          "freq": 439.225
+        }
+      ],
+      "YOROZ TEPE": [
+        {
+          "id": "AT_286",
+          "city": "Ordu",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Yumru Tepesi / Alanya Akrad",
+    "variants": [
+      "Yumru Tepesi / Alanya AKRAD",
+      "Yumru Tepe",
+      "Şehir Merkezi AKRAD"
+    ],
+    "records": {
+      "Yumru Tepesi / Alanya AKRAD": [
+        {
+          "id": "AT_34",
+          "city": "Antalya",
+          "freq": 145.6125
+        }
+      ],
+      "Yumru Tepe": [
+        {
+          "id": "AT_37",
+          "city": "Antalya",
+          "freq": 439.225
+        }
+      ],
+      "Şehir Merkezi AKRAD": [
+        {
+          "id": "AT_64",
+          "city": "Balikesir",
+          "freq": 439.1625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Zeytinburnu Digital - Atro",
+    "variants": [
+      "Zeytinburnu",
+      "Zeytinburnu Digital - Atro",
+      "Zeytinburnu - Tango Alfa"
+    ],
+    "records": {
+      "Zeytinburnu": [
+        {
+          "id": "AT_188",
+          "city": "Istanbul",
+          "freq": 439.4
+        }
+      ],
+      "Zeytinburnu Digital - Atro": [
+        {
+          "id": "AT_396",
+          "city": "Istanbul",
+          "freq": 439.275
+        }
+      ],
+      "Zeytinburnu - Tango Alfa": [
+        {
+          "id": "AT_410",
+          "city": "Istanbul",
+          "freq": 439.175
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Çaldağ",
+    "variants": [
+      "Çaldağ",
+      "CALDAG"
+    ],
+    "records": {
+      "Çaldağ": [
+        {
+          "id": "AT_151",
+          "city": "Giresun",
+          "freq": 144.8
+        }
+      ],
+      "CALDAG": [
+        {
+          "id": "AK_163",
+          "city": "Giresun/Espiye",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Çamyayla Tepesi",
+    "variants": [
+      "Çamyayla Tepesi",
+      "Çamyayla",
+      "YAYLA DG",
+      "Kaşyayla Tepesi"
+    ],
+    "records": {
+      "Çamyayla Tepesi": [
+        {
+          "id": "AT_69",
+          "city": "Bilecik",
+          "freq": 145.725
+        },
+        {
+          "id": "AT_71",
+          "city": "Bilecik",
+          "freq": 145.75
+        },
+        {
+          "id": "AT_72",
+          "city": "Bilecik",
+          "freq": 439.15
+        }
+      ],
+      "Çamyayla": [
+        {
+          "id": "AT_73",
+          "city": "Bilecik",
+          "freq": 439.425
+        }
+      ],
+      "YAYLA DG": [
+        {
+          "id": "AT_157",
+          "city": "Hatay",
+          "freq": 439.375
+        }
+      ],
+      "Kaşyayla Tepesi": [
+        {
+          "id": "AT_307",
+          "city": "Samsun",
+          "freq": 145.675
+        },
+        {
+          "id": "AT_308",
+          "city": "Samsun",
+          "freq": 145.725
+        },
+        {
+          "id": "AT_309",
+          "city": "Samsun",
+          "freq": 439.2
+        },
+        {
+          "id": "AT_310",
+          "city": "Samsun",
+          "freq": 439.275
+        },
+        {
+          "id": "AT_311",
+          "city": "Samsun",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_528",
+          "city": "Samsun",
+          "freq": 439.3
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Çatak Tepesi",
+    "variants": [
+      "Çatak Tepe",
+      "Çatak Tepesi",
+      "Şehir Merkezi ATAK"
+    ],
+    "records": {
+      "Çatak Tepe": [
+        {
+          "id": "AT_110",
+          "city": "Corum",
+          "freq": 439.275
+        }
+      ],
+      "Çatak Tepesi": [
+        {
+          "id": "AT_113",
+          "city": "Corum",
+          "freq": 144.8
+        }
+      ],
+      "Şehir Merkezi ATAK": [
+        {
+          "id": "AT_509",
+          "city": "Izmir",
+          "freq": 439.2625
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Çorum Kösedağ",
+    "variants": [
+      "Köse Dağı",
+      "Çorum Kösedağ"
+    ],
+    "records": {
+      "Köse Dağı": [
+        {
+          "id": "AT_111",
+          "city": "Corum",
+          "freq": 439.375
+        }
+      ],
+      "Çorum Kösedağ": [
+        {
+          "id": "AT_494",
+          "city": "Corum",
+          "freq": 439.375
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Çukurova Curad - Süleyman Demirel - Dijital Nxdn",
+    "variants": [
+      "Çukurova CURAD - Şehir Merkezi",
+      "Çukurova CURAD - Süleyman Demirel",
+      "Çukurova CURAD - Süleyman Demirel - Dijital NXDN"
+    ],
+    "records": {
+      "Çukurova CURAD - Şehir Merkezi": [
+        {
+          "id": "AT_2",
+          "city": "Adana",
+          "freq": 145.7
+        }
+      ],
+      "Çukurova CURAD - Süleyman Demirel": [
+        {
+          "id": "AT_5",
+          "city": "Adana",
+          "freq": 439.275
+        }
+      ],
+      "Çukurova CURAD - Süleyman Demirel - Dijital NXDN": [
+        {
+          "id": "AT_6",
+          "city": "Adana",
+          "freq": 439.2875
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "İkisivri (Trac)",
+    "variants": [
+      "İkisivri (TRAC)",
+      "SIVRI TP"
+    ],
+    "records": {
+      "İkisivri (TRAC)": [
+        {
+          "id": "AT_77",
+          "city": "Bolu",
+          "freq": 145.725
+        }
+      ],
+      "SIVRI TP": [
+        {
+          "id": "AT_374",
+          "city": "Karabuk",
+          "freq": 144.8
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "İzmir Tafhad",
+    "variants": [
+      "TAFHAD",
+      "İzmir TAFHAD"
+    ],
+    "records": {
+      "TAFHAD": [
+        {
+          "id": "AT_456",
+          "city": "Izmir",
+          "freq": 439.3125
+        }
+      ],
+      "İzmir TAFHAD": [
+        {
+          "id": "AT_522",
+          "city": "Izmir",
+          "freq": 145.7
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "İğdecik-Derbent Üşümüş Tepesi",
+    "variants": [
+      "İğdecik-Derbent Üşümüş Tepesi",
+      "DERBENT"
+    ],
+    "records": {
+      "İğdecik-Derbent Üşümüş Tepesi": [
+        {
+          "id": "AT_254",
+          "city": "Manisa",
+          "freq": 439.175
+        }
+      ],
+      "DERBENT": [
+        {
+          "id": "AT_339",
+          "city": "Usak",
+          "freq": 145.675
+        }
+      ]
+    }
+  },
+  {
+    "canonical": "Şehir Merkezi",
+    "variants": [
+      "Şehir Merkezi",
+      "S.MERKEZI",
+      "MERKEZ",
+      "Merkez"
+    ],
+    "records": {
+      "Şehir Merkezi": [
+        {
+          "id": "AT_4",
+          "city": "Adana",
+          "freq": 439.225
+        },
+        {
+          "id": "AT_12",
+          "city": "Adana",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_16",
+          "city": "Afyon",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_25",
+          "city": "Ankara",
+          "freq": 145.775
+        },
+        {
+          "id": "AT_43",
+          "city": "Antalya",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_47",
+          "city": "Artvin",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_54",
+          "city": "Aydin",
+          "freq": 439.225
+        },
+        {
+          "id": "AT_92",
+          "city": "Bursa",
+          "freq": 439.375
+        },
+        {
+          "id": "AT_106",
+          "city": "Cankiri",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_122",
+          "city": "Edirne",
+          "freq": 145.775
+        },
+        {
+          "id": "AT_130",
+          "city": "Erzincan",
+          "freq": 439.2
+        },
+        {
+          "id": "AT_133",
+          "city": "Eskisehir",
+          "freq": 145.6
+        },
+        {
+          "id": "AT_142",
+          "city": "Giresun",
+          "freq": 145.725
+        },
+        {
+          "id": "AT_145",
+          "city": "Giresun",
+          "freq": 439.4
+        },
+        {
+          "id": "AT_149",
+          "city": "Giresun",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_248",
+          "city": "Kutahya",
+          "freq": 439.25
+        },
+        {
+          "id": "AT_267",
+          "city": "Kahramanmaras",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_323",
+          "city": "Tekirdag",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_361",
+          "city": "Bartin",
+          "freq": 439.2
+        },
+        {
+          "id": "AT_377",
+          "city": "Osmaniye",
+          "freq": 439.2
+        },
+        {
+          "id": "AT_378",
+          "city": "Osmaniye",
+          "freq": 439.375
+        },
+        {
+          "id": "AT_440",
+          "city": "Ankara",
+          "freq": 439.425
+        },
+        {
+          "id": "AT_521",
+          "city": "Karabuk",
+          "freq": 145.6
+        }
+      ],
+      "S.MERKEZI": [
+        {
+          "id": "AT_341",
+          "city": "Usak",
+          "freq": 439.15
+        }
+      ],
+      "MERKEZ": [
+        {
+          "id": "AT_363",
+          "city": "Bartin",
+          "freq": 144.8
+        }
+      ],
+      "Merkez": [
+        {
+          "id": "AT_366",
+          "city": "Yalova",
+          "freq": 144.8
+        },
+        {
+          "id": "AT_416",
+          "city": "Yozgat",
+          "freq": 439.15
+        },
+        {
+          "id": "AT_466",
+          "city": "Adiyaman",
+          "freq": 439.275
+        },
+        {
+          "id": "AT_485",
+          "city": "Izmir",
+          "freq": 439.2875
+        }
+      ]
+    }
+  }
+]
