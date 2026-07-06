@@ -1,10 +1,10 @@
 {
-  "updated": "2026-04-08",
-  "count": 571,
+  "updated": "2026-07-06",
+  "count": 523,
   "repeaters": [
     {
       "id": "AT_1",
-      "callsign": "YM5KAD",
+      "callsign": "",
       "city": "Adana",
       "district": null,
       "location": "Rüzgarlı Tepe",
@@ -22,8 +22,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM77PB"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_2",
@@ -45,7 +44,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_3",
@@ -67,8 +66,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_4",
@@ -90,11 +88,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_5",
-      "callsign": "YM5KAD",
+      "callsign": "",
       "city": "Adana",
       "district": null,
       "location": "Çukurova CURAD - Süleyman Demirel",
@@ -112,12 +110,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM77PA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_6",
-      "callsign": "YM5KAD",
+      "callsign": "",
       "city": "Adana",
       "district": null,
       "location": "Çukurova CURAD - Süleyman Demirel - Dijital NXDN",
@@ -135,8 +132,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM77PB"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_7",
@@ -158,11 +154,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_10",
-      "callsign": "YM5ADN",
+      "callsign": "",
       "city": "Adana",
       "district": null,
       "location": "Rüzgarlı Tepesi",
@@ -180,8 +176,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_11",
@@ -203,7 +198,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_12",
@@ -225,7 +220,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_13",
@@ -247,8 +242,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_14",
@@ -270,12 +264,11 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_15",
-      "callsign": "TA4AKE-L",
+      "callsign": "",
       "city": "Afyonkarahisar",
       "district": null,
       "location": "TA4AKE-L",
@@ -293,8 +286,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_16",
@@ -316,7 +308,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_17",
@@ -338,8 +330,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_18",
@@ -361,8 +352,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_19",
@@ -384,8 +374,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN70RW"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_20",
@@ -407,11 +396,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_21",
-      "callsign": "TA6ATA-L",
+      "callsign": "",
       "city": "Amasya",
       "district": null,
       "location": "Tavşan Dağı",
@@ -429,8 +418,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_22",
@@ -452,8 +440,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "------"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_23",
@@ -475,8 +462,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_24",
@@ -498,8 +484,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM69LT"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_25",
@@ -521,8 +506,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_26",
@@ -544,8 +528,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM69JU"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_27",
@@ -567,8 +550,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_28",
@@ -590,12 +572,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM69LT"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_29",
-      "callsign": "TA2DQ-L",
+      "callsign": "",
       "city": "Ankara",
       "district": null,
       "location": "TA2DQ-L",
@@ -613,12 +594,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_30",
-      "callsign": "TA2DQ-L",
+      "callsign": "",
       "city": "Ankara",
       "district": null,
       "location": "TA2DQ-L",
@@ -636,12 +616,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_31",
-      "callsign": "TB2NJL-L",
+      "callsign": "",
       "city": "Ankara",
       "district": null,
       "location": "TB2NJL-L",
@@ -659,12 +638,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_32",
-      "callsign": "YM2KA-2",
+      "callsign": "",
       "city": "Ankara",
       "district": null,
       "location": "Elmadağ",
@@ -682,8 +660,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_33",
@@ -705,7 +682,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_34",
@@ -727,12 +704,11 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM66BM"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_35",
-      "callsign": "YM4KC-R",
+      "callsign": "",
       "city": "Antalya",
       "district": null,
       "location": "Sarıçınar",
@@ -750,8 +726,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_36",
@@ -773,8 +748,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_37",
@@ -796,8 +770,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM66AN"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_38",
@@ -819,8 +792,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_39",
@@ -842,8 +814,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_40",
@@ -865,8 +836,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_41",
@@ -888,11 +858,11 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_42",
-      "callsign": "YM4KA",
+      "callsign": "",
       "city": "Antalya",
       "district": null,
       "location": "Tünek Tepesi",
@@ -910,8 +880,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_43",
@@ -933,7 +902,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_44",
@@ -955,12 +924,11 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_45",
-      "callsign": "TA9AF-L",
+      "callsign": "",
       "city": "Artvin",
       "district": null,
       "location": "TA9AF-L",
@@ -978,12 +946,11 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_46",
-      "callsign": "YM9KRT",
+      "callsign": "",
       "city": "Artvin",
       "district": null,
       "location": "Yusufeli Dağı",
@@ -1001,8 +968,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_47",
@@ -1024,7 +990,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_48",
@@ -1046,7 +1012,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_49",
@@ -1068,7 +1034,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_50",
@@ -1090,8 +1056,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_51",
@@ -1113,8 +1078,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_52",
@@ -1136,8 +1100,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM47DV"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_53",
@@ -1159,8 +1122,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM47GW"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_54",
@@ -1182,8 +1144,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_55",
@@ -1205,7 +1166,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_57",
@@ -1227,8 +1188,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_59",
@@ -1250,12 +1210,11 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_60",
-      "callsign": "YM4DIL",
+      "callsign": "",
       "city": "Aydın",
       "district": null,
       "location": "Dilek Tepesi",
@@ -1273,8 +1232,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM37OP"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_61",
@@ -1296,8 +1254,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_62",
@@ -1319,8 +1276,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KMXXXX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_63",
@@ -1342,7 +1298,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_64",
@@ -1364,8 +1320,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KOXXXX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_65",
@@ -1387,19 +1342,19 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_66",
       "callsign": "",
       "city": "Balıkesir",
-      "district": null,
+      "district": "Balya",
       "location": "Şehir Merkezi TRAC",
       "frequency": 439.375,
       "offset": -7.6,
-      "tone": 77.0,
+      "tone": 250.3,
       "band": "UHF",
-      "mode": "FM",
+      "mode": "C4FM",
       "status": true,
       "licensed": true,
       "power_w": 5,
@@ -1409,12 +1364,11 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM39WP"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_67",
-      "callsign": "YM3KD",
+      "callsign": "",
       "city": "Balıkesir",
       "district": "Gönen",
       "location": "Gönen",
@@ -1432,8 +1386,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_68",
@@ -1455,7 +1408,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_69",
@@ -1477,8 +1430,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_70",
@@ -1500,7 +1452,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_71",
@@ -1522,8 +1474,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_72",
@@ -1545,8 +1496,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_73",
@@ -1568,12 +1518,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "XX35XX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_74",
-      "callsign": "YM2KBO",
+      "callsign": "",
       "city": "Bilecik",
       "district": null,
       "location": "Çamlıca Tepesi",
@@ -1591,12 +1540,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_75",
-      "callsign": "TA7OTX / 9-L",
+      "callsign": "",
       "city": "Bitlis",
       "district": null,
       "location": "TA7OTX / 9-L",
@@ -1614,8 +1562,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_76",
@@ -1637,7 +1584,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_77",
@@ -1659,7 +1606,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_78",
@@ -1681,8 +1628,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_79",
@@ -1704,7 +1650,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_80",
@@ -1726,11 +1672,11 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_81",
-      "callsign": "YM4BUR",
+      "callsign": "",
       "city": "Burdur",
       "district": null,
       "location": "Eğlence Tepe",
@@ -1748,8 +1694,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_82",
@@ -1771,7 +1716,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_83",
@@ -1793,8 +1738,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN40ND"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_84",
@@ -1816,8 +1760,7 @@
       "coord_approx": true,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_85",
@@ -1839,8 +1782,7 @@
       "coord_approx": true,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_86",
@@ -1862,8 +1804,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_87",
@@ -1885,8 +1826,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN40NC"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_88",
@@ -1908,8 +1848,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_89",
@@ -1931,8 +1870,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_90",
@@ -1954,8 +1892,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN40MI"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_91",
@@ -1977,8 +1914,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_92",
@@ -2000,7 +1936,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_93",
@@ -2022,8 +1958,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_94",
@@ -2045,8 +1980,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_95",
@@ -2068,11 +2002,11 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_96",
-      "callsign": "YM3KBU",
+      "callsign": "",
       "city": "Bursa",
       "district": null,
       "location": "Cennetkaya",
@@ -2090,8 +2024,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN40MI"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_97",
@@ -2113,7 +2046,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_98",
@@ -2135,8 +2068,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_99",
@@ -2158,8 +2090,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_100",
@@ -2181,7 +2112,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_101",
@@ -2203,8 +2134,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_102",
@@ -2226,7 +2156,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_103",
@@ -2248,12 +2178,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_104",
-      "callsign": "TA6AEU-L",
+      "callsign": "",
       "city": "Çankırı",
       "district": null,
       "location": "TA6AEU-L",
@@ -2271,12 +2200,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN60TO"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_105",
-      "callsign": "YM6KCN",
+      "callsign": "",
       "city": "Çankırı",
       "district": null,
       "location": "SEHIR MRK",
@@ -2294,8 +2222,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN60TO"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_106",
@@ -2317,7 +2244,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_107",
@@ -2339,8 +2266,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_108",
@@ -2362,8 +2288,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_109",
@@ -2385,8 +2310,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_110",
@@ -2408,8 +2332,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_111",
@@ -2431,12 +2354,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_112",
-      "callsign": "TA6AYR-L",
+      "callsign": "",
       "city": "Çorum",
       "district": null,
       "location": "TA6AYR-L",
@@ -2454,12 +2376,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_113",
-      "callsign": "YM6KCR",
+      "callsign": "",
       "city": "Çorum",
       "district": null,
       "location": "Çatak Tepesi",
@@ -2477,8 +2398,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_114",
@@ -2500,7 +2420,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_115",
@@ -2522,8 +2442,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM47PK"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_116",
@@ -2545,8 +2464,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM47PQ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_117",
@@ -2568,8 +2486,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM47PQ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_118",
@@ -2591,7 +2508,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_119",
@@ -2613,7 +2530,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_120",
@@ -2635,8 +2552,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_121",
@@ -2658,8 +2574,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_122",
@@ -2681,7 +2596,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_123",
@@ -2703,8 +2618,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_124",
@@ -2726,8 +2640,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_125",
@@ -2749,8 +2662,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_126",
@@ -2772,11 +2684,11 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_127",
-      "callsign": "YM8KEI",
+      "callsign": "",
       "city": "Elazığ",
       "district": null,
       "location": "SEHIR MRK",
@@ -2794,8 +2706,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM98OQ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_128",
@@ -2817,8 +2728,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_129",
@@ -2840,8 +2750,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_130",
@@ -2863,12 +2772,11 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_131",
-      "callsign": "YM7ERC",
+      "callsign": "",
       "city": "Erzincan",
       "district": null,
       "location": "Kara Dağ",
@@ -2886,8 +2794,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_132",
@@ -2909,8 +2816,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_133",
@@ -2932,8 +2838,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_134",
@@ -2955,8 +2860,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_135",
@@ -2978,12 +2882,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_136",
-      "callsign": "YM2ESK",
+      "callsign": "",
       "city": "Eskişehir",
       "district": null,
       "location": "Boz Tepe",
@@ -3001,8 +2904,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_137",
@@ -3024,8 +2926,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_138",
@@ -3047,14 +2948,13 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_139",
       "callsign": "",
       "city": "Gaziantep",
-      "district": null,
+      "district": "Şehitkamil",
       "location": "Dülükbaba Tepesi",
       "frequency": 439.25,
       "offset": -7.6,
@@ -3065,13 +2965,12 @@
       "licensed": false,
       "power_w": 5,
       "altitude_m": 1150,
-      "lat": 37.128,
-      "lon": 37.345,
+      "lat": 37.12268413,
+      "lon": 37.33321868,
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_140",
@@ -3093,7 +2992,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_141",
@@ -3115,8 +3014,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN90BM"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_142",
@@ -3138,8 +3036,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_143",
@@ -3161,7 +3058,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_144",
@@ -3183,7 +3080,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_145",
@@ -3205,8 +3102,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_146",
@@ -3228,7 +3124,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_147",
@@ -3250,11 +3146,11 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_148",
-      "callsign": "YM7KSK",
+      "callsign": "",
       "city": "Giresun",
       "district": null,
       "location": "Taflan Tepesi",
@@ -3272,8 +3168,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_149",
@@ -3295,7 +3190,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_150",
@@ -3317,7 +3212,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_151",
@@ -3339,7 +3234,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_152",
@@ -3361,7 +3256,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_153",
@@ -3383,8 +3278,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_154",
@@ -3406,8 +3300,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM86CM"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_155",
@@ -3429,8 +3322,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM86DM"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_156",
@@ -3452,8 +3344,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM86BE"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_157",
@@ -3475,12 +3366,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM86BB"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_158",
-      "callsign": "YM5KDA",
+      "callsign": "",
       "city": "Hatay",
       "district": null,
       "location": "Yayladağ / Ziyaret Tepesi",
@@ -3498,8 +3388,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_159",
@@ -3521,8 +3410,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_160",
@@ -3544,7 +3432,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_161",
@@ -3566,12 +3454,11 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_162",
-      "callsign": "YM4KAY",
+      "callsign": "",
       "city": "Isparta",
       "district": null,
       "location": "Davraz Dağı",
@@ -3589,8 +3476,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_163",
@@ -3612,8 +3498,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM76ES"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_164",
@@ -3635,8 +3520,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM66XI"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_165",
@@ -3658,8 +3542,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM76GU"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_166",
@@ -3681,8 +3564,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM76FU"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_167",
@@ -3704,8 +3586,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM76XX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_168",
@@ -3727,8 +3608,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM76AK"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_169",
@@ -3750,12 +3630,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM76GU"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_170",
-      "callsign": "TB5SIM-L",
+      "callsign": "",
       "city": "Mersin",
       "district": null,
       "location": "TB5SIM-L",
@@ -3773,12 +3652,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM66XJ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_171",
-      "callsign": "TA5SBG-L",
+      "callsign": "",
       "city": "Mersin",
       "district": null,
       "location": "TA5SBG-L",
@@ -3796,12 +3674,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM66XJ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_172",
-      "callsign": "YM5KSA",
+      "callsign": "",
       "city": "Mersin",
       "district": null,
       "location": "SORGUN",
@@ -3819,8 +3696,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM76WH"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_173",
@@ -3842,7 +3718,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_174",
@@ -3864,7 +3740,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_175",
@@ -3886,7 +3762,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_176",
@@ -3908,7 +3784,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_177",
@@ -3930,8 +3806,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_178",
@@ -3953,8 +3828,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_179",
@@ -3976,8 +3850,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN41HA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_180",
@@ -3999,8 +3872,7 @@
       "coord_approx": false,
       "ta_region": "TA0",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN40IX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_181",
@@ -4022,8 +3894,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_182",
@@ -4045,8 +3916,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_183",
@@ -4068,8 +3938,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN41MA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_184",
@@ -4091,8 +3960,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_185",
@@ -4114,8 +3982,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN41HA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_186",
@@ -4137,8 +4004,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_187",
@@ -4160,7 +4026,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_188",
@@ -4182,12 +4048,11 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_189",
-      "callsign": "TA2SV-L",
+      "callsign": "",
       "city": "İstanbul",
       "district": null,
       "location": "TA1ABI-L",
@@ -4205,8 +4070,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_190",
@@ -4228,11 +4092,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_191",
-      "callsign": "TA1FL-L",
+      "callsign": "",
       "city": "İstanbul",
       "district": null,
       "location": "TA1FL-L",
@@ -4250,12 +4114,11 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_192",
-      "callsign": "TA1ABI-R",
+      "callsign": "",
       "city": "İstanbul",
       "district": null,
       "location": "TA1ABI-R",
@@ -4273,12 +4136,11 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_193",
-      "callsign": "TA1QQ",
+      "callsign": "",
       "city": "İstanbul",
       "district": null,
       "location": "İşkule",
@@ -4296,8 +4158,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN41IA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_194",
@@ -4319,7 +4180,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_195",
@@ -4341,7 +4202,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_196",
@@ -4363,7 +4224,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_197",
@@ -4385,8 +4246,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38NL"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_198",
@@ -4408,8 +4268,7 @@
       "coord_approx": true,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_199",
@@ -4431,8 +4290,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38MH"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_200",
@@ -4454,8 +4312,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38OM"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_201",
@@ -4477,8 +4334,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38MH"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_202",
@@ -4500,7 +4356,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_203",
@@ -4522,8 +4378,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38OM"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_204",
@@ -4545,8 +4400,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38NL"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_205",
@@ -4568,8 +4422,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM39MD"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_206",
@@ -4591,8 +4444,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM48BH"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_207",
@@ -4614,8 +4466,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38NL"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_208",
@@ -4637,8 +4488,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38NL"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_209",
@@ -4660,12 +4510,11 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38GN"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_210",
-      "callsign": "TA3GL-L",
+      "callsign": "",
       "city": "İzmir",
       "district": null,
       "location": "TA3GL-L",
@@ -4683,8 +4532,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_211",
@@ -4706,11 +4554,11 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_212",
-      "callsign": "YM3IZM-1",
+      "callsign": "",
       "city": "İzmir",
       "district": null,
       "location": "CATALKAYA",
@@ -4728,8 +4576,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM38GN"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_213",
@@ -4751,7 +4598,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_214",
@@ -4773,11 +4620,11 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_215",
-      "callsign": "YM9KRS",
+      "callsign": "",
       "city": "Kars",
       "district": null,
       "location": "Toptepe Dağı",
@@ -4795,12 +4642,11 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_216",
-      "callsign": "TA6UMI-L",
+      "callsign": "",
       "city": "Kastamonu",
       "district": null,
       "location": "TA6UMI-L",
@@ -4818,12 +4664,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_217",
-      "callsign": "TA6UMI-L",
+      "callsign": "",
       "city": "Kastamonu",
       "district": null,
       "location": "TA6UMI-L ",
@@ -4841,8 +4686,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_218",
@@ -4864,8 +4708,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_219",
@@ -4887,8 +4730,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_220",
@@ -4910,12 +4752,11 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_221",
-      "callsign": "YM7KAY",
+      "callsign": "",
       "city": "Kayseri",
       "district": null,
       "location": "Ali Dağı",
@@ -4933,8 +4774,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_222",
@@ -4956,7 +4796,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_223",
@@ -4978,12 +4818,11 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN31OR"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_224",
-      "callsign": "YM1EB",
+      "callsign": "",
       "city": "Kırklareli",
       "district": null,
       "location": "Mahya Dağı",
@@ -5001,8 +4840,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_225",
@@ -5024,7 +4862,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_226",
@@ -5046,7 +4884,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_227",
@@ -5068,7 +4906,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_228",
@@ -5090,7 +4928,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_229",
@@ -5112,7 +4950,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_230",
@@ -5134,7 +4972,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_231",
@@ -5156,7 +4994,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_232",
@@ -5178,7 +5016,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_233",
@@ -5200,7 +5038,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_234",
@@ -5222,7 +5060,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_235",
@@ -5244,7 +5082,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_236",
@@ -5266,7 +5104,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_237",
@@ -5288,8 +5126,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM67EX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_238",
@@ -5311,8 +5148,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_239",
@@ -5334,7 +5170,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_240",
@@ -5356,8 +5192,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_241",
@@ -5379,8 +5214,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM67EX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_242",
@@ -5402,8 +5236,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM69KE"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_243",
@@ -5425,12 +5258,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_244",
-      "callsign": "YM5KON",
+      "callsign": "",
       "city": "Konya",
       "district": null,
       "location": "Aydos",
@@ -5448,8 +5280,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_245",
@@ -5471,7 +5302,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_246",
@@ -5493,8 +5324,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_247",
@@ -5516,8 +5346,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_248",
@@ -5539,8 +5368,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_249",
@@ -5562,7 +5390,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_250",
@@ -5584,8 +5412,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM98DI"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_251",
@@ -5607,8 +5434,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM98DI"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_252",
@@ -5630,8 +5456,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_253",
@@ -5653,8 +5478,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_254",
@@ -5676,8 +5500,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_255",
@@ -5699,7 +5522,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_256",
@@ -5721,8 +5544,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_257",
@@ -5744,11 +5566,11 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_258",
-      "callsign": "TB3BG - L",
+      "callsign": "",
       "city": "Manisa",
       "district": null,
       "location": "TB3BG - L",
@@ -5766,12 +5588,11 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_259",
-      "callsign": "YM3KAM",
+      "callsign": "",
       "city": "Manisa",
       "district": null,
       "location": "Spil Dağı",
@@ -5789,8 +5610,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_260",
@@ -5812,7 +5632,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_261",
@@ -5834,7 +5654,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_262",
@@ -5856,7 +5676,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_263",
@@ -5878,7 +5698,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_264",
@@ -5900,7 +5720,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_265",
@@ -5922,7 +5742,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_266",
@@ -5944,7 +5764,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_267",
@@ -5966,7 +5786,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_268",
@@ -5988,7 +5808,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_269",
@@ -6010,7 +5830,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_270",
@@ -6032,8 +5852,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM47FE"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_271",
@@ -6055,7 +5874,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_272",
@@ -6077,7 +5896,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_273",
@@ -6099,7 +5918,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_274",
@@ -6121,7 +5940,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_275",
@@ -6143,7 +5962,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_276",
@@ -6165,7 +5984,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_277",
@@ -6187,7 +6006,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_278",
@@ -6209,7 +6028,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_279",
@@ -6231,7 +6050,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_280",
@@ -6253,8 +6072,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_281",
@@ -6276,8 +6094,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_282",
@@ -6299,7 +6116,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_283",
@@ -6321,8 +6138,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN81UE"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_284",
@@ -6344,12 +6160,11 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN90AW"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_285",
-      "callsign": "YM7KOR",
+      "callsign": "",
       "city": "Ordu",
       "district": null,
       "location": "SEHIR MRK",
@@ -6367,8 +6182,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN90AW"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_286",
@@ -6390,7 +6204,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_287",
@@ -6412,7 +6226,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_288",
@@ -6434,7 +6248,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_289",
@@ -6456,8 +6270,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_290",
@@ -6479,12 +6292,11 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_291",
-      "callsign": "YM9KRZ",
+      "callsign": "",
       "city": "Rize",
       "district": null,
       "location": "Isırlık Tepesi",
@@ -6502,8 +6314,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_292",
@@ -6525,8 +6336,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_293",
@@ -6548,8 +6358,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_294",
@@ -6571,8 +6380,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_295",
@@ -6594,8 +6402,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_296",
@@ -6617,8 +6424,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN50DS"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_297",
@@ -6640,8 +6446,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN50DS"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_298",
@@ -6663,15 +6468,14 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_299",
       "callsign": "",
       "city": "Sakarya",
-      "district": null,
-      "location": "Serdivan",
+      "district": "Serdivan",
+      "location": "Paraşüt tepe",
       "frequency": 439.375,
       "offset": -7.6,
       "tone": 123.0,
@@ -6681,13 +6485,12 @@
       "licensed": false,
       "power_w": null,
       "altitude_m": 400,
-      "lat": 40.767,
-      "lon": 30.33,
+      "lat": 40.7669099,
+      "lon": 30.32925446,
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_300",
@@ -6709,7 +6512,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_301",
@@ -6731,7 +6534,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_302",
@@ -6753,12 +6556,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_303",
-      "callsign": "YM2KGY",
+      "callsign": "",
       "city": "Sakarya",
       "district": null,
       "location": "Kızılcık Köyü",
@@ -6776,8 +6578,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_304",
@@ -6799,7 +6600,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_305",
@@ -6821,11 +6622,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_306",
-      "callsign": "YM2KST",
+      "callsign": "",
       "city": "Sakarya",
       "district": null,
       "location": "Sivritepe Mevkii / Soğucak Yaylası",
@@ -6843,8 +6644,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_307",
@@ -6866,8 +6666,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_308",
@@ -6889,8 +6688,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_309",
@@ -6912,8 +6710,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_310",
@@ -6935,12 +6732,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_311",
-      "callsign": "YM6SMS",
+      "callsign": "",
       "city": "Samsun",
       "district": null,
       "location": "Kaşyayla Tepesi",
@@ -6958,8 +6754,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_312",
@@ -6981,7 +6776,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_313",
@@ -7003,8 +6798,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_314",
@@ -7026,12 +6820,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN72NA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_315",
-      "callsign": "YM6KSI",
+      "callsign": "",
       "city": "Sinop",
       "district": null,
       "location": "Korucuk Köyü",
@@ -7049,8 +6842,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN72NA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_316",
@@ -7072,7 +6864,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_317",
@@ -7094,7 +6886,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_318",
@@ -7116,8 +6908,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM89LS"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_319",
@@ -7139,8 +6930,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM89LS"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_320",
@@ -7162,8 +6952,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_321",
@@ -7185,8 +6974,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN31VD"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_322",
@@ -7208,12 +6996,11 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_323",
-      "callsign": "YM1KT",
+      "callsign": "",
       "city": "Tekirdağ",
       "district": null,
       "location": "Şehir Merkezi",
@@ -7231,8 +7018,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_324",
@@ -7254,7 +7040,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_325",
@@ -7276,8 +7062,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN80GH"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_326",
@@ -7299,8 +7084,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN80GQ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_327",
@@ -7322,8 +7106,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN80GH"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_328",
@@ -7345,8 +7128,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_329",
@@ -7368,8 +7150,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_330",
@@ -7391,15 +7172,14 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_331",
       "callsign": "",
       "city": "Trabzon",
       "district": "Beşikdüzü",
-      "location": "Dağlıca Beşikdüzü",
+      "location": "Dağlıca tepesi",
       "frequency": 439.2,
       "offset": -7.6,
       "tone": 88.5,
@@ -7409,13 +7189,12 @@
       "licensed": false,
       "power_w": 0,
       "altitude_m": 1404,
-      "lat": 40.9695,
-      "lon": 39.4321,
+      "lat": 40.97351399,
+      "lon": 39.23487168,
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_332",
@@ -7437,11 +7216,11 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_333",
-      "callsign": "YM7ZIG",
+      "callsign": "",
       "city": "Trabzon",
       "district": null,
       "location": "Hıdırnebi Tepesi",
@@ -7459,8 +7238,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_334",
@@ -7482,7 +7260,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_335",
@@ -7504,7 +7282,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_336",
@@ -7526,7 +7304,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_337",
@@ -7548,7 +7326,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_338",
@@ -7570,7 +7348,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_339",
@@ -7592,8 +7370,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM48OS"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_340",
@@ -7615,8 +7392,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_341",
@@ -7638,8 +7414,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM48QQ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_342",
@@ -7661,8 +7436,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_343",
@@ -7684,8 +7458,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_344",
@@ -7707,8 +7480,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_345",
@@ -7730,7 +7502,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_346",
@@ -7752,8 +7524,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61BK"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_347",
@@ -7775,7 +7546,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_348",
@@ -7797,14 +7568,13 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_349",
       "callsign": "",
       "city": "Zonguldak",
-      "district": null,
+      "district": "Merkez",
       "location": "On Temmuz",
       "frequency": 439.4,
       "offset": -7.6,
@@ -7815,13 +7585,12 @@
       "licensed": false,
       "power_w": 5,
       "altitude_m": 240,
-      "lat": 41.443,
-      "lon": 31.775,
+      "lat": 41.37560422,
+      "lon": 31.95125531,
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_350",
@@ -7843,7 +7612,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_351",
@@ -7865,7 +7634,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_352",
@@ -7887,7 +7656,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_353",
@@ -7909,8 +7678,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_354",
@@ -7932,7 +7700,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_355",
@@ -7954,11 +7722,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_356",
-      "callsign": "YM5KKE",
+      "callsign": "",
       "city": "Aksaray",
       "district": null,
       "location": "Kılıçarslan Tepesi",
@@ -7976,8 +7744,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_357",
@@ -7999,12 +7766,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM67NJ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_358",
-      "callsign": "YM5KRM",
+      "callsign": "",
       "city": "Karaman",
       "district": null,
       "location": "KARADAG",
@@ -8022,8 +7788,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM67NJ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_359",
@@ -8045,8 +7810,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61EO"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_360",
@@ -8068,8 +7832,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_361",
@@ -8091,8 +7854,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_362",
@@ -8114,12 +7876,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61EO"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_363",
-      "callsign": "YM2KV",
+      "callsign": "",
       "city": "Bartın",
       "district": null,
       "location": "MERKEZ",
@@ -8137,8 +7898,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61EO"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_364",
@@ -8160,8 +7920,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61CP"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_365",
@@ -8183,12 +7942,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61ES"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_366",
-      "callsign": "TA2IKY",
+      "callsign": "",
       "city": "Yalova",
       "district": null,
       "location": "Merkez",
@@ -8206,8 +7964,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_367",
@@ -8229,8 +7986,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61HI"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_368",
@@ -8252,8 +8008,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61IA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_369",
@@ -8275,8 +8030,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61DB"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_370",
@@ -8298,8 +8052,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61IA"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_371",
@@ -8321,8 +8074,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61GG"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_372",
@@ -8344,8 +8096,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61IF"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_373",
@@ -8367,11 +8118,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_374",
-      "callsign": "YM2KO",
+      "callsign": "",
       "city": "Karabük",
       "district": null,
       "location": "SIVRI TP",
@@ -8389,8 +8140,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61IF"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_375",
@@ -8412,7 +8162,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_376",
@@ -8434,7 +8184,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_377",
@@ -8456,8 +8206,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_378",
@@ -8479,8 +8228,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_379",
@@ -8502,7 +8250,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_380",
@@ -8524,12 +8272,11 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_381",
-      "callsign": "YM5KOS",
+      "callsign": "",
       "city": "Osmaniye",
       "district": null,
       "location": "Kızılyüce Tepesi",
@@ -8547,8 +8294,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_382",
@@ -8570,8 +8316,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_383",
@@ -8593,8 +8338,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_384",
@@ -8616,8 +8360,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_385",
@@ -8639,8 +8382,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_386",
@@ -8662,11 +8404,11 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_387",
-      "callsign": "YM2KDZ-1",
+      "callsign": "",
       "city": "Düzce",
       "district": null,
       "location": "Hatipli-Ketenciler",
@@ -8684,8 +8426,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN50OW"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_388",
@@ -8707,7 +8448,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_389",
@@ -8729,7 +8470,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_391",
@@ -8751,7 +8492,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_392",
@@ -8773,7 +8514,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_393",
@@ -8795,7 +8536,7 @@
       "coord_approx": true,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_394",
@@ -8817,7 +8558,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_395",
@@ -8839,7 +8580,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_396",
@@ -8861,7 +8602,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_397",
@@ -8883,7 +8624,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_398",
@@ -8905,7 +8646,7 @@
       "coord_approx": false,
       "ta_region": "TA0",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_399",
@@ -8927,7 +8668,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_400",
@@ -8949,7 +8690,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_401",
@@ -8971,7 +8712,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_402",
@@ -8993,7 +8734,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_403",
@@ -9015,7 +8756,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_404",
@@ -9037,7 +8778,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_405",
@@ -9059,7 +8800,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_406",
@@ -9081,7 +8822,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_407",
@@ -9103,7 +8844,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_408",
@@ -9125,7 +8866,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_409",
@@ -9147,8 +8888,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN31TT"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_410",
@@ -9170,7 +8910,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_411",
@@ -9192,7 +8932,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_412",
@@ -9214,7 +8954,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_413",
@@ -9236,8 +8976,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN30GD"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_414",
@@ -9259,7 +8998,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_415",
@@ -9281,7 +9020,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_416",
@@ -9303,7 +9042,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_418",
@@ -9325,7 +9064,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_420",
@@ -9347,8 +9086,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM98DI"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_421",
@@ -9370,7 +9108,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_424",
@@ -9392,7 +9130,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_425",
@@ -9401,9 +9139,9 @@
       "district": null,
       "location": "Davudi Dağı TRT",
       "frequency": 145.725,
-      "offset": -7.6,
+      "offset": -0.6,
       "tone": 88.5,
-      "band": "UHF",
+      "band": "VHF",
       "mode": "FM",
       "status": false,
       "licensed": true,
@@ -9414,7 +9152,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_426",
@@ -9436,7 +9174,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_427",
@@ -9458,7 +9196,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_428",
@@ -9480,7 +9218,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_429",
@@ -9502,7 +9240,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_430",
@@ -9524,7 +9262,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_431",
@@ -9546,7 +9284,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_432",
@@ -9568,7 +9306,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_433",
@@ -9590,8 +9328,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "XXXXXX"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_435",
@@ -9613,11 +9350,11 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_436",
-      "callsign": "TB5MMA-L",
+      "callsign": "",
       "city": "Adana",
       "district": "Merkez",
       "location": "Akdeniz Radyo Amatörleri Derneği TA5GMZ",
@@ -9635,8 +9372,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_437",
@@ -9658,7 +9394,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_438",
@@ -9680,7 +9416,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_439",
@@ -9702,7 +9438,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_440",
@@ -9724,7 +9460,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_441",
@@ -9746,8 +9482,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM66DF"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_442",
@@ -9769,8 +9504,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM66AO"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_443",
@@ -9792,7 +9526,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_444",
@@ -9814,7 +9548,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_445",
@@ -9836,8 +9570,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61IF"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_446",
@@ -9859,8 +9592,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN61DE"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_447",
@@ -9882,7 +9614,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_448",
@@ -9904,11 +9636,11 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_452",
-      "callsign": "YM5KNY",
+      "callsign": "",
       "city": "Konya",
       "district": null,
       "location": "Ağlayançal / Kon-RF",
@@ -9926,8 +9658,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_453",
@@ -9949,8 +9680,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_454",
@@ -9972,7 +9702,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_455",
@@ -9994,7 +9724,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_456",
@@ -10016,7 +9746,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_457",
@@ -10038,11 +9768,11 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_458",
-      "callsign": "YM2KRD",
+      "callsign": "",
       "city": "Ankara",
       "district": "Dikmen",
       "location": "Dikmen",
@@ -10060,8 +9790,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM69JU"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_459",
@@ -10083,7 +9812,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_460",
@@ -10105,7 +9834,7 @@
       "coord_approx": false,
       "ta_region": "TA9",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_461",
@@ -10127,7 +9856,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_462",
@@ -10149,7 +9878,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_463",
@@ -10171,7 +9900,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_465",
@@ -10181,9 +9910,9 @@
       "location": "Kapaklı TRAC",
       "frequency": 439.4125,
       "offset": -7.6,
-      "tone": 77.0,
+      "tone": 67.0,
       "band": "UHF",
-      "mode": "FM",
+      "mode": "DMR",
       "status": true,
       "licensed": true,
       "power_w": null,
@@ -10193,7 +9922,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_466",
@@ -10215,8 +9944,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": ""
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_467",
@@ -10238,7 +9966,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_468",
@@ -10247,9 +9975,9 @@
       "district": "Merkez",
       "location": "Ali Dağı",
       "frequency": 439.275,
-      "offset": -0.6,
+      "offset": -7.6,
       "tone": 88.5,
-      "band": "VHF",
+      "band": "UHF",
       "mode": "FM",
       "status": true,
       "licensed": false,
@@ -10260,13 +9988,13 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_469",
       "callsign": "",
       "city": "Bursa",
-      "district": "Gündoğdu",
+      "district": "Osmangazi",
       "location": "Gündoğdu BTRAD",
       "frequency": 439.2375,
       "offset": -7.6,
@@ -10277,12 +10005,12 @@
       "licensed": true,
       "power_w": null,
       "altitude_m": 0,
-      "lat": 40.32518088,
-      "lon": 29.03366067,
+      "lat": 40.3335398,
+      "lon": 29.02739804,
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_470",
@@ -10304,7 +10032,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_473",
@@ -10326,7 +10054,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_475",
@@ -10348,7 +10076,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_476",
@@ -10370,7 +10098,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_477",
@@ -10392,7 +10120,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_478",
@@ -10414,7 +10142,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_480",
@@ -10431,12 +10159,12 @@
       "licensed": true,
       "power_w": null,
       "altitude_m": null,
-      "lat": 40.2156,
-      "lon": 27.281,
-      "coord_approx": true,
+      "lat": 39.93244436,
+      "lon": 32.84381037,
+      "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_481",
@@ -10453,19 +10181,19 @@
       "licensed": true,
       "power_w": null,
       "altitude_m": null,
-      "lat": 37.085,
-      "lon": 30.79,
-      "coord_approx": true,
+      "lat": 39.93244436,
+      "lon": 32.84381037,
+      "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_482",
       "callsign": "",
       "city": "İstanbul",
       "district": "Başakşehir",
-      "location": "Başakşehir",
+      "location": "Onurkent",
       "frequency": 439.1625,
       "offset": -7.6,
       "tone": 123.0,
@@ -10475,12 +10203,12 @@
       "licensed": true,
       "power_w": null,
       "altitude_m": null,
-      "lat": 41.0927,
-      "lon": 28.8063,
-      "coord_approx": true,
+      "lat": 41.10937912,
+      "lon": 28.78898889,
+      "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_483",
@@ -10502,7 +10230,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_484",
@@ -10519,12 +10247,12 @@
       "licensed": true,
       "power_w": 5,
       "altitude_m": null,
-      "lat": 36.98,
-      "lon": 34.55,
-      "coord_approx": true,
+      "lat": 39.93244436,
+      "lon": 32.84381037,
+      "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_485",
@@ -10541,12 +10269,12 @@
       "licensed": true,
       "power_w": null,
       "altitude_m": null,
-      "lat": 38.4192,
-      "lon": 27.1287,
-      "coord_approx": true,
+      "lat": 39.93244436,
+      "lon": 32.84381037,
+      "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_486",
@@ -10568,7 +10296,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_487",
@@ -10590,7 +10318,7 @@
       "coord_approx": true,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_488",
@@ -10612,7 +10340,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_489",
@@ -10634,7 +10362,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_490",
@@ -10656,7 +10384,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_491",
@@ -10678,7 +10406,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_492",
@@ -10700,7 +10428,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_493",
@@ -10722,7 +10450,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_494",
@@ -10744,7 +10472,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_495",
@@ -10766,7 +10494,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_496",
@@ -10788,7 +10516,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_497",
@@ -10810,7 +10538,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_498",
@@ -10832,7 +10560,7 @@
       "coord_approx": false,
       "ta_region": "TA1",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_499",
@@ -10854,8 +10582,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN40XQ"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_500",
@@ -10877,7 +10604,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_501",
@@ -10899,7 +10626,7 @@
       "coord_approx": false,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_502",
@@ -10921,7 +10648,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_503",
@@ -10943,7 +10670,7 @@
       "coord_approx": true,
       "ta_region": "TA5",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_504",
@@ -10965,7 +10692,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_505",
@@ -10987,7 +10714,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_506",
@@ -11009,7 +10736,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_507",
@@ -11031,7 +10758,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_508",
@@ -11053,8 +10780,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KM48DM"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_509",
@@ -11076,7 +10802,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_510",
@@ -11098,7 +10824,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_511",
@@ -11120,7 +10846,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_512",
@@ -11142,7 +10868,7 @@
       "coord_approx": false,
       "ta_region": "TA4",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_513",
@@ -11164,7 +10890,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_515",
@@ -11186,7 +10912,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_517",
@@ -11208,7 +10934,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_518",
@@ -11230,7 +10956,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_519",
@@ -11252,8 +10978,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08",
-      "locator": "KN90DW"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_520",
@@ -11275,7 +11000,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_521",
@@ -11297,7 +11022,7 @@
       "coord_approx": false,
       "ta_region": "TA2",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_522",
@@ -11319,7 +11044,7 @@
       "coord_approx": false,
       "ta_region": "TA3",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_523",
@@ -11341,7 +11066,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_524",
@@ -11363,7 +11088,7 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_525",
@@ -11385,7 +11110,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_526",
@@ -11407,7 +11132,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_527",
@@ -11429,7 +11154,7 @@
       "coord_approx": false,
       "ta_region": "TA8",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_528",
@@ -11451,7 +11176,7 @@
       "coord_approx": false,
       "ta_region": "TA6",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_529",
@@ -11473,1502 +11198,135 @@
       "coord_approx": false,
       "ta_region": "TA7",
       "source": "amatortelsizcilik.com.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_3",
-      "callsign": "",
-      "city": "Adana",
-      "district": null,
-      "location": "Ceyhan / SEHIR MRK",
-      "frequency": 439.225,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.0,
-      "lon": 35.32,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_7",
-      "callsign": "TB5THG-L",
-      "city": "Adana",
-      "district": null,
-      "location": "Ceyhan / TB5THG-L",
-      "frequency": 433.4,
-      "offset": 0.0,
-      "tone": null,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.0,
-      "lon": 35.32,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_15",
-      "callsign": "",
-      "city": "Aksaray",
-      "district": null,
-      "location": "YM5KKE-R",
-      "frequency": 439.375,
-      "offset": 0.0,
-      "tone": 88.5,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 38.37,
-      "lon": 34.04,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_20",
-      "callsign": "",
-      "city": "Amasya",
-      "district": null,
-      "location": "Merzifon/Taşan Dağı",
-      "frequency": 439.425,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.65,
-      "lon": 35.83,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_23",
-      "callsign": "TA6ATA-L",
-      "city": "Amasya",
-      "district": null,
-      "location": "Merzifon",
-      "frequency": 433.4,
-      "offset": 0.0,
-      "tone": 100.0,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.65,
-      "lon": 35.83,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_33",
-      "callsign": "TA2NSH-L",
-      "city": "Ankara",
-      "district": null,
-      "location": "TA2NSH-L",
-      "frequency": 432.85,
-      "offset": 0.0,
-      "tone": null,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 39.93,
-      "lon": 32.86,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "KM69HX",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_60",
-      "callsign": "",
-      "city": "Aydın",
-      "district": null,
-      "location": "SOKE GUMUS DG",
-      "frequency": 439.275,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.85,
-      "lon": 27.85,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM37RT",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_61",
-      "callsign": "",
-      "city": "Aydın",
-      "district": null,
-      "location": "DILEK TP",
-      "frequency": 439.375,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.85,
-      "lon": 27.85,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM37OP",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_75",
-      "callsign": "",
-      "city": "Balıkesir",
-      "district": null,
-      "location": "Gugu Köyü",
-      "frequency": 145.75,
-      "offset": -0.6,
-      "tone": 67.0,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 39.65,
-      "lon": 27.88,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_77",
-      "callsign": "",
-      "city": "Balıkesir",
-      "district": null,
-      "location": "Edremit / MADRA DG",
-      "frequency": 439.225,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 39.65,
-      "lon": 27.88,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_88",
-      "callsign": "",
-      "city": "Bolu",
-      "district": null,
-      "location": "Abant / KELTEPE",
-      "frequency": 145.625,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.74,
-      "lon": 31.61,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_89",
-      "callsign": "",
-      "city": "Bolu",
-      "district": null,
-      "location": "Bolu/Abant",
-      "frequency": 145.725,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.74,
-      "lon": 31.61,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_91",
-      "callsign": "",
-      "city": "Burdur",
-      "district": null,
-      "location": "Bucak / KARTAL TEPE MEV",
-      "frequency": 145.775,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.72,
-      "lon": 30.29,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM57DK",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_92",
-      "callsign": "",
-      "city": "Burdur",
-      "district": null,
-      "location": "Bucak / KARTAL TEPE MEV",
-      "frequency": 439.15,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.72,
-      "lon": 30.29,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM57DK",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_94",
-      "callsign": "",
-      "city": "Bursa",
-      "district": null,
-      "location": "Inegol / ARPAKARI TP",
-      "frequency": 145.625,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.18,
-      "lon": 29.06,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_104",
-      "callsign": "",
-      "city": "Bursa",
-      "district": null,
-      "location": "Inegol / SEHIR MRK",
-      "frequency": 439.375,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.18,
-      "lon": 29.06,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_114",
-      "callsign": "TA3JO-R",
-      "city": "Çanakkale",
-      "district": null,
-      "location": "TA3JO-R",
-      "frequency": 433.575,
-      "offset": 0.0,
-      "tone": 77.0,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.15,
-      "lon": 26.41,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "locator": "KN30EC",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_134",
-      "callsign": "YM4DNZ",
-      "city": "Denizli",
-      "district": null,
-      "location": "Honaz / MILLI PARK",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.77,
-      "lon": 29.09,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM47PQ",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_135",
-      "callsign": "YM4DEN",
-      "city": "Denizli",
-      "district": null,
-      "location": "Cokelez / TRT VERICILERI",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.77,
-      "lon": 29.09,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM47PK",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_157",
-      "callsign": "",
-      "city": "Giresun",
-      "district": null,
-      "location": "Espiye / IMAM TP",
-      "frequency": 145.775,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.92,
-      "lon": 38.39,
-      "coord_approx": true,
-      "ta_region": "TA7",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_163",
-      "callsign": "YM7KGS",
-      "city": "Giresun",
-      "district": null,
-      "location": "Çaldağ",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.92,
-      "lon": 38.39,
-      "coord_approx": true,
-      "ta_region": "TA7",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_172",
-      "callsign": "",
-      "city": "Isparta",
-      "district": null,
-      "location": "Gökçay Mevkii",
-      "frequency": 439.225,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.76,
-      "lon": 30.55,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_180",
-      "callsign": "",
-      "city": "Mersin",
-      "district": null,
-      "location": "Mukaddem Mevkii",
-      "frequency": 439.2,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 36.8,
-      "lon": 34.64,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "KM66XI",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_183",
-      "callsign": "",
-      "city": "Mersin",
-      "district": null,
-      "location": "SILIFKE",
-      "frequency": 439.4125,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 36.8,
-      "lon": 34.64,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "KM66WJ",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_191",
-      "callsign": "YM5KMR",
-      "city": "Mersin",
-      "district": null,
-      "location": "YAVCA",
-      "frequency": 144800.0,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 36.8,
-      "lon": 34.64,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "KM76ES",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_226",
-      "callsign": "TA3URS-L",
-      "city": "İzmir",
-      "district": null,
-      "location": "Menemen / TA3URS-L",
-      "frequency": 433.3,
-      "offset": 0.0,
-      "tone": null,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 38.42,
-      "lon": 27.14,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_240",
-      "callsign": "",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Izmit / KAR TP",
-      "frequency": 145.6125,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_242",
-      "callsign": "",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Bağçeşme",
-      "frequency": 145.725,
-      "offset": -0.6,
-      "tone": 67.0,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_243",
-      "callsign": "",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Golcuk / CENE DAG",
-      "frequency": 439.1875,
-      "offset": -7.6,
-      "tone": 77.0,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "KN40VT",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_244",
-      "callsign": "",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Karamursel / KARAPINAR KY",
-      "frequency": 439.2,
-      "offset": -7.6,
-      "tone": 77.0,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "KM40TQ",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_245",
-      "callsign": "",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Izmit / KAR TP",
-      "frequency": 439.275,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_248",
-      "callsign": "",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Karamursel / YM2KDB-R",
-      "frequency": 439.375,
-      "offset": 0.0,
-      "tone": 94.8,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "KN40TQ",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_249",
-      "callsign": "YM2KDB",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Karamursel / HEREKE",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "KN40TS",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_250",
-      "callsign": "YM2IMT",
-      "city": "Kocaeli",
-      "district": null,
-      "location": "Izmit / KAR TP",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.85,
-      "lon": 29.88,
-      "coord_approx": true,
-      "ta_region": "TA2",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_254",
-      "callsign": "",
-      "city": "Konya",
-      "district": null,
-      "location": "Eregli / AYDOS MVK",
-      "frequency": 145.7,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.87,
-      "lon": 32.49,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_270",
-      "callsign": "",
-      "city": "Manisa",
-      "district": null,
-      "location": "SIPIL DMR/ANALOG MIX MODE",
-      "frequency": 439.3,
-      "offset": -7.6,
-      "tone": 110.9,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 38.62,
-      "lon": 27.43,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_275",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "AHIR DG",
-      "frequency": 145.625,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "KM87KP",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_276",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "Başkonuş Dağı",
-      "frequency": 145.75,
-      "offset": -0.6,
-      "tone": 77.0,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "KM87HN",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_277",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "AHIR DG",
-      "frequency": 145.775,
-      "offset": -0.6,
-      "tone": 123.0,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "KM87KP",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_278",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "AHIR DG",
-      "frequency": 439.175,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "XXXXXX",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_279",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "AHIR DG",
-      "frequency": 439.2,
-      "offset": -7.6,
-      "tone": 74.4,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_280",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "AHIR DG",
-      "frequency": 439.2375,
-      "offset": -7.6,
-      "tone": 123.0,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "KM87KP",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_281",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "Başkonuş Dağı",
-      "frequency": 439.2625,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "KM87HN",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_282",
-      "callsign": "",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "AHIR DG",
-      "frequency": 439.425,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_284",
-      "callsign": "TA8KC",
-      "city": "Kahramanmaraş",
-      "district": null,
-      "location": "SEHIR MRK",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.58,
-      "lon": 36.94,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_285",
-      "callsign": "",
-      "city": "Muğla",
-      "district": null,
-      "location": "Bodrum / KAYABASI TP",
-      "frequency": 145.6,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_286",
-      "callsign": "",
-      "city": "Muğla",
-      "district": null,
-      "location": "Fethiye / BABADAG MEVKII",
-      "frequency": 145.675,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM46OM",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_288",
-      "callsign": "",
-      "city": "Muğla",
-      "district": null,
-      "location": "Dalaman / NURIBABA TEPESI",
-      "frequency": 439.175,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM46KU",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_289",
-      "callsign": "",
-      "city": "Muğla",
-      "district": null,
-      "location": "Bodrum / KAYABASI TP",
-      "frequency": 439.175,
-      "offset": -7.6,
-      "tone": 67.0,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_291",
-      "callsign": "",
-      "city": "Muğla",
-      "district": null,
-      "location": "Fethiye / DIKMENTEPE",
-      "frequency": 439.375,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM46MT",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_292",
-      "callsign": "",
-      "city": "Muğla",
-      "district": null,
-      "location": "Bodrum / TA4AYW-L",
-      "frequency": 144.975,
-      "offset": 0.0,
-      "tone": 88.5,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_294",
-      "callsign": "YM4KFT",
-      "city": "Muğla",
-      "district": null,
-      "location": "Babadağ Mevkii",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "KM46OM",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_296",
-      "callsign": "YM4KAN",
-      "city": "Muğla",
-      "district": null,
-      "location": "Bodrum / x",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.22,
-      "lon": 28.37,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_299",
-      "callsign": "",
-      "city": "Ordu",
-      "district": null,
-      "location": "KARAGOL TEPE",
-      "frequency": 145.6,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.98,
-      "lon": 37.88,
-      "coord_approx": true,
-      "ta_region": "TA7",
-      "locator": "KN90BM",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_345",
-      "callsign": "",
-      "city": "Tokat",
-      "district": null,
-      "location": "Zile / BAYIR KÖY",
-      "frequency": 439.175,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 40.31,
-      "lon": 36.55,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "KN70WI",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_356",
-      "callsign": "",
-      "city": "Şanlıurfa",
-      "district": null,
-      "location": "ATATURK ORM",
-      "frequency": 439.15,
-      "offset": -7.6,
-      "tone": 88.5,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.17,
-      "lon": 38.79,
-      "coord_approx": true,
-      "ta_region": "TA8",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_363",
-      "callsign": "",
-      "city": "Zonguldak",
-      "district": null,
-      "location": "Ereğli",
-      "frequency": 145.6,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 41.45,
-      "lon": 31.79,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_365",
-      "callsign": "",
-      "city": "Zonguldak",
-      "district": null,
-      "location": "Eregli / KALE TP",
-      "frequency": 145.7,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 41.45,
-      "lon": 31.79,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_368",
-      "callsign": "",
-      "city": "Zonguldak",
-      "district": null,
-      "location": "Kestaneci Köyü",
-      "frequency": 439.425,
-      "offset": -7.6,
-      "tone": 67.0,
-      "band": "UHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 41.45,
-      "lon": 31.79,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_369",
-      "callsign": "",
-      "city": "Zonguldak",
-      "district": null,
-      "location": "Eregli / YM2KJ-L",
-      "frequency": 144.95,
-      "offset": 0.0,
-      "tone": 88.5,
-      "band": "ECHO",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 41.45,
-      "lon": 31.79,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_370",
-      "callsign": "YM2KJ",
-      "city": "Zonguldak",
-      "district": null,
-      "location": "Eregli / KALE TP",
-      "frequency": 144.8,
-      "offset": 0.0,
-      "tone": null,
-      "band": "APRS",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 41.45,
-      "lon": 31.79,
-      "coord_approx": true,
-      "ta_region": "TA6",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
-    },
-    {
-      "id": "AK_385",
-      "callsign": "",
-      "city": "Osmaniye",
-      "district": null,
-      "location": "Kadirli / SULEMIS TP",
-      "frequency": 145.6,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
-      "mode": "FM",
-      "status": true,
-      "licensed": null,
-      "power_w": null,
-      "altitude_m": null,
-      "lat": 37.07,
-      "lon": 36.25,
-      "coord_approx": true,
-      "ta_region": "TA5",
-      "locator": "",
-      "source": "akrad.org.tr",
-      "last_seen": "2026-04-08"
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_530",
-      "callsign": null,
-      "city": "İzmir",
+      "callsign": "",
+      "city": "Kahramanmaraş",
       "district": null,
-      "location": "Çatalkaya",
-      "frequency": 145.6625,
-      "offset": -0.6,
-      "tone": 88.5,
-      "band": "VHF",
+      "location": "Asil Telsiz ve Radyo Amatörleri Derneği (ASRAD)",
+      "frequency": 439.2875,
+      "offset": -7.6,
+      "tone": 67.0,
+      "band": "UHF",
       "mode": "FM",
       "status": true,
-      "licensed": null,
+      "licensed": false,
       "power_w": null,
       "altitude_m": null,
-      "lat": 38.4192,
-      "lon": 27.1287,
+      "lat": 37.58,
+      "lon": 36.94,
       "coord_approx": true,
-      "ta_region": "TA3",
-      "source": "ta3hrj-anytone",
-      "last_seen": "2026-07-04",
-      "locator": null
+      "ta_region": "TA8",
+      "source": "amatortelsizcilik.com.tr",
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_531",
-      "callsign": null,
-      "city": "İzmir",
-      "district": null,
-      "location": "Merkez",
-      "frequency": 439.3375,
+      "callsign": "",
+      "city": "Eskişehir",
+      "district": "Odunpazarı",
+      "location": "Yangın kulesi",
+      "frequency": 439.2,
       "offset": -7.6,
       "tone": 88.5,
       "band": "UHF",
       "mode": "FM",
       "status": true,
-      "licensed": null,
+      "licensed": false,
       "power_w": null,
       "altitude_m": null,
-      "lat": 38.4192,
-      "lon": 27.1287,
-      "coord_approx": true,
-      "ta_region": "TA3",
-      "source": "ta3hrj-anytone",
-      "last_seen": "2026-07-04",
-      "locator": null
+      "lat": 39.73374827,
+      "lon": 30.50356049,
+      "coord_approx": false,
+      "ta_region": "TA2",
+      "source": "amatortelsizcilik.com.tr",
+      "last_seen": "2026-07-06"
     },
     {
       "id": "AT_532",
-      "callsign": null,
-      "city": "Muğla",
-      "district": null,
-      "location": "Merkez",
-      "frequency": 439.575,
+      "callsign": "",
+      "city": "Balıkesir",
+      "district": "Edremit",
+      "location": "Kazdağları",
+      "frequency": 439.2125,
       "offset": -7.6,
-      "tone": null,
+      "tone": 88.5,
       "band": "UHF",
       "mode": "FM",
       "status": true,
-      "licensed": null,
+      "licensed": false,
       "power_w": null,
       "altitude_m": null,
-      "lat": 37.2153,
-      "lon": 28.3636,
-      "coord_approx": true,
-      "ta_region": "TA4",
-      "source": "ta3hrj-anytone",
-      "last_seen": "2026-07-04",
-      "locator": null
+      "lat": 39.68878084,
+      "lon": 26.85938392,
+      "coord_approx": false,
+      "ta_region": "TA3",
+      "source": "amatortelsizcilik.com.tr",
+      "last_seen": "2026-07-06"
+    },
+    {
+      "id": "AT_533",
+      "callsign": "",
+      "city": "Tokat",
+      "district": "Merkez",
+      "location": "Tokat",
+      "frequency": 439.3875,
+      "offset": -7.6,
+      "tone": 67.0,
+      "band": "UHF",
+      "mode": "FM",
+      "status": true,
+      "licensed": false,
+      "power_w": null,
+      "altitude_m": null,
+      "lat": 40.48452946,
+      "lon": 36.53535739,
+      "coord_approx": false,
+      "ta_region": "TA6",
+      "source": "amatortelsizcilik.com.tr",
+      "last_seen": "2026-07-06"
+    },
+    {
+      "id": "AK_294",
+      "location": "Babadağ Mevkii"
+    },
+    {
+      "id": "AK_242",
+      "location": "Bağçeşme"
+    },
+    {
+      "id": "AK_276",
+      "location": "Başkonuş Dağı"
+    },
+    {
+      "id": "AK_281",
+      "location": "Başkonuş Dağı"
+    },
+    {
+      "id": "AK_363",
+      "location": "Ereğli"
+    },
+    {
+      "id": "AK_75",
+      "location": "Gugu Köyü"
+    },
+    {
+      "id": "AK_172",
+      "location": "Gökçay Mevkii"
+    },
+    {
+      "id": "AK_368",
+      "location": "Kestaneci Köyü"
+    },
+    {
+      "id": "AK_180",
+      "location": "Mukaddem Mevkii"
+    },
+    {
+      "id": "AK_163",
+      "location": "Çaldağ"
     }
   ]
 }
