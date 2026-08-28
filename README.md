@@ -14,15 +14,21 @@ Live site: **https://ta3hrj.github.io/turkey-repeaters**
 - CSV export (filtered or full)
 - Client-side RepeaterBook CSV import (session only)
 - Installable PWA — works fully offline (service worker caches app + data)
-- Weekly automated data refresh via GitHub Actions
+- Manually maintained database; a GitHub Action rebuilds the published payload on demand
 - No login required, no backend, hosted free on GitHub Pages
 
 ---
 
 ## Data Sources
 
-Data is aggregated from multiple Turkish amateur radio sources and cross-checked for accuracy.
-[RepeaterBook](https://www.repeaterbook.com/row_repeaters/index2.php?state_id=TR) CSV can be imported manually for corrections and additions.
+The database was originally aggregated from several Turkish amateur radio sources. Automated
+scraping has since been removed and **the database is now maintained by hand** - corrections and
+additions live in `data/overrides.json` and are applied on every rebuild.
+[RepeaterBook](https://www.repeaterbook.com/row_repeaters/index2.php?state_id=TR) CSV can be
+imported manually for corrections and additions.
+
+The `source` and `last_seen` fields on each record reflect where an entry originally came from
+and when it was last confirmed; they are not refreshed automatically.
 
 ---
 
@@ -34,7 +40,7 @@ Data is aggregated from multiple Turkish amateur radio sources and cross-checked
 pip install -r scripts/requirements.txt
 ```
 
-### 2. Fetch / update repeater data
+### 2. Rebuild repeater data
 
 ```bash
 python scripts/scrape.py
@@ -44,8 +50,8 @@ This writes `docs/data/repeaters.json` and the compact `docs/data/repeaters.min.
 the site actually loads (regenerate it alone with `python scripts/build_compact.py`).
 Serve `docs/` locally (e.g. `python -m http.server --directory docs`) to view.
 
-> Data also refreshes automatically every Monday via the
-> `.github/workflows/update-data.yml` GitHub Action.
+>  `.github/workflows/update-data.yml` performs the same rebuild on GitHub, but it is
+> **manual-only** (`workflow_dispatch`) - there is no schedule. Nothing updates on its own.
 
 ### 3. (Optional) Import a RepeaterBook CSV
 
@@ -78,7 +84,7 @@ turkey-repeaters/
 │   └── data/
 │       └── repeaters.json # Generated data file (commit after update)
 ├── scripts/
-│   ├── scrape.py          # Fetch & normalize data from all sources
+│   ├── scrape.py          # Rebuild repeaters.json and apply data/overrides.json
 │   ├── merge_repeaterbook.py  # Import RepeaterBook CSV into overrides
 │   └── requirements.txt
 ├── data/

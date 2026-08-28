@@ -21,7 +21,7 @@ data/            # overrides.json (elle düzeltmeler), location_aliases_draft.js
 ## Veri hattı
 
 ```bash
-python scripts/scrape.py           # veriyi yeniden üret (aşağıdaki nota bak)
+python scripts/scrape.py           # repeaters.json'u yeniden üret + override uygula
 python scripts/build_compact.py    # repeaters.min.json'u tek başına yeniden üret
 python scripts/merge_repeaterbook.py path/to/export.csv
 ```
@@ -29,18 +29,20 @@ python scripts/merge_repeaterbook.py path/to/export.csv
 `build_compact.py` sitenin gerçekte yüklediği dosyayı üretir — veri değiştiyse bunu çalıştırmadan
 yayın eksik kalır. Haftalık workflow da bunu çağırıyor.
 
-## Bilinen tuzak — README gerçeği tam yansıtmıyor
+## Veri elle bakılıyor — otomatik çekme yok
 
-Son commit'lerden biri dış kaynaklı otomatik çekmeyi kaldırdı (*"Remove external scraping;
-database is now manually maintained"*) ve `scripts/scrape.py` artık dışarıdan veri çekmiyor;
-mevcut `repeaters.json`'ı `data/overrides.json` ile birleştirip yeniden yazıyor.
+`scripts/scrape.py` adına rağmen dışarıdan veri çekmiyor; dosyada tek bir ağ çağrısı yok.
+Yaptığı iş, mevcut `repeaters.json`'ı okuyup `data/overrides.json`'daki elle düzeltmeleri
+uygulayarak yeniden yazmak. Kendi docstring'i de bunu söylüyor: *"External scraping has been
+disabled. The database is now manually maintained."*
 
-Ama `README.md` hâlâ *"Data is aggregated from multiple Turkish amateur radio sources"* ve
-*"weekly automated data refresh"* diyor. Workflow haftalık çalışmaya devam ediyor ama gerçek
-scraping yapmıyor, sadece override uyguluyor.
+`.github/workflows/update-data.yml` yalnızca `workflow_dispatch` ile çalışıyor — **zamanlanmış
+tetikleyici yok**, yani kendiliğinden hiçbir şey güncellenmiyor. Elle tetiklendiğinde
+`build_compact.py` çalıştırıp değişiklik varsa commit'liyor.
 
-Bu ifadeleri düzeltmek açık bir iş. Düzeltmeden önce `scrape.py`'yi okuyup bugünkü davranışı
-teyit et — yukarıdaki tespit commit mesajı ve koda dayanıyor, ama son durum değişmiş olabilir.
+README bir süre bunun tersini iddia ediyordu ("weekly automated data refresh", "aggregated from
+multiple Turkish amateur radio sources", "refreshes automatically every Monday") ve düzeltildi.
+İleride gerçek bir otomatik çekme eklenirse README'nin de birlikte güncellenmesi gerekir.
 
 ## Konvansiyonlar
 
