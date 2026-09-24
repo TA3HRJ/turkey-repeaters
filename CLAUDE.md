@@ -49,8 +49,8 @@ multiple Turkish amateur radio sources", "refreshes automatically every Monday")
 - Elle düzeltmeler koda değil `data/overrides.json`'a yazılır — böylece yeniden üretimde kaybolmaz.
 - Şüpheli kayıtlar için `find_suspicious.py`, konum takma adları için `find_similar_locations.py`
   ve `apply_location_aliases.py` var; elle JSON düzenlemeden önce bunlara bak.
-- `.claude/settings.local.json` kişisel yerel ayardır, `.gitignore`'a girmelidir — şu an takipsiz
-  duruyor.
+- `.claude/settings.local.json` ve `.claude/launch.json` kişisel yerel ayardır, `.gitignore`'da;
+  commit'leme.
 
 ## Oturum sonu
 
