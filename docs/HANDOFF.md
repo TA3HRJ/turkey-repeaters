@@ -60,10 +60,29 @@ Bu oturumda yapılanlar:
   Temiz tarayıcıda doğrulandı; v1 kurulu bir cihazda bakılmadı.
 - **family.css bir kopya.** Standart değişirse önce `_shared/aprsagent-site-standardi/family.css`,
   sonra buraya kopyala ve SW sürümünü artır. `docs/assets/family.css`'i yerinde düzenleme.
-- Firebase oylama özelliğinin canlıda çalışıp çalışmadığı hâlâ doğrulanmadı.
+- **Firebase oylama — düzeltme commit'li, push onayı bekliyor olabilir (`git status -sb`).**
+  Canlıda ölçülen: SDK yükleniyor, anonim oturum açılıyor, `aggregates/votes` okunuyor, kendi
+  `user_votes/{uid}` okunuyor; kurallar doğru. Yazma da çalışıyor (gerçek kullanıcılardan 42 sayaç
+  birikmiş, 11 röle). **Ama hiçbir oy sayfada görünmüyordu:** `castVote`, `batch.set(ref,
+  {"AT_1.wy": increment(1)}, {merge:true})` ile yazıyor; `set()` noktayı yol saymaz, belgede
+  düz `"AT_1.wy"` alanları duruyor. Okuma iç içe `data.AT_1.wy` arıyordu → hep 0; kendi oyunun
+  vurgusu yoktu ve oy değiştirince eskisi düşülmüyordu (çift sayım mümkün — mevcut sayaçlarda
+  bundan kalma şişme olabilir, ayıklanamaz). Düzeltme okuma tarafında: `unflattenVotes()`
+  düz alanları iç içe nesneye katlıyor; veri taşıma gerekmedi, yazma koduna dokunulmadı.
+  Yerelde canlı Firestore'dan okuyarak doğrulandı (11 rölede sayılar görünüyor). Test oyu
+  verilmedi — canlı veriye yazmamak için.
+- **Yazma biçimini değiştirme** (`update()`'e ya da iç içe nesneye geçmek): eski düz alanlarla
+  yeni iç içe alanlar karışır; `unflattenVotes` ikisini de okur ama aynı rölede ikisi birden
+  varsa biri diğerinin üstüne yazılır (toplanmaz). Geçilecekse önce veriyi taşı.
 - Veri tarafı: `data/overrides.json` → `python scripts/scrape.py` (build_compact'ı da çağırır) → commit.
 
 ## Tuzaklar
+
+- **Firebase hataları sessizce yutuluyor** (`.catch(()=>{})` her yerde): bir şey bozulursa sayfa
+  hiçbir iz vermez. Kontrol için konsolda `firebaseReady`, `fbUid`, `voteAggregates`'e bak.
+- **Gizli sekmede Firebase hiç yüklenmez:** `loadFirebase` `requestIdleCallback` ile çağrılıyor,
+  tarayıcı gizli sekmede bunu çalıştırmıyor. Tarayıcı panelinde test ederken `loadFirebase()`'i
+  elle çağır; bu canlı bir hata değil.
 
 - **`.wrap` padding'i `main`'i eziyor:** `main{padding…}` yerine `main.wrap{padding-top…}`
   gerekiyor (sınıf seçici öğe seçicisini yener). Lejant sekme çizgisine yapışınca fark edildi.

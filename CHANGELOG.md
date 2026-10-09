@@ -27,6 +27,10 @@
 - Mode filter, TA region filter, frequency conflict filter, plate number column.
 
 ### Fixed
+- Community votes were saved but never shown: `castVote` writes `{"AT_1.wy": …}` with
+  `set(…, {merge:true})`, which stores literal dotted field names, while the page read nested
+  objects. The page now folds the flat fields back (`unflattenVotes`); existing votes appear,
+  "you voted" highlighting works and changing a vote subtracts the previous one.
 - RepeaterBook Import button needed two clicks to open the panel the first time.
 - "All cities" filter option was not translated to Turkish.
 - Five records with placeholder Ankara-center coordinates.

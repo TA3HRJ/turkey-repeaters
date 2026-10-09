@@ -1576,15 +1576,29 @@ function initFirebase(){
   }catch(e){}
 }
 
+// castVote writes with batch.set(..., {"AT_1.wy": inc}, {merge:true}). set() does not treat
+// dots as paths, so Firestore stores literal "AT_1.wy" fields. Fold them back into
+// {AT_1:{wy:…}}; nested objects (if any are ever written) are kept too. Repeater IDs have no dots.
+function unflattenVotes(data){
+  const out={};
+  for(const [k,v] of Object.entries(data||{})){
+    if(v&&typeof v==="object"){Object.assign(out[k]||(out[k]={}),v);continue}
+    const i=k.indexOf(".");
+    if(i<0) continue;
+    (out[k.slice(0,i)]||(out[k.slice(0,i)]={}))[k.slice(i+1)]=v;
+  }
+  return out;
+}
+
 function loadVotes(){
   if(!db) return;
   db.doc("aggregates/votes").get().then(doc=>{
-    if(doc.exists) voteAggregates=doc.data()||{};
+    if(doc.exists) voteAggregates=unflattenVotes(doc.data());
     refreshVoteCells();
   }).catch(()=>{});
   if(fbUid){
     db.doc(`user_votes/${fbUid}`).get().then(doc=>{
-      if(doc.exists) myVotes=doc.data()||{};
+      if(doc.exists) myVotes=unflattenVotes(doc.data());
       refreshVoteCells();
     }).catch(()=>{});
   }
