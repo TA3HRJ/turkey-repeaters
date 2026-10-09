@@ -81,7 +81,8 @@
 
     /* TABLE */
     main.wrap{padding-top:14px}
-    .table-scroll{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
+    /* Bounded box: the horizontal scrollbar stays on screen instead of under 574 rows */
+    .table-scroll{overflow:auto;max-height:calc(100vh - 80px);max-height:calc(100dvh - 80px);border:1px solid var(--line);background:var(--card)}
     .legend{display:flex;gap:16px;margin-bottom:10px;font:12px var(--mono);letter-spacing:.04em;color:var(--fg2);flex-wrap:wrap}
     .legend span{display:flex;align-items:center;gap:5px}
     .dot,.sdot{width:8px;height:8px;border-radius:50%;display:inline-block}
@@ -90,7 +91,15 @@
 
     table#rt{width:100%;border-collapse:collapse;font-size:13px;line-height:1.35}
     table#rt thead th{background:var(--bg2);color:var(--fg);padding:9px 8px;text-align:left;white-space:nowrap;user-select:none;cursor:pointer;
-      font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--fg)}
+      font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;position:sticky;top:0;z-index:2;
+      box-shadow:inset 0 -1px 0 var(--fg)} /* border would not stick with border-collapse */
+    /* Community column pinned to the right edge so voting is always in view */
+    table#rt th#th-community,table#rt td.vote-cell{position:sticky;right:0;box-shadow:inset 1px 0 0 var(--line)}
+    table#rt th#th-community{z-index:3;box-shadow:inset 1px 0 0 var(--line),inset 0 -1px 0 var(--fg);text-align:center}
+    table#rt td.vote-cell{z-index:1;background:var(--card)}
+    table#rt tbody tr:hover td.vote-cell{background:var(--bg2)}
+    table#rt tbody tr.row-selected td.vote-cell{background:linear-gradient(var(--selected),var(--selected)),var(--card)}
+    .th-sub{display:block;font-weight:400;font-size:10px;letter-spacing:.04em;color:var(--fg2);margin-top:2px}
     table#rt thead th:hover{color:var(--accent)}
     table#rt thead th.sort-asc::after{content:" ▲";font-size:.75em;color:var(--accent)}
     table#rt thead th.sort-desc::after{content:" ▼";font-size:.75em;color:var(--accent)}
@@ -135,16 +144,14 @@
     #wiz-count-label{margin-right:auto;font:12px var(--mono);color:var(--fg2)}
 
     /* COMMUNITY VOTE */
-    .vote-cell{text-align:center;white-space:nowrap;min-width:90px}
-    .vote-row{display:inline-flex;gap:3px;align-items:center;font-size:11px}
+    .vote-cell{text-align:center;white-space:nowrap}
+    .vote-row{display:inline-flex;gap:3px;align-items:center;font-size:11px;vertical-align:middle}
+    .vote-sep{display:inline-block;width:1px;height:14px;background:var(--line);margin:0 6px;vertical-align:middle}
     .vote-btn{border:1px solid currentColor;border-radius:var(--r);background:transparent;cursor:pointer;padding:0 4px;font:700 11px/1.5 var(--mono)}
     .vote-btn:hover{background:var(--bg2)}
     .vb-yes{color:var(--on-air)}.vb-yes.voted{background:var(--on-air);color:var(--card)}
     .vb-no{color:var(--off-air)}.vb-no.voted{background:var(--off-air);color:var(--card)}
     .vote-score{font-size:10.5px;color:inherit;margin:0 1px}
-    .vote-label{font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--fg2)}
-    /* both vote groups on one line keeps table rows short */
-    .vote-cell>div{display:inline-flex;align-items:center;gap:4px;margin:0 5px!important}
 
     /* MAP */
     #tab-map .wrap{padding-top:14px}
@@ -746,7 +753,7 @@ function applyStrings(){
   document.getElementById("wiz-prio-status").textContent=s.wizPrioStatus;
   document.getElementById("wiz-prio-region").textContent=s.wizPrioRegion;
   document.getElementById("wiz-prio-freq").textContent=s.wizPrioFreq;
-  document.getElementById("th-community").textContent=s.thCommunity;
+  document.getElementById("th-community").innerHTML=`${s.thCommunity}<span class="th-sub">${s.cvWorking} · ${s.cvLocation}</span>`;
   document.getElementById("tab-list-label").textContent=s.tabList;
   document.getElementById("tab-map-label").textContent=s.tabMap;
   document.getElementById("map-leg-on").textContent=s.mapLegOn;
@@ -976,7 +983,7 @@ function renderTable(data){
     ];
     cells.forEach((c,i)=>{
       const td=document.createElement("td");
-      if(i===6) td.className="loc-cell";
+      if(i===7) td.className="loc-cell";
       td.innerHTML=c;
       tr.appendChild(td);
     });
@@ -1613,30 +1620,14 @@ function getVoteCounts(id){
 function buildVoteCell(id){
   const v=getVoteCounts(id);
   const my=myVotes[id]||{};
-  const wTotal=v.wy+v.wn;
-  const lTotal=v.ly+v.ln;
-
   const wYesC=my.w===true?"voted":"";
   const wNoC=my.w===false?"voted":"";
   const lYesC=my.l===true?"voted":"";
   const lNoC=my.l===false?"voted":"";
 
-  return `<div>
-    <span class="vote-label">${t("cvWorking")}</span>
-    <span class="vote-row">
-      <button class="vote-btn vb-yes ${wYesC}" onclick="castVote('${id}','w',true)" title="${t("cvYes")}">&#10003;${v.wy?'<span class="vote-score">'+v.wy+'</span>':''}</button>
-      <button class="vote-btn vb-no ${wNoC}" onclick="castVote('${id}','w',false)" title="${t("cvNo")}">&#10007;${v.wn?'<span class="vote-score">'+v.wn+'</span>':''}</button>
-      ${wTotal?'<span class="vote-score">('+wTotal+')</span>':''}
-    </span>
-  </div>
-  <div style="margin-top:2px">
-    <span class="vote-label">${t("cvLocation")}</span>
-    <span class="vote-row">
-      <button class="vote-btn vb-yes ${lYesC}" onclick="castVote('${id}','l',true)" title="${t("cvYes")}">&#10003;${v.ly?'<span class="vote-score">'+v.ly+'</span>':''}</button>
-      <button class="vote-btn vb-no ${lNoC}" onclick="castVote('${id}','l',false)" title="${t("cvNo")}">&#10007;${v.ln?'<span class="vote-score">'+v.ln+'</span>':''}</button>
-      ${lTotal?'<span class="vote-score">('+lTotal+')</span>':''}
-    </span>
-  </div>`;
+  // Labels live in the column header; each button carries them as a tooltip.
+  const btn=(f,val,cls,n,lbl)=>`<button class="vote-btn ${val?"vb-yes":"vb-no"} ${cls}" onclick="castVote('${id}','${f}',${val})" title="${lbl} ${t(val?"cvYes":"cvNo")}">${val?"&#10003;":"&#10007;"}${n?'<span class="vote-score">'+n+'</span>':''}</button>`;
+  return `<span class="vote-row" title="${t("cvWorking")}">${btn("w",true,wYesC,v.wy,t("cvWorking"))}${btn("w",false,wNoC,v.wn,t("cvWorking"))}</span><span class="vote-sep"></span><span class="vote-row" title="${t("cvLocation")}">${btn("l",true,lYesC,v.ly,t("cvLocation"))}${btn("l",false,lNoC,v.ln,t("cvLocation"))}</span>`;
 }
 
 function castVote(id, field, value){

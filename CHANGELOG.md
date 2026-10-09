@@ -9,10 +9,6 @@
   rounded floating cards removed; map and badge colours follow `--series-*`. Dark theme kept,
   using the family dark values. PWA icons redrawn in the same palette; service worker cache v2.
 
-### Fixed
-- Trademarks and disclaimer section (`#legal`) is aligned with the rest of the About tab
-  instead of shifted to the middle of the page (2026-10-10). Service worker cache v3.
-
 ### Removed
 - External scraping: `scrape.py` no longer fetches amatortelsizcilik.com.tr or akrad.org.tr.
   It now only rebuilds `repeaters.json` from the existing file, applies `data/overrides.json`
@@ -31,6 +27,14 @@
 - Mode filter, TA region filter, frequency conflict filter, plate number column.
 
 ### Fixed
+- Repeater list overflowed and the Community (voting) column was out of sight: the 17-column
+  table only scrolled sideways, with its scrollbar under all 574 rows. The table now sits in a
+  viewport-high box (scrollbar always reachable, sticky header row), the Community column is
+  pinned to the right edge, its labels moved into the header, and the Location column wraps
+  again (wrapping had been applied to City since the Plate column was added). At a 1024px
+  viewport the table went from 1670px to 1336px wide.
+- Trademarks and disclaimer section (`#legal`) is aligned with the rest of the About tab
+  instead of shifted to the middle of the page (2026-10-10). Service worker cache v3.
 - Community votes were saved but never shown: `castVote` writes `{"AT_1.wy": …}` with
   `set(…, {merge:true})`, which stores literal dotted field names, while the page read nested
   objects. The page now folds the flat fields back (`unflattenVotes`); existing votes appear,

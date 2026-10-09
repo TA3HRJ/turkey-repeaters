@@ -114,7 +114,13 @@ birlikte push'landı (2026-10-10, `47c781b`). Pages derlemesi başarılı; canl�
 - **Gizli sekmede Firebase hiç yüklenmez:** `loadFirebase` `requestIdleCallback` ile çağrılıyor,
   tarayıcı gizli sekmede bunu çalıştırmıyor. Tarayıcı panelinde test ederken `loadFirebase()`'i
   elle çağır; bu canlı bir hata değil.
-
+- **Liste tablosu geniş (17 sütun, 1024px'te ~1336px):** yatay kaydırma kaçınılmaz. Bu yüzden
+  tablo `.table-scroll` içinde ekran yüksekliğiyle sınırlı (`max-height:calc(100dvh - 80px)`,
+  kaydırma çubuğu hep ulaşılır), başlık satırı `position:sticky;top:0`, Topluluk sütunu
+  `position:sticky;right:0` — oylama her genişlikte görünür. Sütun ekler/çıkarırsan sabit
+  sütunun arka planını (hover/seçili satır) ve `renderTable`'daki `cells[i]` indekslerini kontrol
+  et: plaka sütunu eklenince `loc-cell` sınıfı Konum yerine Şehir'e kaymıştı (i===6 → 7).
+  Sticky başlıkta `border-collapse` kenarlığı yapışmaz; alt çizgi `box-shadow` ile.
 - **`.wrap` padding'i `main`'i eziyor:** `main{padding…}` yerine `main.wrap{padding-top…}`
   gerekiyor (sınıf seçici öğe seçicisini yener). Lejant sekme çizgisine yapışınca fark edildi.
 - **`stateToURL()` her filtre değişiminde URL'yi yeniden yazıyor**; `#legal` hash'ini silmesin
