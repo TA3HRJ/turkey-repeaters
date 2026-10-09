@@ -6,7 +6,8 @@ Oturumlar arası not. Her anlamlı oturumun sonunda güncelle (bkz. `CLAUDE.md` 
 
 Site aprsagent.com ailesinin görünümüne geçirildi. Adres artık https://repeaters.aprsagent.com
 (`docs/CNAME`). Standart: `C:\Claude Projects\_shared\aprsagent-site-standardi\` (README, family.css,
-snippets.html). Değişiklik commit'lendi; push kullanıcı onayına bırakıldı — `git status -sb` ile bak.
+snippets.html). 11f558f push'landı, Pages derlendi; canlıda family.css, başlık çubuğu, 574 kayıt
+ve SW v2 doğrulandı, konsolda hata yok.
 
 Bu oturumda yapılanlar:
 
@@ -54,8 +55,9 @@ Bu oturumda yapılanlar:
 
 ## Açık kalanlar
 
-- **Push / canlı kontrol:** push sonrası https://repeaters.aprsagent.com'da eski SW'nin v2'ye
-  geçtiğini (bir yenileme sonrası yeni görünüm) gözle doğrula.
+- **Eski ziyaretçiler:** v1 SW'si kurulu tarayıcılarda yeni görünüm ilk açılışta değil, bir
+  yenilemeden sonra gelir (navigasyon network-first olduğu için genelde ilk açılışta da gelir).
+  Temiz tarayıcıda doğrulandı; v1 kurulu bir cihazda bakılmadı.
 - **family.css bir kopya.** Standart değişirse önce `_shared/aprsagent-site-standardi/family.css`,
   sonra buraya kopyala ve SW sürümünü artır. `docs/assets/family.css`'i yerinde düzenleme.
 - Firebase oylama özelliğinin canlıda çalışıp çalışmadığı hâlâ doğrulanmadı.
