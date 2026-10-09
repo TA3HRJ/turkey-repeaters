@@ -9,7 +9,7 @@
  *
  * Bump CACHE_VERSION when the precache list changes shape.
  */
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v4";
 const CACHE_NAME = `ta-repeaters-${CACHE_VERSION}`;
 
 const PRECACHE = [
