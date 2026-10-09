@@ -9,13 +9,16 @@ Live site: **https://repeaters.aprsagent.com/**
 
 - Live search and filter by band, city, status — filters are shareable via URL (`?band=VHF&city=İzmir&tab=map`)
 - Interactive map (Leaflet, lazy-loaded on first use)
-- "📍 Nearest" button: sorts repeaters by distance from your location
+- "Nearest" button: sorts repeaters by distance from your location
 - EN / TR language toggle, dark mode (follows system, manual toggle persists)
 - CSV export (filtered or full)
 - Client-side RepeaterBook CSV import (session only)
 - Installable PWA — works fully offline (service worker caches app + data)
 - Manually maintained database; a GitHub Action rebuilds the published payload on demand
 - No login required, no backend, hosted free on GitHub Pages
+- Part of the [aprsagent.com](https://aprsagent.com/#tools) tool family: shared look from
+  `docs/assets/family.css`, which is a copy of the family standard — change it there first,
+  then copy it here, instead of editing it in place
 
 ---
 
@@ -134,6 +137,33 @@ All formats are available via the Export Wizard on the site:
 
 ---
 
+## Trademarks and disclaimer
+
+Brand, product, organisation and company names in this project are trademarks or registered
+trademarks of their respective owners and are used only for identification.
+
+APRS® is a registered trademark of APRS Software and Bob Bruninga, WB4APR (SK), who created APRS
+and gave the hobby the protocol. RepeaterBook, EchoLink, CHIRP, AnyTone, Google Earth,
+OpenStreetMap and other names may also be trademarks or registered trademarks of their owners.
+This project is not affiliated with, endorsed, approved or sponsored by any organisation or
+manufacturer named.
+
+- Information is compiled from Turkish amateur radio sources, RepeaterBook and volunteer reports.
+  Transcription errors are possible and sources may change without notice; check the primary
+  source before relying on it.
+- Repeater details (frequency, offset, tone, status) change and rely on volunteer reports; confirm
+  with the local club or repeater keeper before transmitting. Staying within your licence and the
+  band plan is your responsibility.
+- External links lead to third-party sites; this project is not responsible for their content.
+- Information is provided "as is", without any warranty of accuracy, completeness or fitness for a
+  particular purpose, and no liability is accepted for any damage arising from its use.
+
+The same text is on the site under **About → Trademarks / Disclaimer** (`#legal`), in English and
+Turkish.
+
+---
+
 ## License
 
-MIT — for personal use only.
+Code: MIT. Data: for personal use only. Neither licence grants any rights in the trademarks
+named above.

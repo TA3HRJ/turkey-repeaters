@@ -9,13 +9,15 @@
  *
  * Bump CACHE_VERSION when the precache list changes shape.
  */
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const CACHE_NAME = `ta-repeaters-${CACHE_VERSION}`;
 
 const PRECACHE = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./assets/family.css",
+  "./assets/aprsagent-mark.svg",
   "./data/repeaters.min.json",
   "./assets/icon-192.png",
   "./assets/icon-512.png",

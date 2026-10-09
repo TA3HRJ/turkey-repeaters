@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Turkey Amateur Radio Repeaters / Türkiye Amatör Telsiz Röleleri</title>
-  <meta name="theme-color" content="#1a5276"/>
+  <meta name="theme-color" content="#f6f3ea"/>
   <link rel="manifest" href="manifest.json"/>
   <link rel="icon" href="assets/icon-192.png" type="image/png"/>
   <link rel="apple-touch-icon" href="assets/icon-192.png"/>
@@ -16,159 +16,209 @@
       document.documentElement.dataset.theme=theme;
     })();
   </script>
+  <!-- aprsagent.com family theme (copied from _shared/aprsagent-site-standardi, do not edit here) -->
+  <link rel="stylesheet" href="assets/family.css"/>
   <style>
-    :root {
-      --bg:#f5f7fa; --surface:#fff; --primary:#1a5276; --accent:#2980b9;
-      --on-air:#27ae60; --off-air:#e74c3c; --text:#2c3e50; --muted:#7f8c8d;
-      --border:#dce1e7; --hover:#ddeeff; --selected:#fff3cd;
-      --ptext:#1a5276; --th-hover:#1f6090; --zebra:#f0f4f8; --code-bg:#f8f9fa;
-      --rb-bg:#fffbf0; --rb-border:#f0c040; --warn-bg:#fff3cd; --warn-border:#ffc107;
-      --chip-bg:#e8e8e8; --chip-text:#555; --legend-bg:rgba(255,255,255,.92);
+    /* Site-specific tokens, all derived from family.css */
+    :root{
+      --on-air:var(--series-4); --off-air:var(--accent);
+      --selected:rgba(181,122,24,.16); --legend-bg:rgba(253,251,245,.94);
+      --overlay:rgba(34,32,26,.45);
     }
-    html[data-theme="dark"] {
-      --bg:#0f151c; --surface:#18212b; --primary:#14364d; --accent:#2e86c1;
-      --text:#d5dde5; --muted:#8aa0b2;
-      --border:#2a3846; --hover:#1f3347; --selected:#453c1c;
-      --ptext:#5dade2; --th-hover:#1d4d6e; --zebra:#141c25; --code-bg:#10161d;
-      --rb-bg:#2a2413; --rb-border:#6b5a1e; --warn-bg:#3a3113; --warn-border:#8a7a2a;
-      --chip-bg:#2c3947; --chip-text:#b9c6d2; --legend-bg:rgba(24,33,43,.92);
-    }
-    html[data-theme="dark"] .leaflet-popup-content-wrapper,
-    html[data-theme="dark"] .leaflet-popup-tip{background:var(--surface);color:var(--text)}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+    :root[data-theme="dark"]{--selected:rgba(211,154,58,.18);--legend-bg:rgba(33,31,26,.94);--overlay:rgba(0,0,0,.6)}
+    .wrap{max-width:1440px}
 
-    /* HEADER */
-    header{background:var(--primary);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-    header h1{font-size:1.15rem;font-weight:700}
-    header p{font-size:0.8rem;opacity:.8}
-    #lang-toggle,#theme-toggle{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;padding:4px 12px;border-radius:4px;cursor:pointer;font-size:.83rem}
-    #lang-toggle:hover,#theme-toggle:hover{background:rgba(255,255,255,.25)}
+    /* HEADER (family bar) */
+    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:30px;height:28px;padding:0;
+      border:1px solid var(--fg);background:transparent;color:var(--fg);cursor:pointer;border-radius:0}
+    .icon-btn:hover{background:var(--bg2)}
+    .icon-btn svg{width:15px;height:15px;display:block}
+    :root[data-theme="dark"] .i-moon,:root:not([data-theme="dark"]) .i-sun{display:none}
+
+    /* INTRO */
+    .intro{padding:26px 0 18px}
+    .intro h1{margin:0 0 6px}
+    .intro .lede{margin:0;max-width:70ch}
 
     /* TOOLBAR */
-    .toolbar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end}
-    .toolbar label{display:block;font-size:.75rem;color:var(--muted);margin-bottom:3px}
-    .toolbar select,.toolbar input[type=text]{padding:5px 8px;border:1px solid var(--border);border-radius:4px;font-size:.85rem;background:var(--bg);color:var(--text)}
+    .toolbar{border-top:1px solid var(--hair);border-bottom:1px solid var(--line);background:var(--card)}
+    .toolbar .wrap{display:flex;flex-wrap:wrap;gap:12px 14px;align-items:flex-end;padding-top:14px;padding-bottom:14px}
+    .fld-lbl{display:block;font:600 11px var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--fg2);margin-bottom:4px}
+    .toolbar select,.toolbar input[type=text]{height:34px;padding:0 9px;border:1px solid var(--line);border-radius:var(--r);
+      font:14px var(--sans);background:var(--bg);color:var(--fg)}
+    .toolbar select:focus,.toolbar input[type=text]:focus{outline:2px solid var(--accent2);outline-offset:-1px;border-color:var(--accent2)}
     .toolbar select{min-width:120px}
-    .btn{padding:5px 14px;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-weight:600;white-space:nowrap}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{background:#1a6fa8}
-    .btn-secondary{background:#6c757d;color:#fff}
-    .btn-secondary:hover{background:#5a6268}
-    .btn-sm{padding:3px 10px;font-size:.78rem}
+    .conf-opts{display:flex;gap:10px;align-items:center;height:34px;font-size:14px}
+    .conf-opts label{cursor:pointer;display:flex;gap:4px;align-items:center}
+    .tb-actions{margin-left:auto;display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}
+    .btn.sm{padding:8px 13px;font-size:12px;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
+    .btn.sm svg{width:14px;height:14px;flex:none}
+    .btn:disabled{opacity:.6;cursor:wait}
 
     /* STATS */
-    .stats-bar{padding:6px 20px;font-size:.8rem;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-    .stats-bar strong{color:var(--text)}
-    #sel-count{color:var(--accent);font-weight:600}
+    .stats-bar{border-bottom:1px solid var(--line);font:12px var(--mono);letter-spacing:.04em;color:var(--fg2)}
+    .stats-bar .wrap{display:flex;gap:6px 18px;align-items:center;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+    .stats-bar strong{color:var(--fg)}
+    #sel-count{color:var(--accent2)}
+    .stats-bar .upd{margin-left:auto}
+    .stats-bar a{color:var(--accent2)}
 
-    /* TABLE */
-    main{padding:14px 20px;overflow-x:auto}
-    .legend{display:flex;gap:14px;margin-bottom:10px;font-size:.8rem;flex-wrap:wrap}
-    .legend span{display:flex;align-items:center;gap:4px}
-    .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
-    .dot-on{background:var(--on-air)}.dot-off{background:var(--off-air)}
-
-    table#rt{width:100%;border-collapse:collapse;font-size:.83rem}
-    table#rt thead th{background:var(--primary);color:#fff;padding:8px 8px;text-align:left;white-space:nowrap;user-select:none;cursor:pointer}
-    table#rt thead th:hover{background:var(--th-hover)}
-    table#rt thead th.sort-asc::after{content:" ▲";font-size:.65rem}
-    table#rt thead th.sort-desc::after{content:" ▼";font-size:.65rem}
-    table#rt thead th.no-sort{cursor:default}
-    table#rt thead th.no-sort:hover{background:var(--primary)}
-    table#rt tbody tr:nth-child(even){background:var(--zebra)}
-    table#rt tbody tr:hover{background:var(--hover)}
-    table#rt tbody tr.row-selected{background:var(--selected)!important}
-    table#rt tbody td{padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
-    table#rt tbody td.loc-cell{white-space:normal;max-width:180px}
-
-    .sdot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:3px}
-    .s-on{background:var(--on-air)}.s-off{background:var(--off-air)}
-
-    .badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:.72rem;font-weight:700}
-    .plate-badge{display:inline-block;min-width:1.6em;margin-right:4px;padding:0 4px;border-radius:3px;background:var(--chip-bg);color:var(--chip-text);font-size:.72rem;font-weight:700;text-align:center;vertical-align:middle}
-    .coord-exact{color:#1e8449;font-size:.78rem;font-family:monospace}
-    .coord-approx{color:#d68910;font-size:.78rem;font-family:monospace;font-style:italic}
-    .bvhf{background:#d5f5e3;color:#1e8449}.buhf{background:#d6eaf8;color:#1a5276}.both{background:#fdebd0;color:#784212}
-
-    /* MODAL OVERLAY */
-    .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:center;justify-content:center}
-    .overlay.open{display:flex}
-    .modal{background:var(--surface);border-radius:8px;padding:24px;width:min(680px,96vw);max-height:90vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.25)}
-    .modal h2{color:var(--ptext);font-size:1.05rem;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
-    .modal-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--muted);line-height:1}
-    .modal-close:hover{color:var(--text)}
-    .section{margin-bottom:16px}
-    .section h3{font-size:.85rem;font-weight:700;color:var(--ptext);margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
-    .check-grid{display:flex;flex-wrap:wrap;gap:8px}
-    .check-grid label{display:flex;align-items:center;gap:5px;font-size:.85rem;cursor:pointer;padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg)}
-    .check-grid label:hover{background:var(--hover)}
-    .check-grid input[type=checkbox]:checked+span{font-weight:700;color:var(--ptext)}
-    .radio-group{display:flex;flex-wrap:wrap;gap:6px}
-    .radio-group label{display:flex;align-items:center;gap:5px;font-size:.85rem;cursor:pointer;padding:4px 10px;border:1px solid var(--border);border-radius:4px;background:var(--bg)}
-    .radio-group label:hover{background:var(--hover)}
-    .radio-group input[type=radio]:checked+span{font-weight:700;color:var(--ptext)}
-    .warn-box{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:4px;padding:8px 12px;font-size:.82rem;margin-top:8px;display:none}
-    .warn-box.show{display:block}
-    .preview-box{background:var(--code-bg);border:1px solid var(--border);border-radius:4px;padding:10px;font-size:.8rem;font-family:monospace;max-height:100px;overflow-y:auto;margin-top:8px}
-    .modal-footer{display:flex;justify-content:flex-end;gap:8px;margin-top:20px;padding-top:14px;border-top:1px solid var(--border)}
-
-    /* RB panel */
-    #rb-panel{display:none;background:var(--rb-bg);border:1px solid var(--rb-border);border-radius:6px;padding:12px 16px;margin:0 20px 10px;font-size:.85rem}
-    #rb-panel h3{margin-bottom:6px;font-size:.9rem;color:var(--ptext)}
-    #rb-panel p{color:var(--muted);font-size:.8rem;line-height:1.5;margin-bottom:8px}
-
-    footer{text-align:center;padding:16px;font-size:.76rem;color:var(--muted);border-top:1px solid var(--border);margin-top:10px}
-    footer a{color:var(--accent);text-decoration:none}
     /* TABS */
-    .tab-bar{display:flex;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:0 20px}
-    .tab-btn{padding:8px 20px;border:none;background:none;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;transition:all .15s}
-    .tab-btn:hover{color:var(--text);background:var(--zebra)}
-    .tab-btn.active{color:var(--ptext);border-bottom-color:var(--accent)}
+    .tab-bar .wrap{display:flex;gap:0;border-bottom:1px solid var(--fg)}
+    .tab-btn{padding:12px 18px 10px;border:0;background:none;cursor:pointer;font:700 12px var(--mono);letter-spacing:.12em;
+      text-transform:uppercase;color:var(--fg2);border-bottom:2px solid transparent;margin-bottom:-1px}
+    .tab-btn:hover{color:var(--fg)}
+    .tab-btn.active{color:var(--fg);border-bottom-color:var(--accent)}
     .tab-content{display:none}
     .tab-content.active{display:block}
 
+    /* RB panel */
+    #rb-panel{display:none;margin:14px 0 0;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--copper);
+      border-radius:var(--r);padding:14px 18px;font-size:14px}
+    #rb-panel h3{margin:0 0 6px;font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg)}
+    #rb-panel p{color:var(--fg2);font-size:13.5px;line-height:1.5;margin:0 0 10px}
+    #rb-status{margin-left:10px;color:var(--fg2)}
+
+    /* TABLE */
+    main.wrap{padding-top:14px}
+    .table-scroll{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
+    .legend{display:flex;gap:16px;margin-bottom:10px;font:12px var(--mono);letter-spacing:.04em;color:var(--fg2);flex-wrap:wrap}
+    .legend span{display:flex;align-items:center;gap:5px}
+    .dot,.sdot{width:8px;height:8px;border-radius:50%;display:inline-block}
+    .sdot{margin-right:5px}
+    .dot-on,.s-on{background:var(--on-air)}.dot-off,.s-off{background:var(--off-air)}
+
+    table#rt{width:100%;border-collapse:collapse;font-size:13px;line-height:1.35}
+    table#rt thead th{background:var(--bg2);color:var(--fg);padding:9px 8px;text-align:left;white-space:nowrap;user-select:none;cursor:pointer;
+      font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--fg)}
+    table#rt thead th:hover{color:var(--accent)}
+    table#rt thead th.sort-asc::after{content:" ▲";font-size:.75em;color:var(--accent)}
+    table#rt thead th.sort-desc::after{content:" ▼";font-size:.75em;color:var(--accent)}
+    table#rt thead th.no-sort{cursor:default}
+    table#rt thead th.no-sort:hover{color:var(--fg)}
+    table#rt tbody tr:hover{background:var(--bg2)}
+    table#rt tbody tr.row-selected{background:var(--selected)!important}
+    table#rt tbody td{padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+    table#rt tbody td.loc-cell{white-space:normal;max-width:180px}
+    table#rt input[type=checkbox]{accent-color:var(--accent2)}
+
+    .badge{display:inline-block;padding:0 5px;border:1px solid currentColor;border-radius:var(--r);font:700 11px/1.5 var(--mono);letter-spacing:.04em}
+    .bvhf{color:var(--series-1)}.buhf{color:var(--series-2)}.baprs{color:var(--series-3)}.becho{color:var(--series-4)}.both{color:var(--fg2)}
+    .plate-badge{display:inline-block;min-width:1.6em;margin-right:4px;padding:0 4px;border-radius:var(--r);background:var(--bg2);color:var(--fg2);
+      font:700 11px var(--mono);text-align:center;vertical-align:middle}
+    .coord-exact{color:var(--series-4);font:12px var(--mono)}
+    .coord-approx{color:var(--copper);font:italic 12px var(--mono)}
+
+    /* MODAL OVERLAY */
+    .overlay{display:none;position:fixed;inset:0;background:var(--overlay);z-index:100;align-items:center;justify-content:center}
+    .overlay.open{display:flex}
+    .modal{background:var(--card);border:1px solid var(--fg);border-radius:var(--r);padding:22px 24px;width:min(680px,96vw);max-height:90vh;overflow-y:auto}
+    .modal h2{margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+    .modal-close{background:none;border:0;cursor:pointer;color:var(--fg2);padding:4px;display:inline-flex}
+    .modal-close svg{width:16px;height:16px}
+    .modal-close:hover{color:var(--accent)}
+    .section{margin-bottom:18px}
+    .section h3{font:700 11px var(--mono);color:var(--fg2);margin:0 0 8px;text-transform:uppercase;letter-spacing:.12em}
+    .check-grid,.radio-group{display:flex;flex-wrap:wrap;gap:6px}
+    .check-grid label,.radio-group label{display:flex;align-items:center;gap:5px;font-size:14px;cursor:pointer;padding:4px 9px;
+      border:1px solid var(--line);border-radius:var(--r);background:var(--bg)}
+    .check-grid label:hover,.radio-group label:hover{background:var(--bg2)}
+    .modal input{accent-color:var(--accent2)}
+    .check-grid input:checked+span,.radio-group input:checked+span{font-weight:700;color:var(--accent2)}
+    .sub-lbl{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
+    .note{font-size:13px;color:var(--fg2);margin-top:6px}
+    .note.copper{border-left:3px solid var(--copper);padding-left:8px;margin-left:20px}
+    .warn-box{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--r);padding:9px 12px;font-size:13.5px;margin-top:8px;display:none}
+    .warn-box.show{display:block}
+    .preview-box{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:10px;font:12.5px var(--mono);max-height:100px;overflow-y:auto;margin-top:8px}
+    .modal-footer{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:20px;padding-top:14px;border-top:1px solid var(--line)}
+    #wiz-count-label{margin-right:auto;font:12px var(--mono);color:var(--fg2)}
+
     /* COMMUNITY VOTE */
     .vote-cell{text-align:center;white-space:nowrap;min-width:90px}
-    .vote-row{display:inline-flex;gap:2px;align-items:center;font-size:.72rem}
-    .vote-btn{border:none;border-radius:3px;cursor:pointer;padding:1px 4px;font-size:.72rem;font-weight:700;line-height:1.4;transition:all .12s}
-    .vote-btn:hover{opacity:.85;transform:scale(1.1)}
-    .vb-yes{background:#d5f5e3;color:#1e8449}.vb-yes.voted{background:#27ae60;color:#fff}
-    .vb-no{background:#fadbd8;color:#c0392b}.vb-no.voted{background:#e74c3c;color:#fff}
-    .vote-score{font-size:.7rem;color:var(--muted);margin:0 1px}
-    .vote-separator{display:inline-block;width:1px;height:14px;background:var(--border);margin:0 3px;vertical-align:middle}
-    .vote-label{font-size:.65rem;color:var(--muted);display:block;line-height:1;margin-bottom:1px}
+    .vote-row{display:inline-flex;gap:3px;align-items:center;font-size:11px}
+    .vote-btn{border:1px solid currentColor;border-radius:var(--r);background:transparent;cursor:pointer;padding:0 4px;font:700 11px/1.5 var(--mono)}
+    .vote-btn:hover{background:var(--bg2)}
+    .vb-yes{color:var(--on-air)}.vb-yes.voted{background:var(--on-air);color:var(--card)}
+    .vb-no{color:var(--off-air)}.vb-no.voted{background:var(--off-air);color:var(--card)}
+    .vote-score{font-size:10.5px;color:inherit;margin:0 1px}
+    .vote-label{font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--fg2)}
+    /* both vote groups on one line keeps table rows short */
+    .vote-cell>div{display:inline-flex;align-items:center;gap:4px;margin:0 5px!important}
 
     /* MAP */
-    #map-container{height:calc(100vh - 260px);min-height:400px}
-    .map-legend{position:absolute;bottom:20px;left:20px;background:var(--legend-bg);padding:8px 12px;border-radius:6px;font-size:.78rem;z-index:800;box-shadow:0 1px 5px rgba(0,0,0,.2);line-height:1.6}
-    .map-legend-dot{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:middle;margin-right:4px}
+    #tab-map .wrap{padding-top:14px}
+    #map-container{height:calc(100vh - 330px);min-height:400px;border:1px solid var(--line)}
+    .map-legend{position:absolute;bottom:20px;left:12px;background:var(--legend-bg);border:1px solid var(--line);padding:8px 12px;border-radius:var(--r);
+      font:12px/1.7 var(--mono);color:var(--fg);z-index:800}
+    .map-legend-dot{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+    .map-legend .sep{margin-top:4px;border-top:1px solid var(--line);padding-top:4px}
+    #map-container .leaflet-popup-content-wrapper,#map-container .leaflet-popup-tip{background:var(--card);color:var(--fg);border-radius:var(--r);box-shadow:0 0 0 1px var(--line)}
+    #map-container .leaflet-container a{color:var(--link)}
+    #map-container .marker-cluster-small,#map-container .marker-cluster-medium,#map-container .marker-cluster-large{background-color:rgba(36,80,110,.22)}
+    #map-container .marker-cluster-small div,#map-container .marker-cluster-medium div,#map-container .marker-cluster-large div{background-color:rgba(36,80,110,.85);color:#fdfbf5;font:700 11px var(--mono)}
+    .pop{font-size:13px;line-height:1.5;min-width:180px}
+    .pop strong{font-size:14px}
+    .pop .muted{color:var(--fg2)}
 
-    @media(max-width:600px){main{padding:8px}.toolbar{padding:8px}#map-container{height:60vh;min-height:300px}}
+    .fam-line .sp{flex:1}
+    /* ABOUT */
+    #tab-about section:first-child{border-top:0}
+    #legal{scroll-margin-top:64px}
+    #tab-about .about p{max-width:72ch;color:var(--fg2)}
+    #tab-about .about p strong{color:var(--fg)}
+
+    @media(max-width:600px){
+      .toolbar .wrap{gap:10px}
+      .toolbar select,.toolbar input[type=text]{min-width:0;max-width:100%}
+      #custom-search{width:100%!important}
+      .toolbar .wrap>div:first-child{flex:1 1 100%}
+      .tb-actions{margin-left:0}
+      #map-container{height:60vh;min-height:300px}
+      .tab-btn{padding:12px 12px 10px}
+    }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <div>
-    <h1 id="h-title">Turkey Amateur Radio Repeaters</h1>
-    <p id="h-subtitle">Searchable · Filterable · Exportable</p>
-  </div>
-  <div style="display:flex;gap:6px">
-    <button id="theme-toggle" onclick="toggleTheme()" title="Dark / Light">🌙</button>
-    <button id="lang-toggle" onclick="toggleLang()">TR</button>
+<!-- HEADER: family bar (back link to aprsagent.com + site name) -->
+<header class="fam-bar">
+  <div class="wrap bar">
+    <a class="fam-home" href="https://aprsagent.com/#tools" title="aprsagent.com — Telsizci araçları / Ham radio tools">
+      <img src="assets/aprsagent-mark.svg" alt=""><span class="t">aprsagent.com</span>
+    </a>
+    <span class="fam-sep" aria-hidden="true"></span>
+    <a class="fam-site" href="./">REPEATERS</a>
+    <span class="sp"></span>
+    <button class="icon-btn" id="theme-toggle" type="button" onclick="toggleTheme()" title="Dark / Light" aria-label="Dark / Light">
+      <svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.6A5.8 5.8 0 0 1 6.4 2.5a5.8 5.8 0 1 0 7.1 7.1z"/></svg>
+      <svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M2.9 13.1l1.4-1.4M11.7 4.3l1.4-1.4"/></svg>
+    </button>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="tr" aria-pressed="false" onclick="setLang('tr')">TR</button>
+    </div>
+    <a class="ghl" href="https://github.com/TA3HRJ/turkey-repeaters" rel="noopener">GitHub ↗</a>
   </div>
 </header>
 
+<!-- INTRO -->
+<div class="intro">
+  <div class="wrap">
+    <h1 id="h-title">Turkey Amateur Radio Repeaters</h1>
+    <p class="lede" id="h-subtitle">A searchable, filterable, exportable list and map of amateur radio repeaters in Turkey.</p>
+  </div>
+</div>
+
 <!-- TOOLBAR -->
 <div class="toolbar">
+  <div class="wrap">
   <div>
-    <label id="lbl-search">Search</label>
+    <label class="fld-lbl" id="lbl-search" for="custom-search">Search</label>
     <input type="text" id="custom-search" placeholder="Search..." oninput="applyFilters()" style="width:180px"/>
   </div>
   <div>
-    <label id="lbl-band">Band</label>
+    <label class="fld-lbl" id="lbl-band" for="filter-band">Band</label>
     <select id="filter-band" onchange="applyFilters()">
       <option value="" id="opt-allbands">All bands</option>
       <option value="VHF">VHF</option>
@@ -178,7 +228,7 @@
     </select>
   </div>
   <div>
-    <label id="lbl-mode">Mode</label>
+    <label class="fld-lbl" id="lbl-mode" for="filter-mode">Mode</label>
     <select id="filter-mode" onchange="applyFilters()">
       <option value="" id="opt-allmode">All modes</option>
       <option value="FM">FM</option>
@@ -189,7 +239,7 @@
     </select>
   </div>
   <div>
-    <label id="lbl-status">Status</label>
+    <label class="fld-lbl" id="lbl-status" for="filter-status">Status</label>
     <select id="filter-status" onchange="applyFilters()">
       <option value="" id="opt-allstatus">All</option>
       <option value="on" id="opt-on">On-Air</option>
@@ -197,7 +247,7 @@
     </select>
   </div>
   <div>
-    <label id="lbl-ta">Region</label>
+    <label class="fld-lbl" id="lbl-ta" for="filter-ta">Region</label>
     <select id="filter-ta" onchange="applyFilters()">
       <option value="" id="opt-allta">All regions</option>
       <option value="TA0">TA0</option>
@@ -213,57 +263,69 @@
     </select>
   </div>
   <div>
-    <label id="lbl-city">City</label>
+    <label class="fld-lbl" id="lbl-city" for="filter-city">City</label>
     <select id="filter-city" onchange="applyFilters()">
       <option value="" id="opt-allcities">All cities</option>
     </select>
   </div>
-  <div style="display:flex;flex-direction:column;gap:2px;justify-content:flex-end">
-    <label id="lbl-freq-filter" style="font-size:.75rem;color:#666;margin:0">Frequency</label>
-    <div style="display:flex;gap:8px;align-items:center">
-      <label style="margin:0;cursor:pointer;font-weight:normal"><input type="radio" name="filter-conflicts" value="" onchange="applyFilters()" checked/> <span id="opt-conf-all">All</span></label>
-      <label style="margin:0;cursor:pointer;font-weight:normal"><input type="radio" name="filter-conflicts" value="yes" onchange="applyFilters()"/> <span id="opt-conf-yes">Conflicts</span></label>
-      <label style="margin:0;cursor:pointer;font-weight:normal"><input type="radio" name="filter-conflicts" value="no" onchange="applyFilters()"/> <span id="opt-conf-no">No conflicts</span></label>
+  <div>
+    <span class="fld-lbl" id="lbl-freq-filter">Frequency</span>
+    <div class="conf-opts">
+      <label><input type="radio" name="filter-conflicts" value="" onchange="applyFilters()" checked/> <span id="opt-conf-all">All</span></label>
+      <label><input type="radio" name="filter-conflicts" value="yes" onchange="applyFilters()"/> <span id="opt-conf-yes">Conflicts</span></label>
+      <label><input type="radio" name="filter-conflicts" value="no" onchange="applyFilters()"/> <span id="opt-conf-no">No conflicts</span></label>
     </div>
   </div>
-  <div style="margin-left:auto;display:flex;gap:6px;align-items:flex-end">
-    <button class="btn btn-primary" onclick="findNearest()" id="btn-nearest">📍 Nearest</button>
-    <button class="btn btn-primary" onclick="openExportWizard()" id="btn-export">Export CSV</button>
-    <button class="btn btn-secondary btn-sm" onclick="toggleRBPanel()" id="btn-rb">RepeaterBook Import</button>
+  <div class="tb-actions">
+    <button class="btn s sm" type="button" onclick="findNearest()" id="btn-nearest">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 15s5-4.6 5-8.6A5 5 0 0 0 3 6.4C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.4" r="1.8"/></svg>
+      <span id="btn-nearest-label">Nearest</span>
+    </button>
+    <button class="btn p sm" type="button" onclick="openExportWizard()" id="btn-export">Export CSV</button>
+    <button class="btn s sm" type="button" onclick="toggleRBPanel()" id="btn-rb">RepeaterBook Import</button>
+  </div>
   </div>
 </div>
 
 <!-- STATS BAR -->
 <div class="stats-bar">
+  <div class="wrap">
   <span><strong id="stat-total">—</strong> <span id="lbl-total">total</span></span>
   <span><strong id="stat-filtered">—</strong> <span id="lbl-filtered">shown</span></span>
   <span id="sel-count-wrap"><strong id="sel-count">0</strong> <span id="lbl-selected">selected</span>
-    &nbsp;<a href="#" onclick="clearSelection();return false" id="lbl-clearsel" style="font-size:.75rem">(clear)</a>
+    &nbsp;<a href="#" onclick="clearSelection();return false" id="lbl-clearsel">(clear)</a>
   </span>
-  <span style="margin-left:auto;font-size:.75rem"><span id="lbl-updated">Last updated:</span> <strong id="updated-date">—</strong></span>
+  <span class="upd"><span id="lbl-updated">Last updated:</span> <strong id="updated-date">—</strong></span>
+  </div>
 </div>
 
 <!-- TAB BAR -->
-<div class="tab-bar">
-  <button class="tab-btn active" id="tab-list-btn" onclick="switchTab('list')"><span id="tab-list-label">List</span></button>
-  <button class="tab-btn" id="tab-map-btn" onclick="switchTab('map')"><span id="tab-map-label">Map</span></button>
-</div>
+<nav class="tab-bar">
+  <div class="wrap">
+  <button class="tab-btn active" id="tab-list-btn" type="button" onclick="switchTab('list')"><span id="tab-list-label">List</span></button>
+  <button class="tab-btn" id="tab-map-btn" type="button" onclick="switchTab('map')"><span id="tab-map-label">Map</span></button>
+  <button class="tab-btn" id="tab-about-btn" type="button" onclick="switchTab('about')"><span data-i="tabAbout">About</span></button>
+  </div>
+</nav>
 
 <!-- RB IMPORT PANEL -->
+<div class="wrap">
 <div id="rb-panel">
   <h3 id="rb-title">RepeaterBook CSV Import</h3>
   <p id="rb-desc">Download CSV from RepeaterBook (Turkey filter), select the file. Matching repeaters updated, new ones added. <strong>Session only</strong> — run <code>merge_repeaterbook.py</code> to make permanent.</p>
   <input type="file" id="rb-file" accept=".csv" onchange="importRepeaterBook(this)"/>
-  <span id="rb-status" style="margin-left:10px;color:var(--muted)"></span>
+  <span id="rb-status"></span>
+</div>
 </div>
 
 <!-- LIST TAB -->
 <div id="tab-list" class="tab-content active">
-  <main>
+  <main class="wrap">
     <div class="legend">
       <span><span class="dot dot-on"></span><span id="leg-on">On-Air</span></span>
       <span><span class="dot dot-off"></span><span id="leg-off">Off-Air</span></span>
     </div>
+    <div class="table-scroll">
     <table id="rt">
       <thead>
         <tr>
@@ -288,36 +350,82 @@
       </thead>
       <tbody id="tbody"></tbody>
     </table>
+    </div>
   </main>
 </div>
 
 <!-- MAP TAB -->
 <div id="tab-map" class="tab-content">
+  <div class="wrap">
   <div id="map-container" style="position:relative">
     <div class="map-legend" id="map-legend">
-      <div><span class="map-legend-dot" style="background:#27ae60"></span> VHF</div>
-      <div><span class="map-legend-dot" style="background:#2980b9"></span> UHF</div>
-      <div><span class="map-legend-dot" style="background:#e67e22"></span> APRS</div>
-      <div><span class="map-legend-dot" style="background:#8e44ad"></span> EchoLink</div>
-      <div style="margin-top:4px;border-top:1px solid #ddd;padding-top:4px">
-        <span class="map-legend-dot" style="background:#27ae60;opacity:1"></span> <span id="map-leg-on">On-Air</span>
-        <span class="map-legend-dot" style="background:#ccc;margin-left:6px"></span> <span id="map-leg-off">Off-Air</span>
+      <div><span class="map-legend-dot" style="background:var(--series-1)"></span> VHF</div>
+      <div><span class="map-legend-dot" style="background:var(--series-2)"></span> UHF</div>
+      <div><span class="map-legend-dot" style="background:var(--series-3)"></span> APRS</div>
+      <div><span class="map-legend-dot" style="background:var(--series-4)"></span> EchoLink</div>
+      <div class="sep">
+        <span class="map-legend-dot" style="background:var(--fg)"></span> <span id="map-leg-on">On-Air</span>
+        <span class="map-legend-dot" style="background:var(--line);margin-left:6px"></span> <span id="map-leg-off">Off-Air</span>
       </div>
     </div>
   </div>
+  </div>
 </div>
 
-<footer>
-  <a href="https://www.repeaterbook.com" target="_blank">RepeaterBook</a>
-  &nbsp;|&nbsp; <span id="ft-license">Personal use only.</span>
-  &nbsp;|&nbsp; <a href="https://github.com/TA3HRJ/turkey-repeaters" target="_blank">GitHub</a>
-  &nbsp;|&nbsp; MIT License
+<!-- ABOUT TAB (about + #legal) -->
+<div id="tab-about" class="tab-content">
+  <section>
+    <div class="wrap about">
+      <h2 data-i="abTitle">About</h2>
+      <p data-i="abP1"></p>
+      <p data-i="abP2"></p>
+      <p data-i="abP3"></p>
+    </div>
+  </section>
+  <section id="legal">
+    <div class="wrap legal">
+      <h2 data-i="lgTmTitle">Trademarks</h2>
+      <p data-i="lgTm1"></p>
+      <p data-i="lgTmAprs"></p>
+      <p data-i="lgTm2"></p>
+      <h2 data-i="lgDiscTitle" style="margin-top:28px">Disclaimer</h2>
+      <ul>
+        <li data-i="lgD1"></li>
+        <li data-i="lgD2"></li>
+        <li data-i="lgD3"></li>
+        <li data-i="lgD4"></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<footer class="fam-foot">
+  <div class="wrap">
+    <nav class="fam-tools" aria-label="Telsizci araçları / Ham radio tools">
+      <b data-i="fam_tools">Ham radio tools</b>
+      <a href="https://aprsagent.com/">aprsagent.com</a>
+      <a href="https://coax.aprsagent.com/" data-i="fam_coax">Coax cables</a>
+      <a href="https://repeaters.aprsagent.com/" data-i="fam_rep" aria-current="page">Repeaters</a>
+      <a href="https://sinav.aprsagent.com/" data-i="fam_exam">Exam prep</a>
+      <a href="https://contacts.aprsagent.com/" data-i="fam_contacts">AnyTone contacts</a>
+    </nav>
+    <div class="fam-line">
+      <span data-i="fam_lic">Code MIT · data for personal use</span>
+      <a href="#about" onclick="switchTab('about');scrollTo(0,0);return false" data-i="fam_about">About</a>
+      <a href="https://www.repeaterbook.com" rel="noopener">RepeaterBook</a>
+      <a href="https://github.com/TA3HRJ/turkey-repeaters" rel="noopener">GitHub</a>
+      <span class="sp"></span>
+      <span data-i="fam_op">Operated by TA3HX</span>
+    </div>
+    <p class="fam-legal"><span data-i="fam_legal">Brand and product names belong to their owners; this site is not affiliated with any organisation or manufacturer. Information only, without warranty.</span>
+      <a href="#legal" onclick="showLegal();return false" data-i="fam_legal_link">Trademarks and disclaimer</a></p>
+  </div>
 </footer>
 
 <!-- EXPORT WIZARD MODAL -->
 <div class="overlay" id="export-overlay" onclick="overlayClick(event)">
   <div class="modal">
-    <h2 id="wiz-title">Export Wizard <button class="modal-close" onclick="closeExportWizard()">✕</button></h2>
+    <h2 id="wiz-title">Export Wizard <button class="modal-close" type="button" onclick="closeExportWizard()" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></h2>
 
     <!-- Source -->
     <div class="section">
@@ -366,7 +474,7 @@
       <h3 id="wiz-name-lbl">Channel Name Format</h3>
       <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start">
         <div>
-          <label style="font-size:.78rem;color:var(--muted)" id="wiz-charlen-lbl">Max characters</label>
+          <label class="sub-lbl" id="wiz-charlen-lbl">Max characters</label>
           <div class="radio-group" style="margin-top:4px">
             <label><input type="radio" name="wiz-chars" value="6" onchange="wizUpdate()"/><span>6</span></label>
             <label><input type="radio" name="wiz-chars" value="7" onchange="wizUpdate()"/><span>7</span></label>
@@ -377,7 +485,7 @@
           </div>
         </div>
         <div>
-          <label style="font-size:.78rem;color:var(--muted)" id="wiz-prefixmode-lbl">City prefix</label>
+          <label class="sub-lbl" id="wiz-prefixmode-lbl">City prefix</label>
           <div class="radio-group" style="margin-top:4px">
             <label><input type="radio" name="wiz-prefix" value="abbr" checked onchange="wizUpdate()"/><span id="wiz-abbr-lbl">Abbreviation</span></label>
             <label><input type="radio" name="wiz-prefix" value="plate" onchange="wizUpdate()"/><span id="wiz-plate-lbl">Plate number</span></label>
@@ -407,22 +515,22 @@
         <label><input type="radio" name="wiz-fmt" value="gpx" onchange="wizUpdate()"/><span>GPX</span></label>
         <label><input type="radio" name="wiz-fmt" value="kml" onchange="wizUpdate()"/><span>KML</span></label>
       </div>
-      <div id="fmt-note" style="font-size:.78rem;color:var(--muted);margin-top:6px"></div>
+      <div id="fmt-note" class="note"></div>
       <div id="approx-coord-wrap" style="display:none;margin-top:8px">
-        <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer">
+        <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
           <input type="checkbox" id="wiz-approx-coords" onchange="wizUpdate()"/>
           <span id="wiz-approx-lbl">Include approximate coordinates (city center)</span>
         </label>
-        <div style="font-size:.75rem;color:#d68910;margin-top:3px;margin-left:20px" id="wiz-approx-note">⚠ Approximate pins will use a different icon and warning label.</div>
+        <div class="note copper" id="wiz-approx-note">Approximate pins will use a different icon and warning label.</div>
       </div>
     </div>
 
     <div class="warn-box" id="wiz-warn"></div>
 
     <div class="modal-footer">
-      <span id="wiz-count-label" style="align-self:center;font-size:.83rem;color:var(--muted)"></span>
-      <button class="btn btn-secondary" onclick="closeExportWizard()" id="wiz-cancel">Cancel</button>
-      <button class="btn btn-primary" onclick="doExport()" id="wiz-go">Export</button>
+      <span id="wiz-count-label"></span>
+      <button class="btn s sm" type="button" onclick="closeExportWizard()" id="wiz-cancel">Cancel</button>
+      <button class="btn p sm" type="button" onclick="doExport()" id="wiz-go">Export</button>
     </div>
   </div>
 </div>
@@ -433,6 +541,7 @@
 // Leaflet loads on first Map tab open, Firebase after first paint,
 // so the table (core function) renders without waiting for either.
 // ============================================================
+function cssVar(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
 function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
 function loadCSS(href){return new Promise((res,rej)=>{const l=document.createElement("link");l.rel="stylesheet";l.href=href;l.onload=res;l.onerror=rej;document.head.appendChild(l)})}
 let leafletPromise=null;
@@ -463,9 +572,9 @@ function loadFirebase(){
 // ============================================================
 const STRINGS = {
   en:{
-    title:"Turkey Amateur Radio Repeaters", subtitle:"Searchable · Filterable · Exportable",
+    title:"Turkey Amateur Radio Repeaters", subtitle:"A searchable, filterable, exportable list and map of amateur radio repeaters in Turkey.",
     search:"Search", band:"Band", status:"Status", ta:"Region", city:"City",
-    allBands:"All bands", allStatus:"All", allRegions:"All regions", onAir:"On-Air", offAir:"Off-Air",
+    allBands:"All bands", allCities:"All cities", allStatus:"All", allRegions:"All regions", onAir:"On-Air", offAir:"Off-Air",
     export:"Export CSV", rbImport:"RepeaterBook Import",
     rbTitle:"RepeaterBook CSV Import",
     rbDesc:"Download CSV from RepeaterBook (Turkey filter), select file. Matching repeaters updated, new ones added. <strong>Session only</strong> — run <code>merge_repeaterbook.py</code> to make permanent.",
@@ -476,9 +585,8 @@ const STRINGS = {
     freqFilter:"Frequency",confAll:"All",confYes:"Conflicts",confNo:"No conflicts",
     thMode:"Mode",thPlate:"Plate",thCity:"City",thLoc:"Location / Site",thCall:"Callsign",
     thPower:"Pwr (W)",thAlt:"Alt (m)",thTA:"Region",thCoord:"Coordinates",
-    thDist:"Dist (km)", nearest:"📍 Nearest", locating:"Locating…", locErr:"Could not get your location.",
+    thDist:"Dist (km)", nearest:"Nearest", locating:"Locating…", locErr:"Could not get your location.",
     coordExact:"Exact GPS", coordApprox:"~ City center",
-    ftData:"Data: ", ftLicense:"Personal use only.",
     wizTitle:"Export Wizard", wizCancel:"Cancel", wizGo:"Export CSV",
     wizSrc:"Source", wizSrcFiltered:"All filtered rows", wizSrcSelected:"Selected rows only",
     wizLimit:"Channel Limit", wizLimAll:"All",
@@ -490,17 +598,34 @@ const STRINGS = {
     wizFmt:"Export Format",
     wizFmtNotes:{csv:"",chirp:"Import into CHIRP software → Radio > Upload to Radio",anytone:"Import into Anytone CPS → Channels > Import",gpx:"GPS devices & mapping apps.",kml:"Google Earth / Maps."},
     wizApproxLbl:"Include approximate coordinates (city center)",
-    wizApproxNote:"⚠ Approximate pins will use a different icon and warning label.",
+    wizApproxNote:"Approximate pins will use a different icon and warning label.",
     wizWarnOver:(n,lim)=>`${n} repeaters match, limit is ${lim}. Only the top ${lim} will be exported based on priority.`,
     wizCountLabel:(n)=>`${n} records will be exported`,
     tabList:"List", tabMap:"Map", mapLegOn:"On-Air", mapLegOff:"Off-Air",
     thCommunity:"Community", cvWorking:"Working?", cvLocation:"Location?",
     cvYes:"Yes", cvNo:"No", cvVoted:"You voted", cvThanks:"Vote saved!",
+    tabAbout:"About", abTitle:"About",
+    abP1:"A searchable, filterable and exportable list and map of amateur radio repeaters in Turkey: frequency, offset, tone, mode, site and TA region, with export to CHIRP, AnyTone CPS, GPX and KML.",
+    abP2:"The database was first compiled from several Turkish amateur radio sources and RepeaterBook. Automated collection has been removed and it is now <strong>maintained by hand</strong>. The <code>source</code> and <code>last_seen</code> fields show where a record came from and when it was last confirmed; they are not refreshed automatically.",
+    abP3:"Spotted a wrong or missing repeater? <a href=\"https://github.com/TA3HRJ/turkey-repeaters/issues\" rel=\"noopener\">Report it on GitHub</a>. Votes in the Community column (Working? / Location?) help prioritise corrections; they are anonymous and need no login.",
+    lgTmTitle:"Trademarks",
+    lgTm1:"Brand, product, organisation and company names on this site are trademarks or registered trademarks of their respective owners and are used only for identification.",
+    lgTmAprs:"APRS® is a registered trademark of APRS Software and Bob Bruninga, WB4APR (SK), who created APRS and gave the hobby the protocol.",
+    lgTm2:"RepeaterBook, EchoLink, CHIRP, AnyTone, Google Earth, OpenStreetMap and other names may also be trademarks or registered trademarks of their owners. This project is not affiliated with, endorsed, approved or sponsored by any organisation or manufacturer named. The licence grants no rights in these names.",
+    lgDiscTitle:"Disclaimer",
+    lgD1:"Information is compiled from Turkish amateur radio sources, RepeaterBook and volunteer reports. Transcription errors are possible and sources may change without notice; check the primary source before relying on it.",
+    lgD2:"Repeater details (frequency, offset, tone, status) change and rely on volunteer reports; confirm with the local club or repeater keeper before transmitting. Staying within your licence and the band plan is your responsibility.",
+    lgD3:"External links lead to third-party sites; this site is not responsible for their content.",
+    lgD4:"Information is provided \"as is\", without any warranty of accuracy, completeness or fitness for a particular purpose, and no liability is accepted for any damage arising from its use.",
+    fam_tools:"Ham radio tools", fam_coax:"Coax cables", fam_rep:"Repeaters", fam_exam:"Exam prep", fam_contacts:"AnyTone contacts",
+    fam_op:"Operated by TA3HX", fam_lic:"Code MIT · data for personal use only", fam_about:"About",
+    fam_legal:"Brand and product names belong to their owners; this site is not affiliated with any organisation or manufacturer. Information only, without warranty.",
+    fam_legal_link:"Trademarks and disclaimer",
   },
   tr:{
-    title:"Türkiye Amatör Telsiz Röleleri", subtitle:"Arama · Filtreleme · Dışa aktarım",
+    title:"Türkiye Amatör Telsiz Röleleri", subtitle:"Türkiye'deki amatör telsiz rölelerinin aranabilir, filtrelenebilir, dışa aktarılabilir listesi ve haritası.",
     search:"Ara", band:"Bant", status:"Durum", ta:"Bölge", city:"Şehir",
-    allBands:"Tüm bantlar", allStatus:"Tümü", allRegions:"Tüm bölgeler", onAir:"Aktif", offAir:"Pasif",
+    allBands:"Tüm bantlar", allCities:"Tüm şehirler", allStatus:"Tümü", allRegions:"Tüm bölgeler", onAir:"Aktif", offAir:"Pasif",
     export:"CSV İndir", rbImport:"RepeaterBook İçe Aktar",
     rbTitle:"RepeaterBook CSV İçe Aktarma",
     rbDesc:"RepeaterBook'tan Türkiye CSV indirin. Eşleşenler güncellenir, yeniler eklenir. <strong>Yalnızca oturum</strong> — kalıcı için <code>merge_repeaterbook.py</code> çalıştırın.",
@@ -511,9 +636,8 @@ const STRINGS = {
     freqFilter:"Frekans",confAll:"Tümü",confYes:"Çakışanlar",confNo:"Çakışmayanlar",
     thMode:"Mod",thPlate:"Plaka",thCity:"Şehir",thLoc:"Konum / İstasyon",thCall:"Çağrı",
     thPower:"Güç (W)",thAlt:"İrt (m)",thTA:"Bölge",thCoord:"Koordinat",
-    thDist:"Mesafe (km)", nearest:"📍 En Yakın", locating:"Konum alınıyor…", locErr:"Konumunuz alınamadı.",
+    thDist:"Mesafe (km)", nearest:"En Yakın", locating:"Konum alınıyor…", locErr:"Konumunuz alınamadı.",
     coordExact:"Kesin GPS", coordApprox:"~ Şehir merkezi",
-    ftData:"Veri: ", ftLicense:"Yalnızca kişisel kullanım.",
     wizTitle:"Dışa Aktarma Sihirbazı", wizCancel:"İptal", wizGo:"CSV İndir",
     wizSrc:"Kaynak", wizSrcFiltered:"Tüm filtrelenmiş satırlar", wizSrcSelected:"Yalnızca seçili satırlar",
     wizLimit:"Kanal Limiti", wizLimAll:"Tümü",
@@ -525,12 +649,29 @@ const STRINGS = {
     wizFmt:"Dışa Aktarma Formatı",
     wizFmtNotes:{csv:"",chirp:"CHIRP yazılımına import edin → Radio > Upload to Radio",anytone:"Anytone CPS'e import edin → Channels > Import",gpx:"GPS cihazları ve harita uygulamaları.",kml:"Google Earth / Maps."},
     wizApproxLbl:"Yaklaşık koordinatları dahil et (şehir merkezi)",
-    wizApproxNote:"⚠ Yaklaşık pinler farklı ikon ve uyarı etiketiyle gösterilir.",
+    wizApproxNote:"Yaklaşık pinler farklı ikon ve uyarı etiketiyle gösterilir.",
     wizWarnOver:(n,lim)=>`${n} röle eşleşti, limit ${lim}. Öncelik sırasına göre yalnızca ${lim} dışa aktarılacak.`,
     wizCountLabel:(n)=>`${n} kayıt dışa aktarılacak`,
     tabList:"Liste", tabMap:"Harita", mapLegOn:"Aktif", mapLegOff:"Pasif",
     thCommunity:"Topluluk", cvWorking:"Çalışıyor?", cvLocation:"Konum?",
     cvYes:"Evet", cvNo:"Hayır", cvVoted:"Oy verildi", cvThanks:"Oy kaydedildi!",
+    tabAbout:"Hakkında", abTitle:"Hakkında",
+    abP1:"Türkiye'deki amatör telsiz rölelerinin aranabilir, filtrelenebilir ve dışa aktarılabilir listesi ve haritası: frekans, kayma, ton, mod, konum ve TA bölgesi; CHIRP, AnyTone CPS, GPX ve KML biçiminde dışa aktarım.",
+    abP2:"Veritabanı başlangıçta çeşitli Türk amatör telsiz kaynaklarından ve RepeaterBook'tan derlendi. Otomatik toplama kaldırıldı; artık <strong>elle bakılıyor</strong>. Kayıtlardaki <code>source</code> ve <code>last_seen</code> alanları kaydın nereden geldiğini ve en son ne zaman doğrulandığını gösterir; kendiliğinden yenilenmez.",
+    abP3:"Hatalı ya da eksik bir röle mi gördünüz? <a href=\"https://github.com/TA3HRJ/turkey-repeaters/issues\" rel=\"noopener\">GitHub'da bildirin</a>. Topluluk sütunundaki oylar (Çalışıyor? / Konum?) düzeltmeleri önceliklendirmeye yardım eder; anonimdir, oturum açmak gerekmez.",
+    lgTmTitle:"Ticari markalar",
+    lgTm1:"Bu sitede geçen marka, ürün, kurum ve şirket adları sahiplerinin ticari markaları ya da tescilli ticari markalarıdır ve yalnızca tanımlama amacıyla kullanılır.",
+    lgTmAprs:"APRS®, APRS Software ile APRS'i tasarlayan ve bu protokolü amatör telsizciliğe kazandıran Bob Bruninga WB4APR'ın (SK) tescilli markasıdır.",
+    lgTm2:"RepeaterBook, EchoLink, CHIRP, AnyTone, Google Earth, OpenStreetMap ve diğer adlar da sahiplerinin ticari markaları ya da tescilli ticari markaları olabilir. Bu proje adı geçen hiçbir kurum ya da üreticiyle bağlantılı değildir; onlar tarafından desteklenmez, onaylanmaz ya da sponsor edilmez. Lisans bu adlar üzerinde herhangi bir hak vermez.",
+    lgDiscTitle:"Sorumluluk reddi",
+    lgD1:"Bilgiler Türk amatör telsiz kaynaklarından, RepeaterBook'tan ve gönüllü bildirimlerden derlenmiştir. Aktarım hatası olabilir ve kaynaklar haber vermeden değişebilir; kullanmadan önce birincil kaynaktan doğrulayın.",
+    lgD2:"Röle bilgileri (frekans, kayma, ton, durum) değişebilir ve gönüllü bildirimlere dayanır; yayına geçmeden önce yerel kulüp ya da röle sorumlusuyla doğrulayın. Lisans koşullarına ve band planına uymak kullanıcının sorumluluğudur.",
+    lgD3:"Dış bağlantılar üçüncü taraf sitelere gider; içeriklerinden bu site sorumlu değildir.",
+    lgD4:"Bilgiler \"olduğu gibi\" sunulur. Doğruluk, eksiksizlik ya da belirli bir amaca uygunluk konusunda hiçbir garanti verilmez ve kullanımdan doğabilecek zararlardan sorumluluk kabul edilmez.",
+    fam_tools:"Telsizci araçları", fam_coax:"Kablo veritabanı", fam_rep:"Röleler", fam_exam:"Sınav hazırlık", fam_contacts:"AnyTone rehber",
+    fam_op:"İşleten: TA3HX", fam_lic:"Kod MIT · veri yalnızca kişisel kullanım", fam_about:"Hakkında",
+    fam_legal:"Marka ve ürün adları sahiplerinindir; bu site hiçbir kurum ya da üreticiyle bağlantılı değildir. Bilgiler bilgi amaçlıdır, garanti verilmez.",
+    fam_legal_link:"Ticari markalar ve sorumluluk reddi",
   }
 };
 let lang="en";
@@ -547,6 +688,7 @@ function applyStrings(){
   document.getElementById("opt-allta").textContent=s.allRegions;
   document.getElementById("lbl-city").textContent=s.city;
   document.getElementById("opt-allbands").textContent=s.allBands;
+  document.getElementById("opt-allcities").textContent=s.allCities;
   document.getElementById("opt-allstatus").textContent=s.allStatus;
   document.getElementById("opt-on").textContent=s.onAir;
   document.getElementById("opt-off").textContent=s.offAir;
@@ -582,10 +724,9 @@ function applyStrings(){
   document.getElementById("th-ta").textContent=s.thTA;
   document.getElementById("th-coord").textContent=s.thCoord;
   document.getElementById("th-dist").textContent=s.thDist;
-  document.getElementById("btn-nearest").textContent=s.nearest;
+  document.getElementById("btn-nearest-label").textContent=s.nearest;
   document.getElementById("wiz-approx-lbl").textContent=s.wizApproxLbl;
   document.getElementById("wiz-approx-note").textContent=s.wizApproxNote;
-  document.getElementById("ft-license").textContent=s.ftLicense;
   document.getElementById("wiz-title").childNodes[0].textContent=s.wizTitle+" ";
   document.getElementById("wiz-cancel").textContent=s.wizCancel;
   document.getElementById("wiz-go").textContent=s.wizGo;
@@ -610,16 +751,22 @@ function applyStrings(){
   document.getElementById("tab-map-label").textContent=s.tabMap;
   document.getElementById("map-leg-on").textContent=s.mapLegOn;
   document.getElementById("map-leg-off").textContent=s.mapLegOff;
+  document.querySelectorAll("[data-i]").forEach(el=>{const v=s[el.dataset.i];if(v!=null)el.innerHTML=v});
   document.title=s.title;
   document.documentElement.lang=lang;
   updateStats();
   wizUpdate();
 }
-function toggleLang(){
-  lang=lang==="en"?"tr":"en";
-  document.getElementById("lang-toggle").textContent=lang==="en"?"TR":"EN";
+function updateLangButtons(){
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+}
+function setLang(l){
+  if(l===lang) return;
+  lang=l;
+  updateLangButtons();
   try{localStorage.setItem("lang",lang)}catch(e){}
   applyStrings();
+  if(map) updateMapMarkers();
   stateToURL();
 }
 
@@ -628,15 +775,15 @@ function toggleLang(){
 // ============================================================
 function updateThemeButton(){
   const dark=document.documentElement.dataset.theme==="dark";
-  document.getElementById("theme-toggle").textContent=dark?"☀️":"🌙";
   const meta=document.querySelector("meta[name=theme-color]");
-  if(meta) meta.content=dark?"#14364d":"#1a5276";
+  if(meta) meta.content=cssVar("--bg");
 }
 function toggleTheme(){
   const next=document.documentElement.dataset.theme==="dark"?"light":"dark";
   document.documentElement.dataset.theme=next;
   try{localStorage.setItem("theme",next)}catch(e){}
   updateThemeButton();
+  if(map){updateMapMarkers();showUserMarker()}
 }
 
 // ============================================================
@@ -785,7 +932,7 @@ function fmtCoord(r){
 
 function bandBadge(b){
   b=(b||"").toUpperCase();
-  const cls=b==="VHF"?"bvhf":b==="UHF"?"buhf":"both";
+  const cls={VHF:"bvhf",UHF:"buhf",APRS:"baprs",ECHO:"becho"}[b]||"both";
   return `<span class="badge ${cls}">${b||"—"}</span>`;
 }
 function fmtOff(o){
@@ -943,7 +1090,9 @@ function stateToURL(){
   if(activeTab!=="list")p.set("tab",activeTab);
   if(lang!=="en")p.set("lang",lang);
   const qs=p.toString();
-  history.replaceState(null,"",qs?"?"+qs:location.pathname);
+  // keep #legal while the About tab is open so the link stays shareable
+  const hash=activeTab==="about"?location.hash:"";
+  history.replaceState(null,"",(qs?"?"+qs:location.pathname)+hash);
 }
 function setSelect(id,val){
   if(!val) return;
@@ -960,7 +1109,9 @@ function applyURLState(){
   setSelect("filter-city",p.get("city"));
   const conf=p.get("conf");
   if(conf){const r=document.querySelector(`input[name='filter-conflicts'][value='${conf}']`);if(r)r.checked=true;}
-  if(p.get("tab")==="map") switchTab("map");
+  if(location.hash==="#legal") showLegal();
+  else if(location.hash==="#about"||p.get("tab")==="about") switchTab("about");
+  else if(p.get("tab")==="map") switchTab("map");
 }
 
 // ============================================================
@@ -1013,7 +1164,8 @@ function computeDistances(){
 function findNearest(){
   const btn=document.getElementById("btn-nearest");
   if(!navigator.geolocation){alert(t("locErr"));return}
-  btn.disabled=true;btn.textContent=t("locating");
+  const lbl=document.getElementById("btn-nearest-label");
+  btn.disabled=true;lbl.textContent=t("locating");
   navigator.geolocation.getCurrentPosition(pos=>{
     userPos={lat:pos.coords.latitude,lon:pos.coords.longitude};
     computeDistances();
@@ -1023,9 +1175,9 @@ function findNearest(){
     if(thD) thD.classList.add("sort-asc");
     renderTable(filteredData);
     showUserMarker();
-    btn.disabled=false;btn.textContent=t("nearest");
+    btn.disabled=false;lbl.textContent=t("nearest");
   },()=>{
-    btn.disabled=false;btn.textContent=t("nearest");
+    btn.disabled=false;lbl.textContent=t("nearest");
     alert(t("locErr"));
   },{enableHighAccuracy:false,timeout:10000,maximumAge:600000});
 }
@@ -1033,7 +1185,7 @@ function showUserMarker(){
   if(!map||!userPos) return;
   if(userMarker) userMarker.remove();
   userMarker=L.circleMarker([userPos.lat,userPos.lon],
-    {radius:8,color:"#fff",weight:2,fillColor:"#2980b9",fillOpacity:1}).addTo(map);
+    {radius:8,color:cssVar("--card"),weight:2,fillColor:cssVar("--accent"),fillOpacity:1}).addTo(map);
 }
 
 // ============================================================
@@ -1258,7 +1410,7 @@ function exportKML(pool,maxLen,prefixMode,suffix){
 // ============================================================
 // RepeaterBook import
 // ============================================================
-function toggleRBPanel(){const p=document.getElementById("rb-panel");p.style.display=p.style.display==="none"?"block":"none"}
+function toggleRBPanel(){const p=document.getElementById("rb-panel");p.style.display=getComputedStyle(p).display==="none"?"block":"none"}
 
 function importRepeaterBook(input){
   const file=input.files[0];if(!file) return;
@@ -1305,10 +1457,10 @@ function importRepeaterBook(input){
 let activeTab="list";
 function switchTab(tab){
   activeTab=tab;
-  document.getElementById("tab-list").classList.toggle("active",tab==="list");
-  document.getElementById("tab-map").classList.toggle("active",tab==="map");
-  document.getElementById("tab-list-btn").classList.toggle("active",tab==="list");
-  document.getElementById("tab-map-btn").classList.toggle("active",tab==="map");
+  ["list","map","about"].forEach(n=>{
+    document.getElementById("tab-"+n).classList.toggle("active",tab===n);
+    document.getElementById("tab-"+n+"-btn").classList.toggle("active",tab===n);
+  });
   if(tab==="map"){
     ensureLeaflet().then(()=>{
       if(!map) initMap();
@@ -1318,21 +1470,27 @@ function switchTab(tab){
   }
   stateToURL();
 }
+function showLegal(){
+  switchTab("about");
+  history.replaceState(null,"",location.pathname+location.search+"#legal");
+  document.getElementById("legal").scrollIntoView();
+}
 
 // ============================================================
 // Map (Leaflet + MarkerCluster)
 // ============================================================
 let map=null;
 let markerCluster=null;
-const BAND_COLORS={VHF:"#27ae60",UHF:"#2980b9",APRS:"#e67e22",ECHO:"#8e44ad"};
+// Band colours follow the family --series-* order; read live so dark theme applies.
+const BAND_SERIES={VHF:"--series-1",UHF:"--series-2",APRS:"--series-3",ECHO:"--series-4"};
 
 function markerIcon(band,status){
-  const color=BAND_COLORS[(band||"").toUpperCase()]||"#7f8c8d";
-  const fill=status?color:"#ccc";
-  const stroke=status?color:"#999";
+  const color=cssVar(BAND_SERIES[(band||"").toUpperCase()]||"--series-6");
+  const fill=status?color:cssVar("--line");
+  const stroke=status?color:cssVar("--hair");
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="26" height="36" viewBox="0 0 26 36">
     <path d="M13 0C5.8 0 0 5.8 0 13c0 9.8 13 23 13 23s13-13.2 13-23C26 5.8 20.2 0 13 0z" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/>
-    <circle cx="13" cy="13" r="5" fill="white" opacity=".85"/>
+    <circle cx="13" cy="13" r="5" fill="${cssVar("--card")}" opacity=".9"/>
   </svg>`;
   return L.divIcon({
     html:svg,
@@ -1368,18 +1526,18 @@ function updateMapMarkers(){
     if(!r.lat||!r.lon) return;
     const m=L.marker([r.lat,r.lon],{icon:markerIcon(r.band,r.status)});
     const statusTxt=r.status?t("onAir"):t("offAir");
-    const statusColor=r.status?"#27ae60":"#e74c3c";
-    const approxNote=r.coord_approx?`<div style="color:#d68910;font-size:.75rem;margin-top:4px">~ ${t("coordApprox")}</div>`:"";
-    m.bindPopup(`<div style="font-size:.85rem;line-height:1.5;min-width:180px">
-      <strong style="font-size:.95rem">${r.callsign||r.location||r.city}</strong>
+    const statusColor=r.status?"var(--on-air)":"var(--off-air)";
+    const approxNote=r.coord_approx?`<div style="color:var(--copper);font-size:12px;margin-top:4px">~ ${t("coordApprox")}</div>`:"";
+    m.bindPopup(`<div class="pop">
+      <strong>${r.callsign||r.location||r.city}</strong>
       <div style="color:${statusColor};font-weight:600;margin:2px 0">${statusTxt}</div>
       <div><b>${(r.frequency||0).toFixed(4)} MHz</b> ${r.band||""} ${r.mode||"FM"}</div>
       ${r.offset?`<div>Offset: ${fmtOff(r.offset)} MHz</div>`:""}
       ${r.tone?`<div>Tone: ${r.tone.toFixed(1)} Hz</div>`:""}
       <div>${r.city||""}${r.district?" / "+r.district:""}</div>
-      ${r.location?`<div style="color:#666">${r.location}</div>`:""}
+      ${r.location?`<div class="muted">${r.location}</div>`:""}
       ${r.power_w!=null?`<div>${r.power_w}W`:""}${r.altitude_m!=null?` · ${r.altitude_m}m`:""}${r.power_w!=null?"</div>":""}
-      ${r.ta_region?`<div style="color:#888;font-size:.78rem">${r.ta_region}</div>`:""}
+      ${r.ta_region?`<div class="muted" style="font-size:12px">${r.ta_region}</div>`:""}
       ${approxNote}
     </div>`,{maxWidth:260});
     markers.push(m);
@@ -1531,7 +1689,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   let savedLang=null; try{savedLang=localStorage.getItem("lang")}catch(e){}
   const l=p.get("lang")||savedLang;
   if(l==="tr"||l==="en") lang=l;
-  document.getElementById("lang-toggle").textContent=lang==="en"?"TR":"EN";
+  updateLangButtons();
   updateThemeButton();
   applyStrings();
   loadData();
