@@ -53,6 +53,31 @@ Bu oturumda yapılanlar:
   `scrollWidth == 375`), şerit/başlık çakışmıyor · [x] SW sürümü · [x] aprsagent.com ile 375px
   yan yana bakıldı; başlık çubuğu düzeni aynı.
 
+## Ek — 2026-10-10: yasal bölüm hizası
+
+`#legal` bölümü sola hizalı değil, sayfanın ortasına kaymıştı. Sebep standarttaki kalıp:
+`<div class="wrap legal">` — `.legal`'in `max-width:78ch` değeri `.wrap`'ın genişliğini ezip
+`margin:auto` ile kutuyu ortalıyordu. Standart 1.1'de satır sınırı `.legal>*`'a taşındı.
+
+**Bu kopyaya yalnızca o düzeltme yamalandı; "yerinde düzenleme" kuralından bilinçli sapma.**
+Standarttaki `family.css` aynı "1.1" etiketi altında iki değişiklik daha aldı:
+
+- Başlık çubuğunun iç kutusu `.bar` → `.fam-row` (coax'ta ilerleme çubuğu `.bar` ile çakışmış).
+  Bu sitenin HTML'i `<div class="wrap bar">` kullanıyor; dosya olduğu gibi kopyalansa başlık
+  çubuğu düzenini kaybederdi.
+- `--series-*` renkleri değişti (8 seri, dataviz doğrulayıcısıyla ölçülmüş). Harita pinleri ve
+  bant rozetleri bunları kullanıyor; kopyalamak sitenin renklerini değiştirirdi.
+
+Standarda tam eşitlemek için: `index.html`'de `wrap bar` → `wrap fam-row`, yeni `--series-*`
+renklerini haritada/rozetlerde gözle kontrol et, sonra `family.css`'i olduğu gibi kopyala ve
+SW sürümünü artır. Bu yapılana kadar dosyanın başındaki sürüm notu kopyanın tam 1.1
+olmadığını söylüyor.
+
+SW `v2` → `v3`. Yerelde temiz tarayıcıda ölçüldü: yasal başlık Hakkında başlığıyla aynı
+hizada (1280'de 24px, 375'te 16px), `scrollWidth == 375`, önbellek `ta-repeaters-v3`.
+Bu düzeltme oylama düzeltmesiyle (`b283710`) aynı anda, ayrı bir oturumda yapıldı; ikisi de
+yerel commit, push bekliyor.
+
 ## Açık kalanlar
 
 - **Eski ziyaretçiler:** v1 SW'si kurulu tarayıcılarda yeni görünüm ilk açılışta değil, bir

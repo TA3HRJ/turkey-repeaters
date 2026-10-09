@@ -9,6 +9,10 @@
   rounded floating cards removed; map and badge colours follow `--series-*`. Dark theme kept,
   using the family dark values. PWA icons redrawn in the same palette; service worker cache v2.
 
+### Fixed
+- Trademarks and disclaimer section (`#legal`) is aligned with the rest of the About tab
+  instead of shifted to the middle of the page (2026-10-10). Service worker cache v3.
+
 ### Removed
 - External scraping: `scrape.py` no longer fetches amatortelsizcilik.com.tr or akrad.org.tr.
   It now only rebuilds `repeaters.json` from the existing file, applies `data/overrides.json`
