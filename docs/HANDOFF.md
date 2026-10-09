@@ -75,8 +75,9 @@ olmadığını söylüyor.
 
 SW `v2` → `v3`. Yerelde temiz tarayıcıda ölçüldü: yasal başlık Hakkında başlığıyla aynı
 hizada (1280'de 24px, 375'te 16px), `scrollWidth == 375`, önbellek `ta-repeaters-v3`.
-Bu düzeltme oylama düzeltmesiyle (`b283710`) aynı anda, ayrı bir oturumda yapıldı; ikisi de
-yerel commit, push bekliyor.
+Bu düzeltme oylama düzeltmesiyle (`b283710`) aynı anda, ayrı bir oturumda yapıldı; ikisi
+birlikte push'landı (2026-10-10, `47c781b`). Pages derlemesi başarılı; canlıda `family.css`'te
+`.legal>*` ve `sw.js`'te `v3` var.
 
 ## Açık kalanlar
 
@@ -85,7 +86,9 @@ yerel commit, push bekliyor.
   Temiz tarayıcıda doğrulandı; v1 kurulu bir cihazda bakılmadı.
 - **family.css bir kopya.** Standart değişirse önce `_shared/aprsagent-site-standardi/family.css`,
   sonra buraya kopyala ve SW sürümünü artır. `docs/assets/family.css`'i yerinde düzenleme.
-- **Firebase oylama — düzeltme commit'li, push onayı bekliyor olabilir (`git status -sb`).**
+- **Firebase oylama — düzeltme yayında (`b283710`, 2026-10-10'da `47c781b` ile push'landı;
+  canlı sayfada `unflattenVotes` var). Oyların canlı sayfada göründüğüne tarayıcıda ayrıca
+  bakılmadı.**
   Canlıda ölçülen: SDK yükleniyor, anonim oturum açılıyor, `aggregates/votes` okunuyor, kendi
   `user_votes/{uid}` okunuyor; kurallar doğru. Yazma da çalışıyor (gerçek kullanıcılardan 42 sayaç
   birikmiş, 11 röle). **Ama hiçbir oy sayfada görünmüyordu:** `castVote`, `batch.set(ref,
