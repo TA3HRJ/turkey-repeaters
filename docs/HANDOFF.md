@@ -87,8 +87,11 @@ birlikte push'landı (2026-10-10, `47c781b`). Pages derlemesi başarılı; canl�
 - **family.css bir kopya.** Standart değişirse önce `_shared/aprsagent-site-standardi/family.css`,
   sonra buraya kopyala ve SW sürümünü artır. `docs/assets/family.css`'i yerinde düzenleme.
 - **Firebase oylama — düzeltme yayında (`b283710`, 2026-10-10'da `47c781b` ile push'landı;
-  canlı sayfada `unflattenVotes` var). Oyların canlı sayfada göründüğüne tarayıcıda ayrıca
-  bakılmadı.**
+  canlı sayfada `unflattenVotes` var). Canlı sayfada tarayıcıda doğrulandı (2cd06e7 derlemesi):
+  11 rölede 42 sayaç görünüyor, örn. AT_197 "Çalışıyor? ✗2", konsolda hata yok; SW güncellemesi
+  önbelleği `ta-repeaters-v3`'e geçirip v2'yi sildi.**
+  Not: sayfadan `fetch('sw.js')` SW'nin stale-while-revalidate önbelleğinden eski sürümü döndürebilir;
+  canlı sürümü `curl` ile ya da `registration.update()` sonrası `caches.keys()` ile ölç.
   Canlıda ölçülen: SDK yükleniyor, anonim oturum açılıyor, `aggregates/votes` okunuyor, kendi
   `user_votes/{uid}` okunuyor; kurallar doğru. Yazma da çalışıyor (gerçek kullanıcılardan 42 sayaç
   birikmiş, 11 röle). **Ama hiçbir oy sayfada görünmüyordu:** `castVote`, `batch.set(ref,
