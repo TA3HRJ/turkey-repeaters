@@ -3,7 +3,7 @@
 Türkçe konuş. Kullanıcı Türkçe çalışıyor.
 
 Türkiye amatör telsiz röle veritabanı — GitHub Pages üzerinde statik site.
-Canlı: <https://ta3hrj.github.io/turkey-repeaters> · Depo: `TA3HRJ/turkey-repeaters`
+Canlı: <https://repeaters.aprsagent.com/> · Depo: `TA3HRJ/turkey-repeaters`
 
 ## Yapı
 

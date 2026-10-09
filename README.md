@@ -1,7 +1,7 @@
 # Turkey Amateur Radio Repeaters
 
 A static, open-source repeater database for Turkey — searchable, filterable, and exportable.  
-Live site: **https://ta3hrj.github.io/turkey-repeaters**
+Live site: **https://repeaters.aprsagent.com/**
 
 ---
 
