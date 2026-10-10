@@ -10,15 +10,17 @@ Live site: **https://repeaters.aprsagent.com/**
 - Live search and filter by band, city, status — filters are shareable via URL (`?band=VHF&city=İzmir&tab=map`)
 - Interactive map (Leaflet, lazy-loaded on first use)
 - "Nearest" button: sorts repeaters by distance from your location
-- EN / TR language toggle, dark mode (follows system, manual toggle persists)
+- EN / TR language toggle; light theme by default, dark one click away and remembered - the
+  system setting is not followed, as on every aprsagent.com site
 - CSV export (filtered or full)
 - Client-side RepeaterBook CSV import (session only)
 - Installable PWA — works fully offline (service worker caches app + data)
 - Manually maintained database; a GitHub Action rebuilds the published payload on demand
 - No login required, no backend, hosted free on GitHub Pages
 - Part of the [aprsagent.com](https://aprsagent.com/#tools) tool family: shared look from
-  `docs/assets/family.css`, which is a copy of the family standard — change it there first,
-  then copy it here, instead of editing it in place
+  `docs/assets/family.css`, a copy of the family standard at 1.0 with 1.1's `.legal` fix; the
+  1.3 theme button sits in the page's own style. Change the standard first, then copy it here,
+  instead of editing the copy in place
 
 ---
 
@@ -69,7 +71,7 @@ Then re-run `scrape.py` to rebuild the JSON.
 ### 4. Deploy
 
 ```bash
-git add docs/data/repeaters.json
+git add docs/data/repeaters.json docs/data/repeaters.min.json
 git commit -m "Update repeater data YYYY-MM-DD"
 git push
 ```
@@ -84,8 +86,10 @@ GitHub Pages serves the `docs/` folder automatically.
 turkey-repeaters/
 ├── docs/                  # GitHub Pages root
 │   ├── index.html         # Website
+│   ├── assets/family.css  # aprsagent.com family look (a copy, see above)
 │   └── data/
-│       └── repeaters.json # Generated data file (commit after update)
+│       ├── repeaters.json     # Generated data file (commit after update)
+│       └── repeaters.min.json # Compact copy the site loads
 ├── scripts/
 │   ├── scrape.py          # Rebuild repeaters.json and apply data/overrides.json
 │   ├── merge_repeaterbook.py  # Import RepeaterBook CSV into overrides
