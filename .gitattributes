@@ -1,0 +1,3 @@
+# Vendored libraries are kept byte for byte: leaflet.css ships with CRLF
+# line endings, and normalising them breaks its published SRI hash.
+docs/assets/vendor/* -text

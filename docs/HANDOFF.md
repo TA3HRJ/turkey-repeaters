@@ -2,6 +2,18 @@
 
 Oturumlar arası not. Her anlamlı oturumun sonunda güncelle (bkz. `CLAUDE.md` → Oturum sonu).
 
+## 2026-10-15 — Leaflet unpkg'den çıktı
+
+Harita kütüphaneleri (Leaflet 1.9.4, leaflet.markercluster 1.5.3) artık `docs/assets/vendor/`
+altından, siteyle aynı adresten yükleniyor; unpkg.com'a istek gitmiyor. Dosyalar npm sürümlerinin
+birebir aynısı (unpkg ve jsDelivr'deki baytlar aynı; Leaflet'in SRI özetleri tutuyor).
+`.gitattributes` bu klasörü `-text` tutuyor: leaflet.css CRLF ile geliyor, git normalleştirirse
+SRI bozulur. Yerelde harita sekmesi açıldı: L 1.9.4, markerClusterGroup var, 47 işaret,
+18 karo, istekler yalnızca `assets/vendor/`. SW önbellek sürümü değişmedi (precache listesi
+aynı; vendor dosyaları çalışma anında önbelleğe giriyor). Kalan üçüncü taraflar: Firebase
+(gstatic.com + Firestore, oylama) ve OpenStreetMap karoları; aprsagent.com/privacy.html
+bunları yazıyor.
+
 ## Son durum — 2026-10-10
 
 Site aprsagent.com ailesinin görünümüne geçirildi. Adres artık https://repeaters.aprsagent.com

@@ -545,9 +545,13 @@
 
 <script>
 // ============================================================
-// Lazy loading of heavy third-party libraries.
+// Lazy loading of heavy libraries.
 // Leaflet loads on first Map tab open, Firebase after first paint,
 // so the table (core function) renders without waiting for either.
+// Leaflet and markercluster are served from this site (assets/vendor/,
+// 2026-10-15), not unpkg.com: one outside host fewer for a visitor's
+// address, and no extra handshake when the map opens. Byte-identical to
+// the npm releases (same bytes on unpkg and jsDelivr; Leaflet's SRI).
 // ============================================================
 function cssVar(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
 function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
@@ -556,11 +560,11 @@ let leafletPromise=null;
 function ensureLeaflet(){
   if(!leafletPromise){
     leafletPromise=Promise.all([
-      loadCSS("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"),
-      loadCSS("https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"),
-      loadCSS("https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"),
-      loadScript("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"),
-    ]).then(()=>loadScript("https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"));
+      loadCSS("assets/vendor/leaflet-1.9.4.css"),
+      loadCSS("assets/vendor/MarkerCluster-1.5.3.css"),
+      loadCSS("assets/vendor/MarkerCluster.Default-1.5.3.css"),
+      loadScript("assets/vendor/leaflet-1.9.4.js"),
+    ]).then(()=>loadScript("assets/vendor/leaflet.markercluster-1.5.3.js"));
   }
   return leafletPromise;
 }
