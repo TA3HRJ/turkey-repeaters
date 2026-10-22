@@ -1681,6 +1681,8 @@ function castVote(id, field, value){
     updates[`${id}.ly`]=inc(value?1:(prevVal===true?-1:0));
     updates[`${id}.ln`]=inc(!value?1:(prevVal===false?-1:0));
   }
+  // firestore.rules reads _last to know which two counters this write may change.
+  updates._last=`${id}.${field}`;
   batch.set(aggRef,updates,{merge:true});
 
   const myUpdate={};

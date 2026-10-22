@@ -3,40 +3,40 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     // Vote counters. The site writes them with
-    //   batch.set(aggregates/votes, {"AT_1.wy": increment(±1|0), "AT_1.wn": increment(…)}, {merge:true})
-    // and set() stores the dotted names as literal top-level fields ("AT_1.wy"), not nested maps.
+    //   batch.set(aggregates/votes, {"AT_1.wy": increment(±1|0), "AT_1.wn": increment(…),
+    //                                "_last": "AT_1.w"}, {merge:true})
+    // set() stores the dotted names as literal top-level fields ("AT_1.wy"), not nested maps.
+    // "_last" names the repeater and question of this write ("w" working / "l" location), so
+    // the rule knows which two counters may change without having to list the changed keys.
     //
-    // One write may only touch the two counters of one question of one repeater
-    // ({id}.wy + {id}.wn, or {id}.ly + {id}.ln), move each by at most 1, never below 0,
-    // and never remove a field. That stops anyone from setting a counter to an arbitrary
-    // value or wiping the document from the browser console. It cannot stop repeated
-    // ±1 votes from a script (anonymous accounts are free); that needs a Cloud Function.
-    function isCounter(k) {
-      return k.matches('^A[TK]_[0-9]+[.](wy|wn|ly|ln)$');
+    // One write may only touch those two counters (and _last), move each by at most 1, never
+    // below 0, and never remove a field. That stops anyone from setting a counter to an
+    // arbitrary value or wiping the document from the browser console. It cannot stop
+    // repeated ±1 votes from a script (anonymous accounts are free); that needs a Cloud Function.
+    //
+    // Deliberately only basic rules features: an earlier draft used affectedKeys().toList()
+    // and let/split, and that version rejected every vote once published (2026-10-23).
+    function counterOk(k, after, before) {
+      return after.get(k, -1) is int
+        && after.get(k, -1) >= 0
+        && after.get(k, -1) - before.get(k, 0) <= 1
+        && after.get(k, -1) - before.get(k, 0) >= -1;
     }
-    function stepOk(k, after, before) {
-      return isCounter(k)
-        && after[k] is int
-        && after[k] >= 0
-        && after[k] - before.get(k, 0) <= 1
-        && after[k] - before.get(k, 0) >= -1;
-    }
-    function validVote(after, before) {
-      let d = after.diff(before);
-      let ks = d.affectedKeys().toList();
-      let id = ks[0].split('[.]')[0];
-      return d.removedKeys().size() == 0
-        && ks.size() >= 1 && ks.size() <= 2
-        && (ks.hasOnly([id + '.wy', id + '.wn']) || ks.hasOnly([id + '.ly', id + '.ln']))
-        && stepOk(ks[0], after, before)
-        && (ks.size() == 1 || stepOk(ks[1], after, before));
+    function validVote(after, before, q) {
+      return q is string
+        && q.matches('^A[TK]_[0-9]+[.][wl]$')
+        && after.diff(before).removedKeys().size() == 0
+        && after.diff(before).affectedKeys().hasOnly([q + 'y', q + 'n', '_last'])
+        && counterOk(q + 'y', after, before)
+        && counterOk(q + 'n', after, before);
     }
 
     match /aggregates/votes {
       allow read: if true;
       // The document is created once by hand (FIREBASE_SETUP.md step 4).
       allow update: if request.auth != null
-                    && validVote(request.resource.data, resource.data);
+                    && validVote(request.resource.data, resource.data,
+                                 request.resource.data.get('_last', ''));
     }
 
     // Per-user votes - only the owner can read/write their own votes

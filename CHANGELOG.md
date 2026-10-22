@@ -35,8 +35,9 @@
 - Generic CSV starts with a UTF-8 BOM so Excel shows Turkish letters; all text fields are quoted
   and escaped; a 0 offset is written as 0 instead of an empty cell.
 - `firestore.rules`: a vote write may only move one repeater's two counters for one question by
-  at most 1 each; no arbitrary values, no deleting fields. Draft in the repo; not yet published
-  in the Firebase console.
+  at most 1 each; no arbitrary values, no deleting fields. Each vote now also sends
+  `_last: "<id>.<w|l>"` so the rule knows which counters may change (a first draft that listed
+  the changed keys rejected every vote and was rolled back).
 - Repeater list overflowed and the Community (voting) column was out of sight: the 17-column
   table only scrolled sideways, with its scrollbar under all 574 rows. The table now sits in a
   viewport-high box (scrollbar always reachable, sticky header row), the Community column is

@@ -29,8 +29,18 @@ yerelde canlı veriyle ölçüldü (veritabanına yazılmadı). 23 Ekim'de ilk �
    durduramaz; bunun için Cloud Function gerekir. **Kural dosyası test edilmedi** (Firebase CLI /
    emülatör yok). Yayınlamak için: Firebase Console → Firestore → Rules → dosyanın içeriğini
    yapıştır → Rules Playground'da önce bir oy (ör. `AT_1.wy` 0→1, `AT_1.wn` 0→0) ve bir saldırı
-   (ör. `AT_1.wy` → 999) dene → Publish. Yayındaki eski kuralın repo dosyasıyla aynı olduğu da
-   doğrulanmadı.
+   (ör. `AT_1.wy` → 999) dene → Publish.
+   **Sonra olanlar (2026-10-23):** Yayındaki eski kural kullanıcıdan alındı: repo'daki eski
+   kuralla aynı (yorumsuz) — açık canlıda da vardı. İlk taslak kullanıcı tarafından yayınlandı;
+   Playground "An unknown error occurred" verdi; canlıda sitenin biçimindeki meşru bir oy
+   (`AT_1.wy` +1) `permission-denied` aldı → o taslak BÜTÜN oyları engelliyordu. Muhtemel neden:
+   `affectedKeys()` bir Set döndürüyor ve Set'te `toList()` yok (belgeyle doğrulanamadı: Firebase
+   rules referans sayfaları fetch ile yalnızca gezinme menüsü döndürüyor). Hiçbir şey yazılmadı.
+   **İkinci taslak:** site her oya `_last: "AT_1.w"` ekliyor; kural yalnızca `get`,
+   `affectedKeys().hasOnly([...])`, `removedKeys().size()`, `matches` ve `+` kullanıyor (`let`,
+   `toList`, `split` yok). Doğru sıra: (1) konsolda eski kurala dön, oylar çalışsın; (2) `_last`
+   gönderen site kodu yayına çıksın (eski kural bunu da kabul eder); (3) yeni kural yayınlansın;
+   (4) canlıda: meşru +1/−1 geçmeli, `AT_530.wy`→5, `TEST_1.wy`, alan silme reddedilmeli.
 5. Açık kalan küçükler: 3 kaydın bandı "CROSS", sihirbazda bu bant için kutu yok → varsayılan
    dışa aktarımlarda çıkmıyor; `user_votes` yüklenmeden oy verilirse önceki oy düşülmez (çift
    sayım); Anytone'da CTCSS *decode* da ton ile dolu — rölenin çıkışında ton yoksa telsiz susar
