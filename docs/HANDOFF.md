@@ -50,10 +50,16 @@ yerelde canlı veriyle ölçüldü (veritabanına yazılmadı). 23 Ekim'de ilk �
    kapsıyor. Son durum başlangıçla aynı (44 alan; 43 + `_last`). Repo'daki `firestore.rules`
    yayındakiyle aynı. Eski (açık) kural metni bu bölümde yukarıda; geri dönmek gerekirse
    konsolda Rules geçmişinden de alınabilir.
-5. Açık kalan küçükler: 3 kaydın bandı "CROSS", sihirbazda bu bant için kutu yok → varsayılan
-   dışa aktarımlarda çıkmıyor; `user_votes` yüklenmeden oy verilirse önceki oy düşülmez (çift
-   sayım); Anytone'da CTCSS *decode* da ton ile dolu — rölenin çıkışında ton yoksa telsiz susar
-   (olası, cihaz kullanımına bağlı); RepeaterBook içe aktarımı virgüllü tırnaklı alanları bölüyor.
+5. **Küçükler — düzeltildi (2026-10-23).** CROSS bandı (3 kayıt, kayma 0, diğer banttaki giriş
+   frekansı veride yok): ana filtrede, harita lejantında (`--series-6`) ve sihirbazda (varsayılan
+   işaretsiz) seçilebiliyor; CHIRP/Anytone'dan dijitallerle birlikte dışarıda bırakılıyor ve not
+   bunu yazıyor. Anytone: CTCSS decode "Off", encode ton. Sıralama: boş hücreler iki yönde de
+   sonda (`sortData` içindeki `key()`), metinler `localeCompare(…,"tr")`. Oy: `myVotesLoaded`
+   bayrağı — `user_votes` okunmadan `castVote` hiçbir şey yapmıyor (çift sayım yok);
+   `isVotableId` — yalnızca `^A[TK]_[0-9]+$` kimliklerine oy düğmesi (kural da yalnızca bunları
+   kabul ediyor). RepeaterBook içe aktarımı `parseCSV()` ile: tırnaklı alanda virgül, çift tırnak,
+   satır sonu; BOM'lu başlık; eksik sütunda çökmeden boş. Yerelde test edildi (tırnaklı virgüllü
+   örnek dosya, sıralama uçları, CROSS filtresi = 3, sihirbaz notu, Anytone sütunları).
 6. Hata değil, not: `sw.js` veri JSON'unu stale-while-revalidate ile veriyor; veri güncellenince
    geri dönen ziyaretçi ilk açılışta eski listeyi ve eski "Son güncelleme" tarihini görür, ikinci
    açılışta yenisini. Çağrı işaretine göre artan sıralamada 494 boş kayıt başa geliyor.

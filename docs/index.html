@@ -236,6 +236,7 @@
       <option value="UHF">UHF</option>
       <option value="APRS">APRS</option>
       <option value="ECHO">EchoLink</option>
+      <option value="CROSS" id="opt-cross">Cross-band</option>
     </select>
   </div>
   <div>
@@ -374,6 +375,7 @@
       <div><span class="map-legend-dot" style="background:var(--series-2)"></span> UHF</div>
       <div><span class="map-legend-dot" style="background:var(--series-3)"></span> APRS</div>
       <div><span class="map-legend-dot" style="background:var(--series-4)"></span> EchoLink</div>
+      <div><span class="map-legend-dot" style="background:var(--series-6)"></span> <span id="map-leg-cross">Cross-band</span></div>
       <div class="sep">
         <span class="map-legend-dot" style="background:var(--fg)"></span> <span id="map-leg-on">On-Air</span>
         <span class="map-legend-dot" style="background:var(--line);margin-left:6px"></span> <span id="map-leg-off">Off-Air</span>
@@ -469,6 +471,7 @@
         <label><input type="checkbox" class="wiz-band" value="UHF" checked onchange="wizUpdate()"/><span>UHF</span></label>
         <label><input type="checkbox" class="wiz-band" value="APRS" onchange="wizUpdate()"/><span>APRS</span></label>
         <label><input type="checkbox" class="wiz-band" value="ECHO" onchange="wizUpdate()"/><span>EchoLink</span></label>
+        <label><input type="checkbox" class="wiz-band" value="CROSS" onchange="wizUpdate()"/><span id="wiz-cross-lbl">Cross-band</span></label>
       </div>
     </div>
 
@@ -615,6 +618,8 @@ const STRINGS = {
     wizFmtNotes:{csv:"",chirp:"Import into CHIRP software → Radio > Upload to Radio",anytone:"Import into Anytone CPS → Channels > Import",gpx:"GPS devices & mapping apps.",kml:"Google Earth / Maps."},
     wizApproxLbl:"Include approximate coordinates (city center)",
     wizApproxNote:"Approximate pins will use a different icon and warning label.",
+    crossBand:"Cross-band",
+    wizCrossSkip:(n)=>`${n} cross-band repeater${n===1?"":"s"} left out: the input frequency on the other band is not in the data.`,
     wizDigSkip:(n)=>`${n} digital-only repeater${n===1?"":"s"} (DMR / NXDN / D-STAR) left out: an analog channel cannot use ${n===1?"it":"them"}.`,
     wizWarnOver:(n,lim)=>`${n} repeaters match, limit is ${lim}. Only the top ${lim} will be exported based on priority.`,
     wizCountLabel:(n)=>`${n} records will be exported`,
@@ -667,6 +672,8 @@ const STRINGS = {
     wizFmtNotes:{csv:"",chirp:"CHIRP yazılımına import edin → Radio > Upload to Radio",anytone:"Anytone CPS'e import edin → Channels > Import",gpx:"GPS cihazları ve harita uygulamaları.",kml:"Google Earth / Maps."},
     wizApproxLbl:"Yaklaşık koordinatları dahil et (şehir merkezi)",
     wizApproxNote:"Yaklaşık pinler farklı ikon ve uyarı etiketiyle gösterilir.",
+    crossBand:"Çapraz bant",
+    wizCrossSkip:(n)=>`${n} çapraz bant röle dışarıda bırakıldı: diğer banttaki giriş frekansı veride yok.`,
     wizDigSkip:(n)=>`${n} yalnızca dijital röle (DMR / NXDN / D-STAR) dışarıda bırakıldı: analog kanal bunlarla çalışmaz.`,
     wizWarnOver:(n,lim)=>`${n} röle eşleşti, limit ${lim}. Öncelik sırasına göre yalnızca ${lim} dışa aktarılacak.`,
     wizCountLabel:(n)=>`${n} kayıt dışa aktarılacak`,
@@ -706,6 +713,9 @@ function applyStrings(){
   document.getElementById("opt-allta").textContent=s.allRegions;
   document.getElementById("lbl-city").textContent=s.city;
   document.getElementById("opt-allbands").textContent=s.allBands;
+  document.getElementById("opt-cross").textContent=s.crossBand;
+  document.getElementById("wiz-cross-lbl").textContent=s.crossBand;
+  document.getElementById("map-leg-cross").textContent=s.crossBand;
   document.getElementById("opt-allcities").textContent=s.allCities;
   document.getElementById("opt-allstatus").textContent=s.allStatus;
   document.getElementById("opt-on").textContent=s.onAir;
@@ -920,18 +930,15 @@ document.querySelectorAll("table#rt thead th[data-col]").forEach(th=>{
 function sortData(data){
   if(!sortCol) return data;
   return [...data].sort((a,b)=>{
-    let av,bv;
-    if(sortCol==="plate"){
-      av=parseInt(getPlate(a.city)||"999");
-      bv=parseInt(getPlate(b.city)||"999");
-    } else if(sortCol==="_dist"){
-      av=a._dist??Infinity;
-      bv=b._dist??Infinity;
-    } else {
-      av=a[sortCol]??-Infinity;
-      bv=b[sortCol]??-Infinity;
-    }
-    if(typeof av==="string") return av.localeCompare(bv)*sortDir;
+    // Empty cells ("—") go last whichever way the column is sorted.
+    const key=r=>{
+      if(sortCol==="plate"){const p=getPlate(r.city);return p?parseInt(p,10):null}
+      const v=r[sortCol];
+      return v===""?null:v??null;
+    };
+    const av=key(a),bv=key(b);
+    if(av==null||bv==null) return av==null?(bv==null?0:1):-1;
+    if(typeof av==="string") return av.localeCompare(String(bv),"tr")*sortDir;
     return(av-bv)*sortDir;
   });
 }
@@ -1262,7 +1269,11 @@ const DIGITAL_ONLY=new Set(["DMR","NXDN","D-STAR"]);
 function isDigitalOnly(r){return DIGITAL_ONLY.has((r.mode||"").toUpperCase())}
 function wizFmt(){return document.querySelector("input[name=wiz-fmt]:checked")?.value||"csv"}
 function isAnalogFmt(fmt){return fmt==="chirp"||fmt==="anytone"}
-function wizDropDigital(pool,fmt){return isAnalogFmt(fmt)?pool.filter(r=>!isDigitalOnly(r)):pool}
+// Cross-band repeaters are stored with offset 0: their input on the other band is not in the
+// data, so a channel would transmit where the repeater does not listen.
+function isCrossBand(r){return (r.band||"").toUpperCase()==="CROSS"}
+function isUnusableAnalog(r){return isDigitalOnly(r)||isCrossBand(r)}
+function wizDropDigital(pool,fmt){return isAnalogFmt(fmt)?pool.filter(r=>!isUnusableAnalog(r)):pool}
 
 function wizApplyPriority(pool){
   const prio=document.querySelector("input[name=wiz-prio]:checked")?.value||"status";
@@ -1280,11 +1291,12 @@ function wizUpdate(){
 
   const fmt=wizFmt();
   let pool=wizApplyFilters(wizGetPool());
-  const beforeDigital=pool.length;
+  const nDig=isAnalogFmt(fmt)?pool.filter(isDigitalOnly).length:0;
+  const nCross=isAnalogFmt(fmt)?pool.filter(isCrossBand).length:0;
   pool=wizDropDigital(pool,fmt);
   const digNote=document.getElementById("wiz-dig-note");
-  digNote.textContent=t("wizDigSkip",beforeDigital-pool.length);
-  digNote.hidden=beforeDigital===pool.length;
+  digNote.textContent=[nDig?t("wizDigSkip",nDig):"",nCross?t("wizCrossSkip",nCross):""].filter(Boolean).join(" ");
+  digNote.hidden=!(nDig||nCross);
 
   const warn=document.getElementById("wiz-warn");
   const prioSec=document.getElementById("priority-section");
@@ -1401,7 +1413,8 @@ function exportAnytone(pool,maxLen,prefixMode,suffix){
     const name=makeChannelName(r,maxLen,prefixMode);
     return [
       i+1,`"${name}"`,rxFreq,txFreq,
-      "A-Analog","High",bw,tone,tone,
+      // Decode Off: many repeaters do not send CTCSS on their output; requiring it would mute them.
+      "A-Analog","High",bw,"Off",tone,
       "","Group Call","","",
       "Off","Carrier","Off",
       "1","1","1","Off","1","1",
@@ -1451,14 +1464,32 @@ function exportKML(pool,maxLen,prefixMode,suffix){
 // ============================================================
 function toggleRBPanel(){const p=document.getElementById("rb-panel");p.style.display=getComputedStyle(p).display==="none"?"block":"none"}
 
+// Minimal RFC 4180 reader: quoted fields may hold commas, doubled quotes and line breaks.
+function parseCSV(text){
+  const rows=[];let row=[],f="",inQ=false;
+  const endRow=()=>{row.push(f);f="";if(row.some(x=>x.trim()))rows.push(row);row=[]};
+  for(let i=0;i<text.length;i++){
+    const c=text.charCodeAt(i); // 34 " · 44 , · 10 LF · 13 CR
+    if(inQ){
+      if(c===34){if(text.charCodeAt(i+1)===34){f+='"';i++}else inQ=false}
+      else f+=text[i];
+    }
+    else if(c===34) inQ=true;
+    else if(c===44){row.push(f);f=""}
+    else if(c===10||c===13){if(c===13&&text.charCodeAt(i+1)===10)i++;endRow()}
+    else f+=text[i];
+  }
+  endRow();
+  return rows;
+}
+
 function importRepeaterBook(input){
   const file=input.files[0];if(!file) return;
   const reader=new FileReader();
   reader.onload=e=>{
-    const text=e.target.result;
-    const lines=text.split("\n").filter(l=>l.trim());
-    if(lines.length<2) return;
-    const headers=lines[0].split(",").map(h=>h.trim().replace(/^"|"$/g,""));
+    const rows=parseCSV(e.target.result);
+    if(rows.length<2) return;
+    const headers=rows[0].map(h=>h.trim().replace(/^\uFEFF/,""));
     const fi=headers.indexOf("Frequency");
     const oi=headers.indexOf("Offset");
     const di=headers.indexOf("Duplex");
@@ -1467,22 +1498,23 @@ function importRepeaterBook(input){
     const ni=headers.indexOf("Name");
     const ci=headers.findIndex(h=>h==="Call"||h==="Callsign");
     const yi=headers.findIndex(h=>h==="Nearest City"||h==="State");
+    const col=(cols,i)=>i>=0&&cols[i]!=null?cols[i].trim():"";
     rbData=[];
-    for(let i=1;i<lines.length;i++){
-      const cols=lines[i].split(",").map(c=>c.trim().replace(/^"|"$/g,""));
-      const freq=parseFloat(cols[fi]);if(isNaN(freq)) continue;
-      const dup=cols[di]||"";
-      const rawOff=parseFloat(cols[oi])||0;
+    for(let i=1;i<rows.length;i++){
+      const cols=rows[i];
+      const freq=parseFloat(col(cols,fi));if(isNaN(freq)) continue;
+      const dup=col(cols,di);
+      const rawOff=parseFloat(col(cols,oi))||0;
       const offset=dup==="-"?-Math.abs(rawOff):dup==="+"?Math.abs(rawOff):0;
-      const tone=parseFloat(cols[ti])||null;
+      const tone=parseFloat(col(cols,ti))||null;
       rbData.push({
-        id:`RB_s_${i}`,callsign:ci>=0?cols[ci]:"",city:(cols[yi]||"").trim(),
-        location:ni>=0?cols[ni]:"",frequency:freq,offset,tone,
-        band:freq<300?"VHF":"UHF",mode:mi>=0?cols[mi].toUpperCase():"FM",
+        id:`RB_s_${i}`,callsign:col(cols,ci),city:col(cols,yi),
+        location:col(cols,ni),frequency:freq,offset,tone,
+        band:freq<300?"VHF":"UHF",mode:(col(cols,mi)||"FM").toUpperCase(),
         status:true,ta_region:"",source:"RepeaterBook (imported)"
       });
     }
-    document.getElementById("rb-status").textContent=`\u2713 ${rbData.length} records imported`;
+    document.getElementById("rb-status").textContent=`✓ ${rbData.length} records imported`;
     populateCityFilter([...allData,...rbData]);
     if(userPos) computeDistances();
     applyFilters();
@@ -1600,6 +1632,8 @@ let db=null, fbAuth=null, fbUid=null;
 let voteAggregates={};
 let myVotes={};
 let firebaseReady=false;
+// castVote needs the voter's previous vote to subtract it; until user_votes has loaded it is unknown.
+let myVotesLoaded=false;
 
 function initFirebase(){
   if(FIREBASE_CONFIG.apiKey==="FIREBASE_API_KEY") return;
@@ -1638,6 +1672,7 @@ function loadVotes(){
   if(fbUid){
     db.doc(`user_votes/${fbUid}`).get().then(doc=>{
       if(doc.exists) myVotes=unflattenVotes(doc.data());
+      myVotesLoaded=true;
       refreshVoteCells();
     }).catch(()=>{});
   }
@@ -1649,7 +1684,12 @@ function getVoteCounts(id){
   return {wy:v.wy||0, wn:v.wn||0, ly:v.ly||0, ln:v.ln||0};
 }
 
+// Only repeaters from the database can be voted on (firestore.rules accepts AT_/AK_ ids);
+// rows imported from a RepeaterBook CSV for this session get no buttons.
+function isVotableId(id){return /^A[TK]_[0-9]+$/.test(id)}
+
 function buildVoteCell(id){
+  if(!isVotableId(id)) return "—";
   const v=getVoteCounts(id);
   const my=myVotes[id]||{};
   const wYesC=my.w===true?"voted":"";
@@ -1663,7 +1703,7 @@ function buildVoteCell(id){
 }
 
 function castVote(id, field, value){
-  if(!firebaseReady||!db||!fbUid) return;
+  if(!firebaseReady||!db||!fbUid||!myVotesLoaded||!isVotableId(id)) return;
   const prev=myVotes[id]||{};
   const prevVal=prev[field];
   if(prevVal===value) return;

@@ -28,6 +28,12 @@
 - Mode filter, TA region filter, frequency conflict filter, plate number column.
 
 ### Fixed
+- Smaller fixes from the 2026-10-22 scan (2026-10-23): cross-band repeaters can be filtered,
+  shown on the map legend and chosen in the export wizard, and are left out of CHIRP / Anytone
+  (their input frequency is not in the data); Anytone exports encode CTCSS but no longer require
+  it on receive; empty cells sort last in both directions; a vote is ignored until the voter's
+  earlier votes have loaded (no double count); session-imported RepeaterBook rows get no vote
+  buttons; the RepeaterBook importer reads quoted fields that contain commas.
 - Search ignores Turkish diacritics and case (2026-10-23): "istanbul", "ISTANBUL", "izmir",
   "canakkale" used to find nothing because `toLowerCase()` turns "İ" into "i" + U+0307.
 - CHIRP and Anytone exports leave out DMR / NXDN / D-STAR repeaters (they were written as analog
