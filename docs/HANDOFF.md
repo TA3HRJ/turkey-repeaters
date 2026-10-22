@@ -19,7 +19,7 @@ yerelde canlı veriyle ölçüldü (veritabanına yazılmadı). 23 Ekim'de ilk �
    başlıyor. CHIRP/Anytone CSV'lerine bilerek eklenmedi: içerikleri ASCII ve içe aktarıcıları
    ilk başlığı adıyla eşliyor, BOM onu bozabilir. Aynı fonksiyonda: bütün metin alanları
    tırnak-kaçışlı (`q()`), `offset` 0 artık boş değil "0" (167 simplex kayıt).
-4. **Firestore kuralları oyu doğrulamıyordu — taslak yazıldı, YAYINLANMADI.** Eski kural:
+4. **Firestore kuralları oyu doğrulamıyordu — düzeltildi, yayında ve canlıda doğrulandı (aşağıda "Sonra olanlar").** Eski kural:
    anonim oturum açan herkes `aggregates/votes`'u istediği değere yazabilir ya da silebilir.
    Yeni `firestore.rules`: bir yazma yalnızca tek rölenin tek sorusunun iki sayacına
    (`{id}.wy`+`{id}.wn` ya da `{id}.ly`+`{id}.ln`) dokunabilir, her biri en çok ±1 değişir,
@@ -41,6 +41,15 @@ yerelde canlı veriyle ölçüldü (veritabanına yazılmadı). 23 Ekim'de ilk �
    `toList`, `split` yok). Doğru sıra: (1) konsolda eski kurala dön, oylar çalışsın; (2) `_last`
    gönderen site kodu yayına çıksın (eski kural bunu da kabul eder); (3) yeni kural yayınlansın;
    (4) canlıda: meşru +1/−1 geçmeli, `AT_530.wy`→5, `TEST_1.wy`, alan silme reddedilmeli.
+   **Dört adım da yapıldı, ikinci kural YAYINDA ve canlıda doğrulandı (2026-10-23, 4bfcf8b):**
+   `TEST_1.wy` reddedildi; meşru `AT_1.wy` +1 ve −1 (sitenin `_last`'lı biçimi) geçti;
+   `AT_530.wy`=5, `AT_1.ly` silme, `_last: AT_1.w` ile `AT_2.wy` +1 reddedildi. `_last`
+   gönderilmeyen +1 geçti, çünkü belgedeki mevcut `_last` kullanılıyor — yine yalnızca o
+   sorunun iki sayacında ±1, açık değil. Belgeyi merge'süz değiştiren yazma bilerek denenmedi
+   (kural bozuksa bütün oyları silerdi); alanları silen yazmanın reddedildiği 4. deneme onu da
+   kapsıyor. Son durum başlangıçla aynı (44 alan; 43 + `_last`). Repo'daki `firestore.rules`
+   yayındakiyle aynı. Eski (açık) kural metni bu bölümde yukarıda; geri dönmek gerekirse
+   konsolda Rules geçmişinden de alınabilir.
 5. Açık kalan küçükler: 3 kaydın bandı "CROSS", sihirbazda bu bant için kutu yok → varsayılan
    dışa aktarımlarda çıkmıyor; `user_votes` yüklenmeden oy verilirse önceki oy düşülmez (çift
    sayım); Anytone'da CTCSS *decode* da ton ile dolu — rölenin çıkışında ton yoksa telsiz susar
