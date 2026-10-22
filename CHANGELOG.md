@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Changed
+- Head theme script also sets the mobile browser bar colour for a saved dark theme (family 1.4).
 - aprsagent.com family look (2026-10-10): `docs/assets/family.css` (paper background, Maidenhead
   grid, airmail strip, mono uppercase headings, 2px corners), family header bar with link back to
   aprsagent.com, family footer with the other tools. Blue Material palette, emoji icons and
@@ -27,6 +28,15 @@
 - Mode filter, TA region filter, frequency conflict filter, plate number column.
 
 ### Fixed
+- Search ignores Turkish diacritics and case (2026-10-23): "istanbul", "ISTANBUL", "izmir",
+  "canakkale" used to find nothing because `toLowerCase()` turns "İ" into "i" + U+0307.
+- CHIRP and Anytone exports leave out DMR / NXDN / D-STAR repeaters (they were written as analog
+  FM channels that cannot work); the wizard says how many were left out.
+- Generic CSV starts with a UTF-8 BOM so Excel shows Turkish letters; all text fields are quoted
+  and escaped; a 0 offset is written as 0 instead of an empty cell.
+- `firestore.rules`: a vote write may only move one repeater's two counters for one question by
+  at most 1 each; no arbitrary values, no deleting fields. Draft in the repo; not yet published
+  in the Firebase console.
 - Repeater list overflowed and the Community (voting) column was out of sight: the 17-column
   table only scrolled sideways, with its scrollbar under all 574 rows. The table now sits in a
   viewport-high box (scrollbar always reachable, sticky header row), the Community column is

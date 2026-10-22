@@ -14,6 +14,9 @@
     (function(){
       var saved=null; try{saved=localStorage.getItem("theme")}catch(e){}
       document.documentElement.dataset.theme=saved==="dark"?"dark":"light";
+      // Mobile browser bar dark from the first paint too (family 1.4); CSS is not loaded yet,
+      // so this is a copy of family.css [data-theme="dark"] --bg. updateThemeButton() redoes it later.
+      var m=document.querySelector('meta[name="theme-color"]');if(m&&saved==="dark")m.content="#1b1a16";
     })();
   </script>
   <!-- aprsagent.com family theme (copied from _shared/aprsagent-site-standardi, do not edit here) -->
@@ -524,6 +527,7 @@
         <label><input type="radio" name="wiz-fmt" value="kml" onchange="wizUpdate()"/><span>KML</span></label>
       </div>
       <div id="fmt-note" class="note"></div>
+      <div id="wiz-dig-note" class="note copper" hidden></div>
       <div id="approx-coord-wrap" style="display:none;margin-top:8px">
         <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer">
           <input type="checkbox" id="wiz-approx-coords" onchange="wizUpdate()"/>
@@ -611,6 +615,7 @@ const STRINGS = {
     wizFmtNotes:{csv:"",chirp:"Import into CHIRP software → Radio > Upload to Radio",anytone:"Import into Anytone CPS → Channels > Import",gpx:"GPS devices & mapping apps.",kml:"Google Earth / Maps."},
     wizApproxLbl:"Include approximate coordinates (city center)",
     wizApproxNote:"Approximate pins will use a different icon and warning label.",
+    wizDigSkip:(n)=>`${n} digital-only repeater${n===1?"":"s"} (DMR / NXDN / D-STAR) left out: an analog channel cannot use ${n===1?"it":"them"}.`,
     wizWarnOver:(n,lim)=>`${n} repeaters match, limit is ${lim}. Only the top ${lim} will be exported based on priority.`,
     wizCountLabel:(n)=>`${n} records will be exported`,
     tabList:"List", tabMap:"Map", mapLegOn:"On-Air", mapLegOff:"Off-Air",
@@ -662,6 +667,7 @@ const STRINGS = {
     wizFmtNotes:{csv:"",chirp:"CHIRP yazılımına import edin → Radio > Upload to Radio",anytone:"Anytone CPS'e import edin → Channels > Import",gpx:"GPS cihazları ve harita uygulamaları.",kml:"Google Earth / Maps."},
     wizApproxLbl:"Yaklaşık koordinatları dahil et (şehir merkezi)",
     wizApproxNote:"Yaklaşık pinler farklı ikon ve uyarı etiketiyle gösterilir.",
+    wizDigSkip:(n)=>`${n} yalnızca dijital röle (DMR / NXDN / D-STAR) dışarıda bırakıldı: analog kanal bunlarla çalışmaz.`,
     wizWarnOver:(n,lim)=>`${n} röle eşleşti, limit ${lim}. Öncelik sırasına göre yalnızca ${lim} dışa aktarılacak.`,
     wizCountLabel:(n)=>`${n} kayıt dışa aktarılacak`,
     tabList:"Liste", tabMap:"Harita", mapLegOn:"Aktif", mapLegOff:"Pasif",
@@ -1039,8 +1045,14 @@ function populateCityFilter(data){
   cities.forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c;sel.appendChild(o)});
 }
 
+// Search ignores Turkish diacritics and case: "istanbul", "ISTANBUL" and "İstanbul" all match.
+// toLowerCase() alone turns "İ" into "i" + U+0307, so "istanbul" never matched "İstanbul".
+function foldSearch(s){
+  return (s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/ı/g,"i");
+}
+
 function applyFilters(){
-  const search=document.getElementById("custom-search").value.toLowerCase();
+  const search=foldSearch(document.getElementById("custom-search").value.trim());
   const band=document.getElementById("filter-band").value.toUpperCase();
   const status=document.getElementById("filter-status").value;
   const ta=document.getElementById("filter-ta").value;
@@ -1065,7 +1077,7 @@ function applyFilters(){
     if(conflictVal==="yes"&&conflictFreqs&&!conflictFreqs.has((r.frequency||0).toFixed(4))) return false;
     if(conflictVal==="no"&&conflictFreqs&&conflictFreqs.has((r.frequency||0).toFixed(4))) return false;
     if(search){
-      const hay=[r.city,r.location,r.callsign,r.band,r.mode,r.ta_region,r.frequency?r.frequency.toFixed(4):""].join(" ").toLowerCase();
+      const hay=foldSearch([r.city,r.location,r.callsign,r.band,r.mode,r.ta_region,r.frequency?r.frequency.toFixed(4):""].join(" "));
       if(!hay.includes(search)) return false;
     }
     return true;
@@ -1243,6 +1255,15 @@ function wizApplyFilters(pool){
   });
 }
 
+// CHIRP and Anytone exports write analog FM channels; a DMR / NXDN / D-STAR repeater is
+// useless as one (and the data has no colour code / talkgroup to build a digital channel).
+// C4FM stays: those repeaters usually pass analog FM too (AMS).
+const DIGITAL_ONLY=new Set(["DMR","NXDN","D-STAR"]);
+function isDigitalOnly(r){return DIGITAL_ONLY.has((r.mode||"").toUpperCase())}
+function wizFmt(){return document.querySelector("input[name=wiz-fmt]:checked")?.value||"csv"}
+function isAnalogFmt(fmt){return fmt==="chirp"||fmt==="anytone"}
+function wizDropDigital(pool,fmt){return isAnalogFmt(fmt)?pool.filter(r=>!isDigitalOnly(r)):pool}
+
 function wizApplyPriority(pool){
   const prio=document.querySelector("input[name=wiz-prio]:checked")?.value||"status";
   return [...pool].sort((a,b)=>{
@@ -1257,8 +1278,13 @@ function wizUpdate(){
   const maxLen=parseInt(document.querySelector("input[name=wiz-chars]:checked")?.value||"10");
   const prefixMode=document.querySelector("input[name=wiz-prefix]:checked")?.value||"abbr";
 
-  let pool=wizGetPool();
-  pool=wizApplyFilters(pool);
+  const fmt=wizFmt();
+  let pool=wizApplyFilters(wizGetPool());
+  const beforeDigital=pool.length;
+  pool=wizDropDigital(pool,fmt);
+  const digNote=document.getElementById("wiz-dig-note");
+  digNote.textContent=t("wizDigSkip",beforeDigital-pool.length);
+  digNote.hidden=beforeDigital===pool.length;
 
   const warn=document.getElementById("wiz-warn");
   const prioSec=document.getElementById("priority-section");
@@ -1278,7 +1304,6 @@ function wizUpdate(){
   document.getElementById("wiz-count-label").textContent=t("wizCountLabel",exportPool.length);
 
   // Format note + approx coords toggle visibility
-  const fmt=document.querySelector("input[name=wiz-fmt]:checked")?.value||"csv";
   const notes=STRINGS[lang].wizFmtNotes||{};
   document.getElementById("fmt-note").textContent=notes[fmt]||"";
   const isGeo=fmt==="gpx"||fmt==="kml";
@@ -1291,8 +1316,7 @@ function wizUpdate(){
 
 function _getExportPool(){
   const lim=parseInt(document.querySelector("input[name=wiz-lim]:checked")?.value||"0");
-  let pool=wizGetPool();
-  pool=wizApplyFilters(pool);
+  let pool=wizDropDigital(wizApplyFilters(wizGetPool()),wizFmt());
   if(lim>0&&pool.length>lim) pool=wizApplyPriority(pool).slice(0,lim);
   return pool;
 }
@@ -1327,14 +1351,17 @@ function doExport(){
 
 function exportGenericCSV(pool,maxLen,prefixMode,suffix){
   const headers=["Name","Callsign","Frequency","Offset","Tone","Band","Mode","City","Location","Status","Power_W","Altitude_m","Lat","Lon","TA_Region","Source"];
+  const q=v=>`"${String(v??"").replace(/"/g,'""')}"`;
   const rows=[headers.join(","),...pool.map(r=>[
-    `"${makeChannelName(r,maxLen,prefixMode)}"`,`"${r.callsign||""}"`,
-    r.frequency||"",r.offset||"",r.tone||"",r.band||"",r.mode||"",
-    `"${r.city||""}"`,`"${(r.location||"").replace(/"/g,'""')}"`,
-    r.status?"On-Air":"Off-Air",r.power_w||"",r.altitude_m||"",
-    r.lat||"",r.lon||"",r.ta_region||"",`"${r.source||""}"`
+    q(makeChannelName(r,maxLen,prefixMode)),q(r.callsign),
+    r.frequency??"",r.offset??"",r.tone??"",r.band||"",r.mode||"",
+    q(r.city),q(r.location),
+    r.status?"On-Air":"Off-Air",r.power_w??"",r.altitude_m??"",
+    r.lat??"",r.lon??"",r.ta_region||"",q(r.source)
   ].join(","))];
-  _download(rows.join("\n"),`turkey-repeaters-${suffix}.csv`,"text/csv;charset=utf-8;");
+  // BOM so Excel reads UTF-8 (otherwise "Rüzgarlı" shows as "RÃ¼zgarlÄ±"). Only this
+  // spreadsheet CSV gets it: CHIRP/Anytone files are ASCII and their importers match header 1.
+  _download("\uFEFF"+rows.join("\n"),`turkey-repeaters-${suffix}.csv`,"text/csv;charset=utf-8;");
 }
 
 function exportCHIRP(pool,maxLen,prefixMode,suffix){

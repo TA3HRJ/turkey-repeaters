@@ -2,6 +2,52 @@
 
 Oturumlar arası not. Her anlamlı oturumun sonunda güncelle (bkz. `CLAUDE.md` → Oturum sonu).
 
+## 2026-10-23 — hata taraması ve düzeltmeler
+
+22 Ekim'de `docs/index.html` script'i, `sw.js` ve `firestore.rules` baştan sona okundu; şüpheliler
+yerelde canlı veriyle ölçüldü (veritabanına yazılmadı). 23 Ekim'de ilk üçü düzeltildi.
+
+1. **Arama Türkçe harfe takılıyordu — düzeltildi.** `toLowerCase()` "İ"yi "i" + U+0307 yapıyordu;
+   "istanbul", "ISTANBUL", "izmir", "canakkale" 0 sonuç veriyordu. Artık `foldSearch()` iki tarafı
+   NFD'ye çevirip birleşik işaretleri atıyor ve ı→i yapıyor. Ölçüm: istanbul/ISTANBUL/İstanbul 36,
+   izmir/İZMİR 29, canakkale/çanakkale 14, sanliurfa/şanlıurfa 3. ("igdir" 0 — veride Iğdır yok.)
+2. **Dijital röleler analog kanal olarak dışa aktarılıyordu — düzeltildi.** CHIRP ve Anytone
+   (analog FM kanal yazan biçimler) artık DMR / NXDN / D-STAR rölelerini dışarıda bırakıyor ve
+   sihirbaz kaç tane bırakıldığını yazıyor (`wiz-dig-note`, şu an 9). C4FM bırakılmadı: çoğu AMS
+   ile analog da geçiriyor. Genel CSV / GPX / KML hepsini içermeye devam ediyor.
+3. **CSV Excel'de bozuk görünüyordu — düzeltildi.** Genel CSV artık UTF-8 BOM (U+FEFF) ile
+   başlıyor. CHIRP/Anytone CSV'lerine bilerek eklenmedi: içerikleri ASCII ve içe aktarıcıları
+   ilk başlığı adıyla eşliyor, BOM onu bozabilir. Aynı fonksiyonda: bütün metin alanları
+   tırnak-kaçışlı (`q()`), `offset` 0 artık boş değil "0" (167 simplex kayıt).
+4. **Firestore kuralları oyu doğrulamıyordu — taslak yazıldı, YAYINLANMADI.** Eski kural:
+   anonim oturum açan herkes `aggregates/votes`'u istediği değere yazabilir ya da silebilir.
+   Yeni `firestore.rules`: bir yazma yalnızca tek rölenin tek sorusunun iki sayacına
+   (`{id}.wy`+`{id}.wn` ya da `{id}.ly`+`{id}.ln`) dokunabilir, her biri en çok ±1 değişir,
+   0'ın altına inmez, alan silinemez, kimlik `^A[TK]_[0-9]+$` (574 kimliğin hepsi uyuyor; bu
+   oturumluk RepeaterBook satırlarına `RB_s_n` verilen oyları da reddeder). Belge oluşturma
+   kapalı (FIREBASE_SETUP adım 4'te elle oluşturuluyor). Script'le tekrar tekrar ±1 oy vermeyi
+   durduramaz; bunun için Cloud Function gerekir. **Kural dosyası test edilmedi** (Firebase CLI /
+   emülatör yok). Yayınlamak için: Firebase Console → Firestore → Rules → dosyanın içeriğini
+   yapıştır → Rules Playground'da önce bir oy (ör. `AT_1.wy` 0→1, `AT_1.wn` 0→0) ve bir saldırı
+   (ör. `AT_1.wy` → 999) dene → Publish. Yayındaki eski kuralın repo dosyasıyla aynı olduğu da
+   doğrulanmadı.
+5. Açık kalan küçükler: 3 kaydın bandı "CROSS", sihirbazda bu bant için kutu yok → varsayılan
+   dışa aktarımlarda çıkmıyor; `user_votes` yüklenmeden oy verilirse önceki oy düşülmez (çift
+   sayım); Anytone'da CTCSS *decode* da ton ile dolu — rölenin çıkışında ton yoksa telsiz susar
+   (olası, cihaz kullanımına bağlı); RepeaterBook içe aktarımı virgüllü tırnaklı alanları bölüyor.
+6. Hata değil, not: `sw.js` veri JSON'unu stale-while-revalidate ile veriyor; veri güncellenince
+   geri dönen ziyaretçi ilk açılışta eski listeyi ve eski "Son güncelleme" tarihini görür, ikinci
+   açılışta yenisini. Çağrı işaretine göre artan sıralamada 494 boş kayıt başa geliyor.
+
+Aynı commit'te, contacts oturumunun isteğiyle aile standardı 1.4: baştaki tema betiği, koyu
+seçmiş ziyaretçide `meta[name=theme-color]`'ı ilk boyamada `#1b1a16` yapıyor (family.css koyu
+`--bg`). Test: betik yalnız başına çalıştırıldı — koyu → #1b1a16, açık/seçimsiz → #f6f3ea.
+
+**Tuzak:** Bash heredoc'undan Python'a `\u0300` ya da Edit aracına `\uFEFF` yazmak dosyaya
+kaçış metni değil gerçek görünmez karakteri koydu (regex'te U+0300-U+036F, CSV'de BOM). Düzeltme:
+Python'da `chr(92)+'u0300'` ile kurmak. Bu tür satırları yazdıktan sonra `od -c` ya da
+`ascii()` ile bayt düzeyinde kontrol et.
+
 ## 2026-10-15 — Leaflet unpkg'den çıktı
 
 Harita kütüphaneleri (Leaflet 1.9.4, leaflet.markercluster 1.5.3) artık `docs/assets/vendor/`
